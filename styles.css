@@ -1,3 +1,17 @@
+/* Footer always at the bottom */
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main, .hero, .products {
+    flex: 0 0 auto;
+}
+
+.footer {
+    margin-top: auto;
+}
 body {
     margin: 0;
     font-family: 'Inter', Arial, sans-serif;
@@ -16,7 +30,7 @@ body {
     align-items: center;
 }
 
-.logo {
+.logo, .footer-logo {
     font-size: 2.5rem;
     font-weight: 700;
     color: #0265DC;
@@ -80,12 +94,4 @@ body {
 
 .cart-btn svg {
     display: block;
-}
-
-.navbar-underline {
-    width: 100vw;
-    height: 6px;
-    background: linear-gradient(90deg, #0265DC 0%, #6A8DFF 100%);
-    margin-top: 24px;
-    box-shadow: 0 2px 16px 0 rgba(2, 101, 220, 0.15);
 }
