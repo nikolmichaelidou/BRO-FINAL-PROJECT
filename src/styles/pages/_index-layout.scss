@@ -1,0 +1,16 @@
+// Footer always at the bottom
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    font-family: 'Inter', Arial, sans-serif;
+}
+
+main, .hero, .products {
+    flex: 0 0 auto;
+}
+
+.footer {
+    margin-top: auto;
+}
