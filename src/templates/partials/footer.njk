@@ -10,33 +10,14 @@
       </div>
     </div>
     <div class="footer-links">
-      <div class="footer-col">
-        <div class="footer-title">Company</div>
-        <a href="#">Homepage v1</a>
-        <a href="#">Homepage v2</a>
-        <a href="#">Homepage v3</a>
-        <a href="#">About Us</a>
-        <a href="#">About Us</a>
-        <a href="#">Blog Articles</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-title">Products</div>
-        <a href="#">Website</a>
-        <a href="#">Mobile App</a>
-        <a href="#">Social Media Feeds</a>
-        <a href="#">Presentation</a>
-        <a href="#">Product Mockups</a>
-        <a href="#">Illustrations</a>
-      </div>
-      <div class="footer-col">
-        <div class="footer-title">Account</div>
-        <a href="#">Your Cart</a>
-        <a href="#">Check Out</a>
-        <a href="#">Refund Policy</a>
-        <a href="#">Company Policy</a>
-        <a href="#">Send A Message</a>
-        <a href="#">Customer Support</a>
-      </div>
+      {% for col in footerLinks %}
+        <div class="footer-col">
+          <div class="footer-title">{{ col.title }}</div>
+          {% for link in col.links %}
+            <a href="#">{{ link }}</a>
+          {% endfor %}
+        </div>
+      {% endfor %}
     </div>
     <div class="footer-newsletter">
       <div class="newsletter-title">Subscribe to<br>Design Newsletter</div>

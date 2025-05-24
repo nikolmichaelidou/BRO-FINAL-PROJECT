@@ -1,29 +1,38 @@
-  {
-    "products": [
-      {
-        "image": "img/Illustration-ui-kit.png",
-        "alt": "UI Kits",
-        "label": "UI Kits"
-      },
-      {
-        "image": "img/Illustration-social-media.png",
-        "alt": "Social Media",
-        "label": "Social Media"
-      },
-      {
-        "image": "img/Illustration-presentations.png",
-        "alt": "Presentation",
-        "label": "Presentation"
-      },
-      {
-        "image": "img/Illustration-fonts.png",
-        "alt": "Fonts",
-        "label": "Fonts"
-      },
-      {
-        "image": "img/Illustration-icon.png",
-        "alt": "Illustrations",
-        "label": "Illustrations"
-      }
-    ]
-  }
+
+{
+  "footerLinks": [
+    {
+      "title": "Company",
+      "links": [
+        "Homepage v1",
+        "Homepage v2",
+        "Homepage v3",
+        "About Us",
+        "About Us",
+        "Blog Articles"
+      ]
+    },
+    {
+      "title": "Products",
+      "links": [
+        "Website",
+        "Mobile App",
+        "Social Media Feeds",
+        "Presentation",
+        "Product Mockups",
+        "Illustrations"
+      ]
+    },
+    {
+      "title": "Account",
+      "links": [
+        "Your Cart",
+        "Check Out",
+        "Refund Policy",
+        "Company Policy",
+        "Send A Message",
+        "Customer Support"
+      ]
+    }
+  ]
+}
