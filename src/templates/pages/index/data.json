@@ -1,4 +1,29 @@
-{
-  "title": "test",
-  "h1": ""
-}
+  {
+    "products": [
+      {
+        "image": "img/Illustration-ui-kit.png",
+        "alt": "UI Kits",
+        "label": "UI Kits"
+      },
+      {
+        "image": "img/Illustration-social-media.png",
+        "alt": "Social Media",
+        "label": "Social Media"
+      },
+      {
+        "image": "img/Illustration-presentations.png",
+        "alt": "Presentation",
+        "label": "Presentation"
+      },
+      {
+        "image": "img/Illustration-fonts.png",
+        "alt": "Fonts",
+        "label": "Fonts"
+      },
+      {
+        "image": "img/Illustration-icon.png",
+        "alt": "Illustrations",
+        "label": "Illustrations"
+      }
+    ]
+  }

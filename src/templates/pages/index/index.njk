@@ -1,5 +1,51 @@
 {% extends "layouts/base.njk" %}
 
 {% block content %}
-index page content
+
+<section class="hero">
+    <div class="hero-content">
+        <div class="hero-text">
+            <h1>
+                Craft Your<br>
+                Success with<br>
+                Our <span class="highlight" style="color: #0265DC;">Digital</span> Assets
+            </h1>
+            <p>From our inspiring illustrations to dynamic UI/UX kits, elevate your projects with our premium digital design resources.</p>
+        </div>
+        <div class="hero-buttons">
+            <a href="#" class="btn btn-primary">
+                {% include "partials/svg-btn-primary.njk" %}
+            </a>
+            <a href="#" class="btn btn-secondary">
+                {% include "partials/svg-btn-secondary.njk" %}
+            </a>
+        </div>
+    </div>
+    <div class="hero-images">
+        <div class="hero-gallery">
+            <div class="hero-gallery-item">
+                <img src="#" alt="Event Website Mockup" class="hero-gallery-img">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="products">
+    <div class="product-list">
+        {% set products = [
+            { img: "img/Illustration-ui-kit.png", alt: "UI Kits", label: "UI Kits" },
+            { img: "img/Illustration-social-media.png", alt: "Social Media", label: "Social Media" },
+            { img: "img/Illustration-presentations.png", alt: "Presentation", label: "Presentation" },
+            { img: "img/Illustration-fonts.png", alt: "Fonts", label: "Fonts" },
+            { img: "img/Illustration-icon.png", alt: "Illustrations", label: "Illustrations" }
+        ] %}
+        {% for product in products %}
+            <div class="product-item">
+                <img src="{{ product.img }}" alt="{{ product.alt }}">
+                <div class="product-label">{{ product.label }}</div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
+
 {% endblock %}
