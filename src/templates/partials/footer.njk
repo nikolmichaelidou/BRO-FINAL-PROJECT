@@ -1,41 +1,41 @@
 <footer class="footer">
   <div class="footer-main">
     <div class="footer-brand">
-      <div class="footer-logo">Pixmart<span class="dot">.</span></div>
-      <div class="footer-desc">Your premium digital assets solution with high quality and comprehensive range of products and services.</div>
-      <div class="footer-socials">
-        <a href="#" class="footer-social"><img src="#" alt="Twitter"></a>
-        <a href="#" class="footer-social"><img src="#" alt="Facebook"></a>
-        <a href="#" class="footer-social"><img src="#" alt="Telegram"></a>
+      <div class="footer__logo">Pixmart<span class="footer__dot">.</span></div>
+      <div class="footer__desc">Your premium digital assets solution with high quality and comprehensive range of products and services.</div>
+      <div class="footer__socials">
+        <a href="#" class="footer__social"><img src="#" alt="Twitter"></a>
+        <a href="#" class="footer__social"><img src="#" alt="Facebook"></a>
+        <a href="#" class="footer__social"><img src="#" alt="Telegram"></a>
       </div>
     </div>
-    <div class="footer-links">
+    <div class="footer__links">
       {% for col in footerLinks %}
-        <div class="footer-col">
-          <div class="footer-title">{{ col.title }}</div>
+        <div class="footer__col">
+          <div class="footer__title">{{ col.title }}</div>
           {% for link in col.links %}
-            <a href="#">{{ link }}</a>
+            <a href="#" class="footer__link">{{ link }}</a>
           {% endfor %}
         </div>
       {% endfor %}
     </div>
-    <div class="footer-newsletter">
-      <div class="newsletter-title">Subscribe to<br>Design Newsletter</div>
-      <form class="newsletter-form">
-        <input type="email" placeholder="Enter your email address ..." required>
-        <button type="submit">Subscribe</button>
+    <div class="footer__newsletter">
+      <div class="footer__newsletter-title">Subscribe to<br>Design Newsletter</div>
+      <form class="footer__newsletter-form">
+        <input type="email" class="footer__newsletter-input" placeholder="Enter your email address ..." required>
+        <button type="submit" class="footer__newsletter-btn">Subscribe</button>
       </form>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="footer-bottom-links">
-      <a href="#">Privacy Policy</a>
-      <span>|</span>
-      <a href="#">Terms and Condition</a>
-      <span>|</span>
-      <a href="#">Site Map</a>
+  <div class="footer__bottom">
+    <div class="footer__bottom-links">
+      <a href="#" class="footer__bottom-link">Privacy Policy</a>
+      <span class="footer__bottom-separator">|</span>
+      <a href="#" class="footer__bottom-link">Terms and Condition</a>
+      <span class="footer__bottom-separator">|</span>
+      <a href="#" class="footer__bottom-link">Site Map</a>
     </div>
-    <div class="footer-copyright">
+    <div class="footer__copyright">
       Copyright © 2024 Pixmart. All rights reserved.
     </div>
   </div>

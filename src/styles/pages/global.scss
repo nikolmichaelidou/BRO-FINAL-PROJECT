@@ -1,0 +1,74 @@
+body {
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  color: #181C25;
+  background: #fff;
+  margin: 0;
+}
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: 700;
+  border: none;
+  border-radius: 16px;
+  background: #0F73F6;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s;
+  gap: 12px;
+}
+
+.btn svg {
+  display: inline-block;
+}
+
+// Button Sizes
+.btn--lg {
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  min-width: 240px;
+  min-height: 80px;
+}
+.btn--md {
+  font-size: 1.25rem;
+  padding: 16px 32px;
+  min-width: 180px;
+  min-height: 64px;
+}
+.btn--sm {
+  font-size: 1rem;
+  padding: 12px 24px;
+  min-width: 120px;
+  min-height: 48px;
+}
+.btn--icon-lg {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+}
+.btn--icon-md {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+}
+.btn--icon-sm {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+// Button Hover State
+.btn:hover {
+  background: #3FA6FF;
+}
+
+// Example for text/heading color
+h1, h2, h3, h4, h5 {
+  color: #181C25;
+  font-family: 'Plus Jakarta Sans', Arial, sans-serif;
+  font-weight: 700;
+}
+

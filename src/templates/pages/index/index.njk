@@ -8,15 +8,15 @@
             <h1>
                 Craft Your<br>
                 Success with<br>
-                Our <span class="highlight" style="color: #0265DC;">Digital</span> Assets
+                Our <span class="hero__highlight">Digital</span> Assets
             </h1>
             <p>From our inspiring illustrations to dynamic UI/UX kits, elevate your projects with our premium digital design resources.</p>
         </div>
         <div class="hero-buttons">
-            <a href="#" class="btn btn-primary">
+            <a href="#" class="hero__btn hero__btn--primary">
                 {% include "partials/svg-btn-primary-index.njk" %}
             </a>
-            <a href="#" class="btn btn-secondary">
+            <a href="#" class="hero__btn hero__btn--secondary">
                 {% include "partials/svg-btn-secondary-index.njk" %}
             </a>
         </div>
@@ -24,13 +24,13 @@
     <div class="hero-images">
         <div class="hero-gallery">
             <div class="hero-gallery-item">
-                <img src="#" alt="Event Website Mockup" class="hero-gallery-img">
+                <img src="#" alt="Event Website Mockup" class="hero__gallery-img">
             </div>
         </div>
     </div>
 </section>
 
-<section class="illustrations">"
+<section class="illustrations">
     {% include "partials/svg-illustrations-index.njk" %}
 </section>
 
@@ -44,9 +44,9 @@
             { img: "img/Illustration-icon.png", alt: "Illustrations", label: "Illustrations" }
         ] %}
         {% for product in products %}
-            <div class="product-item">
-                <img src="{{ product.img }}" alt="{{ product.alt }}">
-                <div class="product-label">{{ product.label }}</div>
+            <div class="products__item">
+                <img src="{{ product.img }}" alt="{{ product.alt }}" class="products__img">
+                <div class="products__label">{{ product.label }}</div>
             </div>
         {% endfor %}
     </div>
