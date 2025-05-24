@@ -1,6 +1,6 @@
 // Header Styles
 .header {
-  background: #fff;
+  background: #ffffff;
   box-shadow: 0 2px 0 0 #E5EAF1;
   width: 100%;
 }
@@ -13,7 +13,7 @@
   height: 92px;
   padding: 24px 80px;
   margin: 0 auto;
-  background: #fff;
+  background: #ffffff;
   box-sizing: border-box;
 }
 
@@ -41,6 +41,7 @@
   margin: 0;
   padding: 0;
 }
+
 .nav-links li a {
   text-decoration: none;
   color: #181C25;
@@ -48,6 +49,7 @@
   font-weight: 700;
   transition: color 0.2s;
 }
+
 .nav-links li a:hover {
   color: #0F73F6;
 }
@@ -66,9 +68,10 @@
   width: 340px;
   outline: none;
   transition: border 0.2s;
-  background: #fff;
+  background: #ffffff;
   color: #181C25;
 }
+
 .search:focus {
   border-color: #0F73F6;
 }
@@ -83,9 +86,11 @@
   align-items: center;
   transition: background 0.2s;
 }
+
 .cart-btn:hover {
   background: #3FA6FF;
 }
+
 .cart-btn svg {
   display: block;
 }
