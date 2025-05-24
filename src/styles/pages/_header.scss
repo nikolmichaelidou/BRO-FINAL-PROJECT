@@ -1,31 +1,37 @@
-// Navbar styles for index page
+// Header Styles
+.header {
+  background: #fff;
+  box-shadow: 0 2px 0 0 #E5EAF1;
+  width: 100%;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 1440px;
+  max-width: 1440px;
   height: 92px;
-  padding: 24px 80px 24px 80px;
+  padding: 24px 80px;
+  margin: 0 auto;
   background: #fff;
   box-sizing: border-box;
-  margin: 0 auto;
 }
 
 .navbar-left {
   display: flex;
   align-items: center;
+  gap: 32px;
 }
 
-.logo, .footer-logo {
+.logo {
   font-size: 2.5rem;
   font-weight: 700;
-  color: #0265DC;
+  color: #0F73F6;
   margin-right: 32px;
   letter-spacing: -1px;
 }
-
-.logo .dot {
-  color: #0265DC;
+.dot {
+  color: #0F73F6;
 }
 
 .nav-links {
@@ -35,17 +41,15 @@
   margin: 0;
   padding: 0;
 }
-
 .nav-links li a {
   text-decoration: none;
-  color: #222;
-  font-size: 1.35rem;
-  font-weight: 600;
+  color: #181C25;
+  font-size: 1.5rem;
+  font-weight: 700;
   transition: color 0.2s;
 }
-
 .nav-links li a:hover {
-  color: #0265DC;
+  color: #0F73F6;
 }
 
 .navbar-right {
@@ -55,29 +59,33 @@
 }
 
 .search {
-  padding: 12px 20px;
-  border: 2px solid #e5eaf1;
+  padding: 16px 24px;
+  border: 2px solid #E5EAF1;
   border-radius: 12px;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   width: 340px;
   outline: none;
   transition: border 0.2s;
+  background: #fff;
+  color: #181C25;
 }
-
 .search:focus {
-  border-color: #0265DC;
+  border-color: #0F73F6;
 }
 
 .cart-btn {
-  background: #0265DC;
+  background: #0F73F6;
   border: none;
   border-radius: 10px;
   padding: 6px 8px;
   cursor: pointer;
   display: flex;
   align-items: center;
+  transition: background 0.2s;
 }
-
+.cart-btn:hover {
+  background: #3FA6FF;
+}
 .cart-btn svg {
   display: block;
 }
