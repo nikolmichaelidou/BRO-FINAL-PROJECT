@@ -1,5 +1,5 @@
 @use 'index-layout';
 @use 'index-navbar';
 @use 'index-hero';
-@use 'src\styles\pages\global.scss';
-@use 'src\styles\pages\header';
+@use 'src/styles/pages/global';
+@use 'src/styles/pages/header';
