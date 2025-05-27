@@ -34,21 +34,28 @@
     {% include "partials/svg-illustrations-index.njk" %}
 </section>
 
+<br>
+
 <section class="products">
     <div class="product-list">
-        {% set products = [
-            { img: "img/Illustration-ui-kit.png", alt: "UI Kits", label: "UI Kits" },
-            { img: "img/Illustration-social-media.png", alt: "Social Media", label: "Social Media" },
-            { img: "img/Illustration-presentations.png", alt: "Presentation", label: "Presentation" },
-            { img: "img/Illustration-fonts.png", alt: "Fonts", label: "Fonts" },
-            { img: "img/Illustration-icon.png", alt: "Illustrations", label: "Illustrations" }
-        ] %}
-        {% for product in products %}
-            <div class="products__item">
-                <img src="{{ product.img }}" alt="{{ product.alt }}" class="products__img">
-                <div class="products__label">{{ product.label }}</div>
-            </div>
-        {% endfor %}
+       <div class="product-list__collum">
+        {% include "partials/svg-products-index.njk" %}
+       </div>
+    </div>
+    <div class="categories-section">
+        <span class="categories-section__label">
+            CATEGORIES
+        </span>
+        <h2 class="categories-section__title">
+            Discover Assets for<br>
+            Every Projects
+        </h2>
+        <p class="categories-section__desc">
+            From fonts and icons to mockups and templates, our comprehensive categories ensure that you find exactly what you need to your projects.
+        </p>
+        <a href="#" class="categories-section__btn">
+            Shop Now
+        </a>
     </div>
 </section>
 
