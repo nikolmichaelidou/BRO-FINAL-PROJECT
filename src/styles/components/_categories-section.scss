@@ -1,68 +1,68 @@
-.categories-section {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: flex-start;
-  margin: 0 auto;
-  max-width: 700px;
-  padding: 0;
+.categories-section__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-items: start;
 }
-.categories-section__label {
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: #0f73f6;
-  margin-bottom: 18px;
-  text-transform: uppercase;
+
+.category-card {
+  border-radius: 24px;
+  // ...other styles
 }
-.categories-section__title {
-  font-size: 3rem;
-  font-weight: 800;
+
+.category-card:nth-child(2),
+.category-card:nth-child(4) {
+  margin-top: 48px; // Stagger right column
+}
+
+.category-card {
+  background: #f6f8fa;
   color: #181c25;
-  margin-bottom: 18px;
-  line-height: 1.1;
+  // ...other styles
 }
-.categories-section__desc {
-  font-size: 1.25rem;
-  color: #222;
-  margin-bottom: 32px;
-  max-width: 700px;
-  line-height: 1.5;
-}
-.categories-section__btn {
+
+.category-card--active {
   background: #0f73f6;
   color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
-  border: none;
-  border-radius: 12px;
-  padding: 18px 48px;
-  cursor: pointer;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgba(15, 115, 246, 0.10);
-}
-.categories-section__btn:hover {
-  background: #0059c9;
 }
 
+.category-card__icon {
+  color: #0f73f6;
+  // ...other styles
+}
 
-// All category card/grid styles removed, as index.njk does not use them
+.category-card--active .category-card__icon {
+  color: #fff;
+}
+
+.categories-section {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 64px;
+}
+
+.categories-section__content {
+  flex: 1 1 400px;
+  margin-left: 64px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 @media (max-width: 900px) {
   .categories-section {
-    max-width: 100%;
-    padding: 0 16px;
+    flex-direction: column;
+    gap: 32px;
   }
-  .categories-section__title {
-    font-size: 2rem;
+  .categories-section__content {
+    margin-left: 0;
   }
-  .categories-section__btn {
-    width: 100%;
-    padding: 14px 0;
-    font-size: 1rem;
+  .categories-section__grid {
+    grid-template-columns: 1fr;
+  }
+  .category-card:nth-child(2),
+  .category-card:nth-child(4) {
+    margin-top: 0;
   }
 }
-
-// Removed invalid top-level &__ selectors left from previous SCSS structure
-
-
