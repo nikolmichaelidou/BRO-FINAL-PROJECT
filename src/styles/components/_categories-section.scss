@@ -1,60 +1,68 @@
 .categories-section {
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 8px 32px rgba(30, 41, 59, 0.08);
-  padding: 48px 40px;
-  max-width: 420px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  justify-content: flex-start;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 0;
+}
+.categories-section__label {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #0f73f6;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+}
+.categories-section__title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #181c25;
+  margin-bottom: 18px;
+  line-height: 1.1;
+}
+.categories-section__desc {
+  font-size: 1.25rem;
+  color: #222;
+  margin-bottom: 32px;
+  max-width: 700px;
+  line-height: 1.5;
+}
+.categories-section__btn {
+  background: #0f73f6;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 48px;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(15, 115, 246, 0.10);
+}
+.categories-section__btn:hover {
+  background: #0059c9;
+}
 
-  &__label {
-    font-size: 13px;
-    font-weight: 700;
-    letter-spacing: 0.15em;
-    color: #7c3aed;
-    background: #f3f0ff;
-    padding: 4px 14px;
-    border-radius: 12px;
-    margin-bottom: 8px;
-    display: inline-block;
+
+// All category card/grid styles removed, as index.njk does not use them
+
+@media (max-width: 900px) {
+  .categories-section {
+    max-width: 100%;
+    padding: 0 16px;
   }
-
-  &__title {
+  .categories-section__title {
     font-size: 2rem;
-    font-weight: 800;
-    line-height: 1.15;
-    color: #1e293b;
-    margin: 0 0 8px 0;
   }
-
-  &__desc {
+  .categories-section__btn {
+    width: 100%;
+    padding: 14px 0;
     font-size: 1rem;
-    color: #64748b;
-    margin-bottom: 18px;
-    line-height: 1.6;
-  }
-
-  &__btn {
-    display: inline-block;
-    background: linear-gradient(90deg, #7c3aed 0%, #6366f1 100%);
-    color: #fff;
-    font-weight: 700;
-    font-size: 1rem;
-    padding: 12px 32px;
-    border-radius: 999px;
-    text-decoration: none;
-    box-shadow: 0 2px 12px rgba(124, 58, 237, 0.12);
-    transition: background 0.2s, box-shadow 0.2s;
-
-    &:hover,
-    &:focus {
-      background: linear-gradient(90deg, #6366f1 0%, #7c3aed 100%);
-      box-shadow: 0 4px 24px rgba(124, 58, 237, 0.18);
-      text-decoration: none;
-    }
   }
 }
+
+// Removed invalid top-level &__ selectors left from previous SCSS structure
+
 
