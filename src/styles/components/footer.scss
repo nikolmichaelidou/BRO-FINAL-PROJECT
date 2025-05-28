@@ -1,9 +1,12 @@
 
 .footer {
-  background: #111217;
   color: #222;
-  padding: 0 0 0 0;
+  padding: 0;
   font-family: 'Inter', Arial, sans-serif;
+  width: 1440px;
+  min-height: 688px;
+  margin: 20px auto 0 20px;
+  position: relative;
 }
 
 .footer-main {
@@ -14,6 +17,7 @@
   padding: 64px 0 0 0;
   max-width: 1400px;
   margin: 0 auto;
+  gap: 110px;
 }
 
 .footer-brand {
