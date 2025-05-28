@@ -1,0 +1,86 @@
+// Contact Form Styles
+.contact-form-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: none;
+}
+
+.contact-form {
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: 0 8px 32px rgba(30, 41, 59, 0.16);
+  padding: 40px 32px 32px 32px;
+  max-width: 600px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.contact-form__label {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #181c25;
+  margin-bottom: 6px;
+}
+
+.contact-form__input {
+  width: 100%;
+  padding: 20px 18px;
+  font-size: 1.1rem;
+  border: 1.5px solid #e3e7ed;
+  border-radius: 12px;
+  background: #f9fafb;
+  margin-bottom: 8px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font-family: inherit;
+  resize: none;
+}
+.contact-form__input:focus {
+  border-color: #0070f3;
+  background: #fff;
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(0,112,243,0.08);
+}
+
+.contact-form__options {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 8px 0 0 0;
+}
+
+.contact-form__checkbox {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #222;
+  gap: 8px;
+}
+
+.contact-form__btn {
+  margin-top: 12px;
+  background: #0070f3;
+  color: #fff;
+  font-size: 1.25rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 12px;
+  padding: 18px 0;
+  cursor: pointer;
+  transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(15, 115, 246, 0.10);
+  width: 100%;
+}
+.contact-form__btn:hover {
+  background: #0059c9;
+}
+
+@media (max-width: 700px) {
+  .contact-form {
+    padding: 24px 8px;
+    max-width: 100%;
+  }
+}

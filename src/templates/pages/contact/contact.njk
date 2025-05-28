@@ -22,10 +22,46 @@
     </div>
   </div>
   <div class="contact-section__map">
+    <img src="/static/Location.webp" alt="Map" class="contact-section__map-image">
     <div class="contact-section__map-card">
       <strong>PixMart HQ</strong><br>
       123 Creative Ave, Design City, 45678
     </div>
   </div>
 </section>
+
+<section class="contact-form-section">
+  <form class="contact-form">
+    <label for="fullName" class="contact-form__label">Full Name</label>
+    <input type="text" id="fullName" name="fullName" class="contact-form__input" placeholder="Amelia Robert Johnson" required>
+
+    <label for="email" class="contact-form__label">Email Address</label>
+    <input type="email" id="email" name="email" class="contact-form__input" placeholder="amelia.robertjohnson@pixmart.com" required>
+
+    <label for="subject" class="contact-form__label">Subject</label>
+    <select id="subject" name="subject" class="contact-form__input">
+      <option>General Inquiry</option>
+      <option>Support</option>
+      <option>Feedback</option>
+      <option>Other</option>
+    </select>
+
+    <label for="message" class="contact-form__label">Message</label>
+    <textarea id="message" name="message" class="contact-form__input" placeholder="Enter your message ..." required></textarea>
+
+    <div class="contact-form__options">
+      <label class="contact-form__checkbox">
+        <input type="checkbox" name="newsletter">
+        Subscribe me to Newsletter
+      </label>
+      <label class="contact-form__checkbox">
+        <input type="checkbox" name="privacy" required checked>
+        I have read the User & Privacy Policy
+      </label>
+    </div>
+
+    <button type="submit" class="contact-form__btn">Send Message</button>
+  </form>
+</section>
+
 {% endblock %}
