@@ -96,13 +96,13 @@ a {
 
 // Link Hover State
 a:hover {
-  color: #3892f3;
+  background: #3892f3;
 }
 
 // Link Focus State
 a:focus {
-  color: #0265dc;
   border: 4px solid var(--StaticPalette-Marina-Marina600, #3892f3);
+  background: #0265dc;
 }
 
 // Modern hover effect for product cards
