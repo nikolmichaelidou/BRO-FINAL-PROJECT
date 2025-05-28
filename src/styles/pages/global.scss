@@ -1,8 +1,10 @@
 body {
-  font-family: 'Plus Jakarta Sans', "Arial", sans-serif;
-  color: #181C25;
+  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
+  color: #181c25;
   background: #ffffff;
-  margin: 0;
+  top: 80px;
+  left: 80px;
+  gap: 120px;
 }
 
 // Button Styles
@@ -14,7 +16,7 @@ body {
   font-weight: 700;
   border: none;
   border-radius: 16px;
-  background: #0F73F6;
+  background: #0f73f6;
   color: #ffffff;
   cursor: pointer;
   transition: background 0.2s;
@@ -67,24 +69,46 @@ body {
 
 // Button Hover State
 .btn:hover {
-  background: #3FA6FF;
+  background: #3fa6ff;
+}
+
+//Button Focus State
+.btn:focus {
+  background: #0265dc;
 }
 
 // Example for text/heading color
-h1, h2, h3, h4, h5 {
-  color: #181C25;
-  font-family: 'Plus Jakarta Sans', "Arial", sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: #181c25;
+  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
   font-weight: 700;
 }
 
+// Link Styles
 a {
   text-decoration: none;
-  color: inherit;
+  color: #0265dc;
+}
+
+// Link Hover State
+a:hover {
+  color: #3892f3;
+}
+
+// Link Focus State
+a:focus {
+  color: #0265dc;
+  border: 4px solid var(--StaticPalette-Marina-Marina600, #3892f3);
 }
 
 // Modern hover effect for product cards
 .product-card {
-  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1), transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 2px 8px rgba(24, 28, 37, 0.06);
   background: #fff;
   border-radius: 20px;
