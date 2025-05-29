@@ -1,0 +1,43 @@
+body {
+    background: linear-gradient(0.23deg, #F0F6FD 0.2%, rgba(255, 255, 255, 0) 99.8%);
+}
+
+.blog-hero {
+  margin-top: 32px;
+  margin-bottom: 48px;
+  padding-left: 8vw;
+
+  &__tag {
+    display: inline-block;
+    background: #1769FF;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 500;
+    border-radius: 32px;
+    padding: 8px 32px;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  &__title {
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: #181a1d;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+}
+
+@media (max-width: 900px) {
+  .blog-hero {
+    padding-left: 0;
+    &__title {
+      font-size: 2rem;
+    }
+    &__tag {
+      font-size: 1rem;
+      padding: 6px 18px;
+    }
+  }
+}
