@@ -93,3 +93,73 @@
 .cart-btn svg {
   display: block;
 }
+
+// Add to your _header.scss
+
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 40px;
+  height: 40px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  margin-left: 8px;
+  z-index: 1001;
+
+  span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #0F73F6;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 92px;
+    left: 0;
+    right: 0;
+    background: #fff;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 24px 32px;
+    display: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    z-index: 1000;
+  }
+  .nav-links--open {
+    display: flex;
+  }
+  .navbar {
+    padding: 24px 16px;
+    position: relative;
+  }
+  .burger {
+    display: flex;
+  }
+  .navbar-left {
+    flex: 1;
+  }
+  .search {
+    display: none;
+  }
+}
+
+// Burger animation (optional)
+.burger--open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+.burger--open span:nth-child(2) {
+  opacity: 0;
+}
+.burger--open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}
