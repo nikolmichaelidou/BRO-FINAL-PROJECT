@@ -177,4 +177,72 @@
     </div>
   </div>
 </section>
+<section class="faq">
+  <div class="faq__container">
+    <div class="faq__left">
+      <span class="faq__subtitle">FAQ</span>
+      <h2 class="faq__title">Answers to Your Questions</h2>
+      <button class="faq__ask-btn" disabled>Ask Us A Question</button>
+    </div>
+    <div class="faq__right">
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            Can I request a refund?
+            <span class="faq-accordion__icon">&#9660;</span>
+          </button>
+        </div>
+        <div class="faq-accordion__item faq-accordion__item--active">
+          <button class="faq-accordion__question" aria-expanded="true">
+            How do I access my purchased products?
+            <span class="faq-accordion__icon faq-accordion__icon--open">&#9650;</span>
+          </button>
+          <div class="faq-accordion__answer">
+            Accessing your purchased products is seamless and hassle-free on our digital design assets marketplace. Simply log in to your account, navigate to the 'My Purchases' section, and you'll find all your purchased products ready for download.
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            Are there any discounts for bulk purchases?
+            <span class="faq-accordion__icon">&#9660;</span>
+          </button>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            What payment methods do you accept here?
+            <span class="faq-accordion__icon">&#9660;</span>
+          </button>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            Can I sell my digital products on this marketplace?
+            <span class="faq-accordion__icon">&#9660;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const items = document.querySelectorAll('.faq-accordion__item');
+    items.forEach(item => {
+      const btn = item.querySelector('.faq-accordion__question');
+      btn.addEventListener('click', function () {
+        // Collapse all
+        items.forEach(i => {
+          i.classList.remove('faq-accordion__item--active');
+          const icon = i.querySelector('.faq-accordion__icon');
+          if (icon) icon.innerHTML = '&#9660;';
+        });
+        // Expand this one if not already open
+        if (!item.classList.contains('faq-accordion__item--active')) {
+          item.classList.add('faq-accordion__item--active');
+          const icon = item.querySelector('.faq-accordion__icon');
+          if (icon) icon.innerHTML = '&#9650;';
+        }
+      });
+    });
+  });
+</script>
 {% endblock %}
