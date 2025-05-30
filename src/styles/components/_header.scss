@@ -16,24 +16,24 @@
   box-sizing: border-box;
 }
 
-.navbar-left {
+.navbar__left {
   display: flex;
   align-items: center;
   gap: 32px;
 }
 
-.logo {
+.navbar__logo {
   font-size: 2.5rem;
   font-weight: 700;
   color: #0F73F6;
   margin-right: 32px;
   letter-spacing: -1px;
 }
-.dot {
+.navbar__dot {
   color: #0F73F6;
 }
 
-.nav-links {
+.navbar__links {
   list-style: none;
   display: flex;
   gap: 32px;
@@ -41,7 +41,7 @@
   padding: 0;
 }
 
-.nav-links li a {
+.navbar__links li .navbar__link {
   text-decoration: none;
   color: #181C25;
   font-size: 1.5rem;
@@ -49,17 +49,17 @@
   transition: color 0.2s;
 }
 
-.nav-links li a:hover {
+.navbar__links li .navbar__link:hover {
   color: #0F73F6;
 }
 
-.navbar-right {
+.navbar__right {
   display: flex;
   align-items: center;
   gap: 16px;
 }
 
-.search {
+.navbar__search {
   padding: 16px 24px;
   border: 2px solid #E5EAF1;
   border-radius: 12px;
@@ -71,11 +71,11 @@
   color: #181C25;
 }
 
-.search:focus {
+.navbar__search:focus {
   border-color: #0F73F6;
 }
 
-.cart-btn {
+.navbar__cart-btn {
   background: #0F73F6;
   border: none;
   border-radius: 10px;
@@ -86,17 +86,15 @@
   transition: background 0.2s;
 }
 
-.cart-btn:hover {
+.navbar__cart-btn:hover {
   background: #3FA6FF;
 }
 
-.cart-btn svg {
+.navbar__cart-btn svg {
   display: block;
 }
 
-// Add to your _header.scss
-
-.burger {
+.navbar__burger {
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -121,7 +119,7 @@
 }
 
 @media (max-width: 900px) {
-  .nav-links {
+  .navbar__links {
     position: absolute;
     top: 92px;
     left: 0;
@@ -135,31 +133,30 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     z-index: 1000;
   }
-  .nav-links--open {
+  .navbar__links--open {
     display: flex;
   }
   .navbar {
     padding: 24px 16px;
     position: relative;
   }
-  .burger {
+  .navbar__burger {
     display: flex;
   }
-  .navbar-left {
+  .navbar__left {
     flex: 1;
   }
-  .search {
+  .navbar__search {
     display: none;
   }
 }
 
-// Burger animation (optional)
-.burger--open span:nth-child(1) {
+.navbar__burger--open span:nth-child(1) {
   transform: translateY(10px) rotate(45deg);
 }
-.burger--open span:nth-child(2) {
+.navbar__burger--open span:nth-child(2) {
   opacity: 0;
 }
-.burger--open span:nth-child(3) {
+.navbar__burger--open span:nth-child(3) {
   transform: translateY(-10px) rotate(-45deg);
 }

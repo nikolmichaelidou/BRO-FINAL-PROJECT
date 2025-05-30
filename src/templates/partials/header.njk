@@ -1,35 +1,35 @@
 <header class="header">
   <link rel="stylesheet" href="/css/style.css">
   <nav class="navbar">
-    <div class="navbar-left">
-      <a href="/index.html" class="logo">Pixmart<span class="dot">.</span></a>
-      <ul class="nav-links" id="navLinks">
+    <div class="navbar__left">
+      <a href="/index.html" class="navbar__logo">Pixmart<span class="navbar__dot">.</span></a>
+      <ul class="navbar__links" id="navLinks">
         <li>
-          <a href="#">About</a>
+          <a href="#" class="navbar__link">About</a>
         </li>
         <li>
-          <a href="/catalog.html">Products</a>
+          <a href="/catalog.html" class="navbar__link">Products</a>
         </li>
         <li>
-          <a href="#">Creators</a>
+          <a href="#" class="navbar__link">Creators</a>
         </li>
         <li>
-          <a href="/blog.html">Blog</a>
+          <a href="/blog.html" class="navbar__link">Blog</a>
         </li>
         <li>
-          <a href="/contact.html">Contact</a>
+          <a href="/contact.html" class="navbar__link">Contact</a>
         </li>
       </ul>
     </div>
-    <div class="navbar-right">
-      <input class="search" type="text" placeholder="Search for Digital Assets"/>
-      <button class="cart-btn" aria-label="View cart">
+    <div class="navbar__right">
+      <input class="navbar__search" type="text" placeholder="Search for Digital Assets"/>
+      <button class="navbar__cart-btn" aria-label="View cart">
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 8C0 3.58172 3.58172 0 8 0H32C36.4183 0 40 3.58172 40 8V32C40 36.4183 36.4183 40 32 40H8C3.58172 40 0 36.4183 0 32V8Z" fill="#0265DC"/>
           <path d="M23.9984 17V14C23.9984 11.7909 22.2076 10 19.9984 10C17.7893 10 15.9984 11.7909 15.9984 14V17M11.5904 18.352L10.9904 24.752C10.8198 26.5717 10.7345 27.4815 11.0365 28.1843C11.3017 28.8016 11.7665 29.3121 12.3564 29.6338C13.0279 30 13.9418 30 15.7695 30H24.2274C26.055 30 26.9689 30 27.6404 29.6338C28.2303 29.3121 28.6951 28.8016 28.9604 28.1843C29.2623 27.4815 29.177 26.5717 29.0064 24.752L28.4064 18.352C28.2624 16.8153 28.1903 16.047 27.8448 15.4662C27.5404 14.9546 27.0908 14.5451 26.553 14.2898C25.9424 14 25.1707 14 23.6274 14L16.3695 14C14.8261 14 14.0544 14 13.4438 14.2898C12.9061 14.5451 12.4564 14.9546 12.1521 15.4662C11.8065 16.047 11.7345 16.8153 11.5904 18.352Z" stroke="#F8F7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
       </button>
-      <button class="burger" id="burgerBtn" aria-label="Open menu">
+      <button class="navbar__burger" id="burgerBtn" aria-label="Open menu">
         <span></span>
         <span></span>
         <span></span>
@@ -42,10 +42,10 @@
     burger.addEventListener('click', () => {
       navLinks
         .classList
-        .toggle('nav-links--open');
+        .toggle('navbar__links--open');
       burger
         .classList
-        .toggle('burger--open');
+        .toggle('navbar__burger--open');
     });
   </script>
 </header>
