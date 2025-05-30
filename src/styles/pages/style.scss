@@ -7,5 +7,6 @@
 @use '../components/_pricing-plan';
 @use '../components/_faq';
 @use '../components/_catalog-hero';
-@use '../components/catalog-filter.scss';
-@use '../components/blog.scss';
+@use '../components/catalog-filter';
+@use '../components/blog';
+@use '../components/product-grid';

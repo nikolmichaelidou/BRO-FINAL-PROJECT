@@ -114,12 +114,15 @@
             </button>
         </form>
     </aside>
-    <section class="catalog-grid">
-        {% set products = data.products %}
 
+    {# Import the products data from data.json #}
+    {% set products = ('./data.json') %}
+
+    <section class="catalog-grid">
         <section class="product-grid">
             {% for product in products %}
-                {% include "components/product-card.njk" %}
+                {% include "partials/products-card.njk" %}
             {% endfor %}
         </section>
-    {% endblock %}
+    </section>
+{% endblock %}
