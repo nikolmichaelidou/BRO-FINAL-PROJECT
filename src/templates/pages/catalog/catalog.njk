@@ -114,4 +114,12 @@
             </button>
         </form>
     </aside>
-{% endblock %}
+    <section class="catalog-grid">
+        {% set products = data.products %}
+
+        <section class="product-grid">
+            {% for product in products %}
+                {% include "components/product-card.njk" %}
+            {% endfor %}
+        </section>
+    {% endblock %}
