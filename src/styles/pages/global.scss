@@ -22,6 +22,25 @@ body {
   gap: 12px;
 }
 
+.btn--primary {
+  background: #2176ff;
+  color: #fff;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.btn--secondary {
+  background: #fff;
+  color: #222;
+  border: 1px solid #e0e6ef;
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+}
+
 .btn svg {
   display: inline-block;
 }
