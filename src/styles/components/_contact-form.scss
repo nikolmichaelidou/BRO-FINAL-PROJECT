@@ -9,15 +9,15 @@
     }
 
     /* Optional: Adjust flex properties for the sections themselves */
-    .contact-layout-wrapper .contact-section,
-    .contact-layout-wrapper .contact-form-section {
+    // .contact-layout-wrapper .contact-section,
+    // .contact-layout-wrapper .contact-form-section {
        /* You can set flex-grow, flex-shrink, or flex-basis here */
        /* Example: Make them share space equally */
        /* flex: 1; */
        /* Example: Give the form section a fixed width and let the map section grow */
        /* .contact-form-section { width: 300px; flex-shrink: 0; } */
        /* .contact-section { flex-grow: 1; } */
-    }
+    
 
 // Contact Form Styles
 .contact-form-section {
