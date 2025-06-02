@@ -80,10 +80,11 @@
   color: #0070f3;
 }
 
+
 .footer__newsletter {
   display: flex;
-  align-items: center;
-  gap: 16px;
+  flex-direction: column;
+  align-items: flex-start;
   margin-top: 48px;
   margin-bottom: 32px;
 }
@@ -91,11 +92,13 @@
   font-size: 32px;
   font-weight: 600;
   color: #111217;
-  margin-right: 32px;
+  margin-bottom: 16px;
+  margin-right: 0;
 }
 .footer__newsletter-form {
   display: flex;
   gap: 0;
+  width: 100%;
 }
 .footer__newsletter-input {
   flex: 1 1 320px;
@@ -196,6 +199,7 @@
   .footer__newsletter-title {
     margin-right: 0;
     font-size: 24px;
+    margin-bottom: 12px;
   }
   .footer__newsletter-input {
     min-width: 0;
