@@ -171,6 +171,25 @@
   margin: 0 auto 48px auto; // Center the content block
 }
 
+.typography-header {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0px;
+  width: 273;
+  height: 24;
+  opacity: 0.7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #222222;
+}
+
+.get-asset-link {
+  color: #0265dc;
+  width: 105;
+  height: 24;
+}
 
 .blog-quote {
   display: flex;
