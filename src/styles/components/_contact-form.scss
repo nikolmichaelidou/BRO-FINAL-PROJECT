@@ -1,3 +1,24 @@
+.contact-layout-wrapper {
+      display: flex;
+      /* Add gap for spacing between the sections */
+      gap: 20px; /* Adjust as needed */
+      /* Consider flex-wrap if you want them to stack on smaller screens */
+      /* flex-wrap: wrap; */
+      /* You might also want to control alignment */
+      /* align-items: flex-start; */
+    }
+
+    /* Optional: Adjust flex properties for the sections themselves */
+    .contact-layout-wrapper .contact-section,
+    .contact-layout-wrapper .contact-form-section {
+       /* You can set flex-grow, flex-shrink, or flex-basis here */
+       /* Example: Make them share space equally */
+       /* flex: 1; */
+       /* Example: Give the form section a fixed width and let the map section grow */
+       /* .contact-form-section { width: 300px; flex-shrink: 0; } */
+       /* .contact-section { flex-grow: 1; } */
+    }
+
 // Contact Form Styles
 .contact-form-section {
   display: flex;
@@ -19,11 +40,9 @@
   gap: 18px;
 }
 
-.contact-form__label {
-  font-size: 1.1rem;
-  font-weight: 600;
-  color: #181c25;
-  margin-bottom: 6px;
+.contact-section__label{
+  color: #0059c9;
+  font-weight: 400;
 }
 
 .contact-form__input {
@@ -42,7 +61,7 @@
   border-color: #0070f3;
   background: #fff;
   outline: none;
-  box-shadow: 0 0 0 2px rgba(0,112,243,0.08);
+  box-shadow: 0 0 0 2px rgba(0, 112, 243, 0.08);
 }
 
 .contact-form__options {
@@ -71,11 +90,19 @@
   padding: 18px 0;
   cursor: pointer;
   transition: background 0.2s;
-  box-shadow: 0 2px 8px rgba(15, 115, 246, 0.10);
+  box-shadow: 0 2px 8px rgba(15, 115, 246, 0.1);
   width: 100%;
 }
 .contact-form__btn:hover {
   background: #0059c9;
+}
+
+.contact-section__map-image {
+  width: 618;
+  height: 314;
+  gap: 10px;
+  border-radius: 20px;
+  padding: 16px;
 }
 
 @media (max-width: 700px) {
