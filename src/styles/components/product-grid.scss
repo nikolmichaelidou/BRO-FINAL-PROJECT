@@ -4,100 +4,155 @@ $badge-colors: (
   "popular": #2d9cdb
 );
 
-.product-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  padding: 2rem;
+.trending-products__list {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 32px;
+  overflow-x: auto;
+  padding-bottom: 8px;
 }
 
 .product-card {
   background: #fff;
-  border-radius: 1rem;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+  border-radius: 24px;
+  box-shadow: 0 4px 32px 0 rgba(0, 102, 255, 0.10), 0 0 0 4px rgba(0, 102, 255, 0.08);
+  border: 1.5px solid #e6e6e6;
+  flex: 0 0 340px;
+  max-width: 360px;
+  min-width: 320px;
   display: flex;
   flex-direction: column;
+  align-items: stretch;
   position: relative;
-  transition: transform 0.2s ease;
+  transition: box-shadow 0.2s, border 0.2s;
+  overflow: hidden;
+  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
 
   &:hover {
-    transform: translateY(-5px);
+    box-shadow: 0 8px 40px 0 rgba(0, 102, 255, 0.18), 0 0 0 4px rgba(0, 102, 255, 0.12);
+    border-color: #0066ff;
+    transform: translateY(-8px) scale(1.03);
+    z-index: 2;
   }
+}
 
-  .product-image {
+
+.product-card__image {
+  position: relative;
+  border-radius: 24px 24px 0 0;
+  overflow: hidden;
+  min-height: 220px;
+  background: #f7fafd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 24px 24px 0 0;
+    display: block;
+  }
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  background: #ffd600;
+  color: #222;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 6px 18px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,102,255,0.10);
+  letter-spacing: 0.04em;
+  z-index: 2;
+
+  &.product-card__badge--trophy {
+    background: #0066ff;
+    color: #fff;
+    right: 18px;
+    left: auto;
+    top: 18px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.1rem;
+    padding: 6px 18px;
+  }
+}
+
+.product-card--active {
+  border: 2.5px solid #0066ff;
+  z-index: 1;
+
+  .product-card__image {
     position: relative;
-
-    img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .badge {
-      position: absolute;
-      top: 1rem;
-      left: 1rem;
-      background-color: gray;
-      color: white;
-      font-weight: bold;
-      font-size: 0.75rem;
-      text-transform: uppercase;
-      padding: 0.4rem 0.8rem;
-      border-radius: 1rem;
-
-      @each $name, $color in $badge-colors {
-        &--#{$name} {
-          background-color: $color;
-        }
-      }
-    }
   }
 
-  .product-info {
-    padding: 1rem;
+  .product-card__cta {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background: #0066ff;
+    color: #fff;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 12px;
+    padding: 18px 48px;
+    cursor: pointer;
+    z-index: 3;
+    box-shadow: 0 4px 24px 0 rgba(0, 102, 255, 0.10);
+    transition: background 0.2s;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
 
-    h4 {
-      margin: 0;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: #333;
-    }
+.product-card__info {
+  padding: 24px 18px 18px 18px;
+  text-align: left;
+}
 
-    .category {
-      color: #888;
-      font-size: 0.9rem;
-      margin: 0.3rem 0 0.8rem;
-    }
+.product-card__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 6px;
+}
 
-    .price {
-      font-size: 1rem;
-      font-weight: 500;
-      color: #000;
-    }
+.product-card__price {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0066ff;
+  margin-bottom: 8px;
+}
 
-    .actions {
-      margin-top: 0.8rem;
-      display: flex;
-      gap: 0.5rem;
+.product-card__tags {
+  color: #888;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0;
+  span {
+    font-style: italic;
+  }
+}
 
-      .btn-icon {
-        border: 1px solid #ccc;
-        background: #fff;
-        border-radius: 50%;
-        padding: 0.6rem;
-        cursor: pointer;
-        transition: background 0.2s;
-
-        &.filled {
-          background: #2d9cdb;
-          color: white;
-        }
-
-        &:hover {
-          background: #f0f0f0;
-        }
-      }
-    }
+@media (max-width: 1024px) {
+  .trending-products__list {
+    gap: 18px;
+  }
+  .product-card {
+    min-width: 260px;
+    max-width: 320px;
+  }
+  .product-card__image img {
+    height: 160px;
   }
 }
