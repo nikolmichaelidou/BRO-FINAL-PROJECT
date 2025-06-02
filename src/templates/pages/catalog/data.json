@@ -4,84 +4,84 @@
       "title": "Lens Chronicles",
       "category": "Photography · Creative",
       "price": "€00.00",
-      "image": "/img/lens.webp",
+      "image": "/img/lens-1x.webp",
       "badge": "SOLD OUT"
     },
     {
       "title": "Career Success",
       "category": "Guidance · Jobs",
       "price": "€20.99",
-      "image": "/img/career.webp",
+      "image": "/img/career-1x.webp",
       "badge": "NEW"
     },
     {
       "title": "Dream Homes",
       "category": "Real Estate · Modern",
       "price": "€45.99",
-      "image": "/img/dream-2x.webp",
+      "image": "/img/dream-1x.webp",
       "badge": "POPULAR"
     },
     {
       "title": "Foodish Catering",
       "category": "Food · Events",
       "price": "€15.99",
-      "image": "/img/food.webp",
+      "image": "/img/food-1x.webp",
       "badge": "POPULAR"
     },
     {
       "title": "Caring Hearts",
       "category": "Healthcare · Support",
       "price": "€19.99",
-      "image": "/img/health.webp",
+      "image": "/img/health-1x.webp",
       "badge": "NEW"
     },
     {
       "title": "Gaming Rise",
       "category": "eSports · Trends",
       "price": "€00.00",
-      "image": "/img/gaming.webp",
+      "image": "/img/gaming-1x.webp",
       "badge": "SOLD OUT"
     },
     {
       "title": "Edit Pro",
       "category": "Design · Tools",
       "price": "€00.00",
-      "image": "public/img/editpro.webp",
+      "image": "public/img/editpro-1x.webp",
       "badge": "SOLD OUT"
     },
     {
       "title": "Banking Redefined",
       "category": "Finance · Secure",
       "price": "€25.99",
-      "image": "/img/banking.webp",
+      "image": "/img/banking-1x.webp",
       "badge": "NEW"
     },
     {
       "title": "Exploring Fun",
       "category": "Travel · Adventure",
       "price": "€41.99",
-      "image": "/img/exploring.webp",
+      "image": "/img/exploring-1x.webp",
       "badge": "POPULAR"
     },
     {
       "title": "Admin Dashboard",
       "category": "Data · Tools",
       "price": "€15.99",
-      "image": "/img/admin.webp",
+      "image": "/img/admin-1x.webp",
       "badge": "POPULAR"
     },
     {
       "title": "Analytical Dashboard",
       "category": "Data · Tools",
       "price": "€10.99",
-      "image": "/img/analytics.webp",
+      "image": "/img/analytics-1x.webp",
       "badge": "NEW"
     },
     {
       "title": "Kindergarten Website",
       "category": "Education · Kids",
       "price": "€00.00",
-      "image": "/img/kids.webp",
+      "image": "/img/kids-1x.webp",
       "badge": "SOLD OUT"
     }
   ]
