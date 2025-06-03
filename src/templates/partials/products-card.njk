@@ -1,6 +1,6 @@
 <div class="product-card">
   <div class="product-image">
-    <img src="/public{{ product.image }}" alt="{{ product.title }}">
+    <img src="img/{{ products.image }}" alt="{{ products.title }}">
     {% if product.badge %}
       <div class="badge badge--{{ product.badge | lower | replace(' ', '-') }}">{{ product.badge }}</div>
     {% endif %}
