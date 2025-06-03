@@ -68,17 +68,35 @@
                 <p>White space, or negative space, is a powerful tool in typography. It helps in decluttering designs and allows each typographic element to breathe. Proper use of white space can significantly improve the overall balance and composition of your design.</p>
                 <div class="blog-quote">
                     <svg class="blog-quote__icon" width="64" height="48" viewBox="0 0 64 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <svg width="48" height="38" viewBox="0 0 48 38" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.53229 3.80003C1.86562 6.73336 0.265625 9.93336 0.265625 15.2667C0.265625 24.6 6.93229 32.8667 16.2656 37.1334L18.6656 33.6667C9.86563 28.8667 7.99896 22.7334 7.46563 18.7334C8.79896 19.5334 10.6656 19.8 12.5323 19.5334C17.3323 19 21.0656 15.2667 21.0656 10.2C21.0656 7.80003 19.999 5.40003 18.399 3.53336C16.5323 1.6667 14.399 0.866695 11.7323 0.866695C8.79896 0.866695 6.13229 2.20003 4.53229 3.80003ZM31.199 3.80003C28.5323 6.73336 26.9323 9.93336 26.9323 15.2667C26.9323 24.6 33.599 32.8667 42.9323 37.1334L45.3323 33.6667C36.5323 28.8667 34.6656 22.7334 34.1323 18.7334C35.4656 19.5334 37.3323 19.8 39.199 19.5334C43.999 19 47.7323 15.2667 47.7323 10.2C47.7323 7.80003 46.6656 5.40003 45.0656 3.53336C43.4656 1.6667 41.0656 0.866695 38.399 0.866695C35.4656 0.866695 32.799 2.20003 31.199 3.80003Z" fill="#0F73F6"/>
-                        </svg>
-                        <span class="blog-quote__text">
-                            <h4>Typography is not just the art of arranging type but the craft of breathing life into characters, turning words into stories that captivate the soul.</h4>
-                            <p>Typography is an art that speaks volumes beyond the mere letters on a surface. By applying these tips, designers can elevate their work from mere messages to powerful visual statements. Remember, mastering typography is a journey of continuous learning and experimentation. Embrace the process, and let your designs speak louder than words. Happy designing!</p>
-                        </span>
+                        <path d="M4.53229 3.80003C1.86562 6.73336 0.265625 9.93336 0.265625 15.2667C0.265625 24.6 6.93229 32.8667 16.2656 37.1334L18.6656 33.6667C9.86563 28.8667 7.99896 22.7334 7.46563 18.7334C8.79896 19.5334 10.6656 19.8 12.5323 19.5334C17.3323 19 21.0656 15.2667 21.0656 10.2C21.0656 7.80003 19.999 5.40003 18.399 3.53336C16.5323 1.6667 14.399 0.866695 11.7323 0.866695C8.79896 0.866695 6.13229 2.20003 4.53229 3.80003ZM31.199 3.80003C28.5323 6.73336 26.9323 9.93336 26.9323 15.2667C26.9323 24.6 33.599 32.8667 42.9323 37.1334L45.3323 33.6667C36.5323 28.8667 34.6656 22.7334 34.1323 18.7334C35.4656 19.5334 37.3323 19.8 39.199 19.5334C43.999 19 47.7323 15.2667 47.7323 10.2C47.7323 7.80003 46.6656 5.40003 45.0656 3.53336C43.4656 1.6667 41.0656 0.866695 38.399 0.866695C35.4656 0.866695 32.799 2.20003 31.199 3.80003Z" fill="#0F73F6"/>
+                    </svg>
+                    <div class="blog-quote__text">
+                        <h4>Typography is not just the art of arranging type but the craft of breathing life into characters, turning words into stories that captivate the soul.</h4>
+                        <p>Typography is an art that speaks volumes beyond the mere letters on a surface. By applying these tips, designers can elevate their work from mere messages to powerful visual statements. Remember, mastering typography is a journey of continuous learning and experimentation. Embrace the process, and let your designs speak louder than words. Happy designing!</p>
                     </div>
                 </div>
-
             </section>
         </div>
-        {% include "partials/svg-blog-articles.njk" %}    
+        <section class="related-articles">
+            <div class="related-header">
+                <h2>Related Articles</h2>
+                <a href="/blog" class="explore-link">Explore All Articles →</a>
+            </div>
+
+            <div class="article-grid">
+                {% for article in blogPosts %}
+                    <div class="article-card">
+                        <div class="article-image">
+                            <img src="{{ article.image }}" alt="{{ article.title }}">
+                            <span class="tag">{{ article.tag }}</span>
+                        </div>
+                        <div class="article-info">
+                            <h3>{{ article.title }}</h3>
+                            <p class="date">{{ article.date }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </section>
+
     {% endblock %}

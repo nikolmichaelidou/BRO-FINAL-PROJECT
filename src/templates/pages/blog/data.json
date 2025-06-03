@@ -34,5 +34,25 @@
         "Customer Support"
       ]
     }
+  ],
+  "blogPosts": [
+    {
+      "title": "Best Dishes",
+      "date": "15 April 2024",
+      "image": "/img/best-dishes-1x.webp",
+      "tag": "Tag"
+    },
+    {
+      "title": "Contact Us Lotus Spa",
+      "date": "5 May 2024",
+      "image": "/img/lotus-spa-1x.webp",
+      "tag": "Tag"
+    },
+    {
+      "title": "Creative Blog",
+      "date": "20 June 2024",
+      "image": "/img/creative-blog-1x.webp",
+      "tag": "Tag"
+    }
   ]
 }
