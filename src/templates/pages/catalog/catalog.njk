@@ -14,112 +14,114 @@
         </div>
     </section>
 
-    <aside class="catalog-filter">
-        <form>
-            <div class="filter-section">
-                <h2 class="filter-title">Categories</h2>
-                <label class="filter-checkbox">
-                    <input type="checkbox" checked>
-                    <span>All Categories</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>Technology</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>Travel &amp; Tourism</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>Health &amp; Fitness</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>E-Commerce</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>Education</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>Entertainment</span>
-                </label>
-                <label class="filter-checkbox">
-                    <input type="checkbox">
-                    <span>Others</span>
-                </label>
-            </div>
-
-            <div class="filter-section">
-                <h2 class="filter-title">Format Type</h2>
-                <label class="filter-radio">
-                    <input type="radio" name="format" checked>
-                    <span>Figma</span>
-                </label>
-                <label class="filter-radio">
-                    <input type="radio" name="format">
-                    <span>Sketch</span>
-                </label>
-                <label class="filter-radio">
-                    <input type="radio" name="format">
-                    <span>Adobe XD</span>
-                </label>
-                <label class="filter-radio">
-                    <input type="radio" name="format">
-                    <span>Adobe Photoshop</span>
-                </label>
-                <label class="filter-radio">
-                    <input type="radio" name="format">
-                    <span>Adobe Illustration</span>
-                </label>
-            </div>
-
-            <div class="filter-section">
-                <h2 class="filter-title">Style</h2>
-                <label class="filter-toggle">
-                    <input type="checkbox" checked>
-                    <span>Minimalist</span>
-                </label>
-                <label class="filter-toggle">
-                    <input type="checkbox" checked>
-                    <span>Modern</span>
-                </label>
-                <label class="filter-toggle">
-                    <input type="checkbox" checked>
-                    <span>Playful</span>
-                </label>
-                <label class="filter-toggle">
-                    <input type="checkbox" checked>
-                    <span>Dark Mode</span>
-                </label>
-                <label class="filter-toggle">
-                    <input type="checkbox" checked>
-                    <span>Photosentric</span>
-                </label>
-            </div>
-
-            <div class="filter-section">
-                <h2 class="filter-title">Price</h2>
-                <div class="filter-slider">
-                    <input type="range" min="5" max="50" value="15" class="slider" id="priceRange">
-                    <span>€5</span>
-                    <span>€50</span>
+    <section class="catalog-flex-wrapper">
+        <aside class="catalog-filter">
+            <form>
+                <div class="filter-section">
+                    <h2 class="filter-title">Categories</h2>
+                    <label class="filter-checkbox">
+                        <input type="checkbox" checked>
+                        <span>All Categories</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>Technology</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>Travel &amp; Tourism</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>Health &amp; Fitness</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>E-Commerce</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>Education</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>Entertainment</span>
+                    </label>
+                    <label class="filter-checkbox">
+                        <input type="checkbox">
+                        <span>Others</span>
+                    </label>
                 </div>
-            </div>
 
-            <button type="reset" class="filter-clear-btn">
-                &#10005; Clear all filters
-            </button>
-        </form>
-    </aside>
+                <div class="filter-section">
+                    <h2 class="filter-title">Format Type</h2>
+                    <label class="filter-radio">
+                        <input type="radio" name="format" checked>
+                        <span>Figma</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="format">
+                        <span>Sketch</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="format">
+                        <span>Adobe XD</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="format">
+                        <span>Adobe Photoshop</span>
+                    </label>
+                    <label class="filter-radio">
+                        <input type="radio" name="format">
+                        <span>Adobe Illustration</span>
+                    </label>
+                </div>
 
-    <section class="catalog-grid">
-        <section class="product-grid">
-            {% for product in product %}
-                {% include "partials/products-card.njk" %}
-            {% endfor %}
+                <div class="filter-section">
+                    <h2 class="filter-title">Style</h2>
+                    <label class="filter-toggle">
+                        <input type="checkbox" checked>
+                        <span>Minimalist</span>
+                    </label>
+                    <label class="filter-toggle">
+                        <input type="checkbox" checked>
+                        <span>Modern</span>
+                    </label>
+                    <label class="filter-toggle">
+                        <input type="checkbox" checked>
+                        <span>Playful</span>
+                    </label>
+                    <label class="filter-toggle">
+                        <input type="checkbox" checked>
+                        <span>Dark Mode</span>
+                    </label>
+                    <label class="filter-toggle">
+                        <input type="checkbox" checked>
+                        <span>Photosentric</span>
+                    </label>
+                </div>
+
+                <div class="filter-section">
+                    <h2 class="filter-title">Price</h2>
+                    <div class="filter-slider">
+                        <input type="range" min="5" max="50" value="15" class="slider" id="priceRange">
+                        <span>€5</span>
+                        <span>€50</span>
+                    </div>
+                </div>
+
+                <button type="reset" class="filter-clear-btn">
+                    &#10005; Clear all filters
+                </button>
+            </form>
+        </aside>
+
+        <section class="catalog-grid">
+            <section class="product-grid">
+                {% for product in product %}
+                    {% include "partials/products-card.njk" %}
+                {% endfor %}
+            </section>
         </section>
     </section>
 {% endblock %}

@@ -156,3 +156,8 @@ $badge-colors: (
     height: 160px;
   }
 }
+
+.catalog-flex-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
