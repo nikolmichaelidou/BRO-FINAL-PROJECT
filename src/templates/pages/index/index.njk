@@ -18,29 +18,31 @@
     </div>
   </section>
   <section class="illustrations">
-    <section class="asset-categories">
-      <div class="asset-categories__grid">
-        {% for cat in illustrations %}
-          <div class="asset-category-card">
-            <div class="asset-category-card__icon">
-              <img src="{{ cat.icon }}" alt="{{ cat.label }}">
+    <div class="asset-categories__wrapper">
+      <section class="asset-categories">
+        <div class="asset-categories__grid">
+          {% for cat in illustrations %}
+            <div class="asset-category-card">
+              <div class="asset-category-card__icon">
+                <img src="{{ cat.icon }}" alt="{{ cat.label }}">
+              </div>
+              <div class="asset-category-card__label">{{ cat.label }}</div>
             </div>
-            <div class="asset-category-card__label">{{ cat.label }}</div>
-          </div>
-        {% endfor %}
-      </div>
+          {% endfor %}
+        </div>
 
-      <div class="categories-section__content">
-        <span class="categories-section__label">CATEGORIES</span>
-        <h2 class="categories-section__title">Discover Assets for<br>Every Projects</h2>
-        <p class="categories-section__desc">From fonts and icons to mockups and templates, our comprehensive categories ensure that you find exactly what you need to your projects.</p>
-        <button class="btn categories-section__btn--primary">
-          <a href="#">
-          Shop Now
-        </a>
-        </button>
-      </div>
-    </section>
+        <div class="categories-section__content">
+          <span class="categories-section__label">CATEGORIES</span>
+          <h2 class="categories-section__title">Discover Assets for<br>Every Projects</h2>
+          <p class="categories-section__desc">From fonts and icons to mockups and templates, our comprehensive categories ensure that you find exactly what you need to your projects.</p>
+          <button class="btn categories-section__btn--primary">
+            <a href="#">
+            Shop Now
+          </a>
+          </button>
+        </div>
+      </section>
+    </div>
   </section>
 </section>
 <section class="trending-products">
