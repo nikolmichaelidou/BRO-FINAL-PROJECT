@@ -117,6 +117,36 @@
         </aside>
 
         <section class="catalog-grid">
+              <div class="catalog-header-bar">
+          <div class="catalog-header-bar__left">
+            <div class="catalog-sort-dropdown">
+              <button class="sort-btn">
+                Best Seller
+                <span class="icon-chevron">&#9662;</span>
+              </button>
+            </div>
+            <div class="catalog-active-filters">
+              <button class="filter-tag">
+                UI Kit <span class="filter-tag__remove">&#10005;</span>
+              </button>
+              <button class="filter-tag">
+                UI Kit <span class="filter-tag__remove">&#10005;</span>
+              </button>
+            </div>
+          </div>
+          <div class="catalog-header-bar__right">
+            <span class="catalog-results">Showing 12 out of 120 results.</span>
+            <div class="catalog-view-toggle">
+              <button class="view-btn active">
+                <span class="icon-grid"></span>
+              </button>
+              <button class="view-btn">
+                <span class="icon-list"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
             <div class="product-grid-flex">
                 {% for product in product %}
                     {% include "partials/products-card.njk" %}
