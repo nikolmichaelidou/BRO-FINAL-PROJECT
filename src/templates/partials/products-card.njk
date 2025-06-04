@@ -1,14 +1,14 @@
 <div class="product-card">
-  <div class="product-image">
+  <div class="product-card__image">
     <img src="{{ product.image }}" alt="{{ product.title }}">
     {% if product.badge %}
-      <div class="badge badge--{{ product.badge | lower | replace(' ', '-') }}">{{ product.badge }}</div>
+      <div class="product-card__badge product-card__badge--{{ product.badge | lower | replace(' ', '-') }}">{{ product.badge }}</div>
     {% endif %}
   </div>
-  <div class="product-info">
-    <h4>{{ product.title }}</h4>
+  <div class="product-card__info">
+    <h4 class="product-card__name">{{ product.title }}</h4>
     <p class="category">{{ product.category }}</p>
-    <p class="price">{{ product.price }}</p>
+    <p class="product-card__price">{{ product.price }}</p>
     <div class="actions">
       <button class="btn-icon">♡</button>
       <button class="btn-icon filled">🛍️</button>
