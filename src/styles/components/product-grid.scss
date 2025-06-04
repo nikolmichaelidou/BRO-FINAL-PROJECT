@@ -43,21 +43,17 @@ $badge-colors: (
 }
 
 .product-card__image {
-  position: relative;
-  border-radius: 24px 24px 0 0;
-  overflow: hidden;
-  min-height: 220px;
-  background: #f7fafd;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    position: relative;
+    border-radius: 24px 24px 0 0;
+    display: flex;
+    align-items: center;
+}
 
   img {
     object-fit: cover;
     display: block;
     border-radius: 20px;
   }
-}
 
 .product-card--active {
   border: 2.5px solid #0066ff;

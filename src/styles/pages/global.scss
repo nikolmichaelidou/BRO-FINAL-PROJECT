@@ -73,22 +73,6 @@
     gap: 8px !important;
     text-align: center;
   }
-
-  h1,
-  h2,
-  h3 {
-    font-size: 1.5rem !important;
-    word-break: break-word;
-  }
-
-  .btn,
-  .btn--primary,
-  .btn--secondary {
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 12px 0 !important;
-    font-size: 1rem !important;
-  }
 }
 
 body {
@@ -191,17 +175,6 @@ body {
 //Button Focus State
 .btn:focus {
   background: #0265dc;
-}
-
-// Example for text/heading color
-h1,
-h2,
-h3,
-h4,
-h5 {
-  color: #181c25;
-  font-family: "Plus Jakarta Sans", "Arial", sans-serif;
-  font-weight: 700;
 }
 
 // Link Styles

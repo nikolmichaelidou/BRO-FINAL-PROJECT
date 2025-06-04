@@ -18,7 +18,7 @@
       "title": "Dream Homes",
       "category": "Real Estate · Modern",
       "price": "€45.99",
-      "image": "dream-1x.webp",
+      "image": "img/dream-1x.webp",
       "badge": "POPULAR"
     },
     {
@@ -53,7 +53,7 @@
       "title": "Banking Redefined",
       "category": "Finance · Secure",
       "price": "€25.99",
-      "image": "img/banking-1x.webp",
+      "image": "img/banking-2x.webp",
       "badge": "NEW"
     },
     {
@@ -67,21 +67,21 @@
       "title": "Admin Dashboard",
       "category": "Data · Tools",
       "price": "€15.99",
-      "image": "img/admin-1x.webp",
+      "image": "img/admin-2x.webp",
       "badge": "POPULAR"
     },
     {
       "title": "Analytical Dashboard",
       "category": "Data · Tools",
       "price": "€10.99",
-      "image": "img/analytics-1x.webp",
+      "image": "img/analytics-2x.webp",
       "badge": "NEW"
     },
     {
       "title": "Kindergarten Website",
       "category": "Education · Kids",
       "price": "€00.00",
-      "image": "img/kids-1x.webp",
+      "image": "img/kids-2x.webp",
       "badge": "SOLD OUT"
     }
 ],
