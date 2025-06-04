@@ -19,7 +19,7 @@
 .navbar__left {
   display: flex;
   align-items: center;
-  gap: 32px;
+  gap: 20px; // smaller gap between burger and logo
 }
 
 .navbar__logo {
@@ -95,24 +95,26 @@
 }
 
 .navbar__burger {
-  display: none;
+  display: none; // hide by default
   flex-direction: column;
   justify-content: center;
   gap: 6px;
-  width: 40px;
-  height: 40px;
-  background: none;
+  width: 48px;
+  height: 48px;
+  background: #0F73F6;
   border: none;
+  border-radius: 12px;
   cursor: pointer;
   padding: 0;
-  margin-left: 8px;
+  margin-right: 8px;
   z-index: 1001;
+  align-items: center;
 
   span {
     display: block;
     height: 4px;
     width: 28px;
-    background: #0F73F6;
+    background: #fff;
     border-radius: 2px;
     transition: 0.3s;
   }
@@ -141,7 +143,7 @@
     position: relative;
   }
   .navbar__burger {
-    display: flex;
+    display: flex; // show only on mobile
   }
   .navbar__left {
     flex: 1;
