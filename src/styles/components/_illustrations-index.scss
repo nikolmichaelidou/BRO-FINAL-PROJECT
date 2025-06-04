@@ -1,0 +1,22 @@
+.asset-categories__grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+}
+.asset-category-card {
+  background: #f5f8fb;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 180px;
+}
+.asset-category-card__icon img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1rem;
+}
+.asset-category-card__label {
+  font-weight: 600;
+  margin-top: 0.5rem;
+}

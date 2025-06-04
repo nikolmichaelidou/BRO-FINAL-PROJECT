@@ -35,4 +35,27 @@
       ]
     }
   ]
+,
+  "illustrations": [
+    {
+      "icon": "/img/ui-kits.svg",
+      "label": "UI Kits"
+    },
+    {
+      "icon": "/img/social-media.svg",
+      "label": "Social Media"
+    },
+    {
+      "icon": "/img/presentation.svg",
+      "label": "Presentation"
+    },
+    {
+      "icon": "/img/fonts.svg",
+      "label": "Fonts"
+    },
+    {
+      "icon": "/img/illustrations.svg",
+      "label": "Illustrations"
+    }
+  ]
 }
