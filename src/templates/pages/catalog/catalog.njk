@@ -117,11 +117,11 @@
         </aside>
 
         <section class="catalog-grid">
-            <section class="product-grid">
+            <div class="product-grid-flex">
                 {% for product in product %}
                     {% include "partials/products-card.njk" %}
                 {% endfor %}
-            </section>
+            </div>
         </section>
     </section>
 {% endblock %}
