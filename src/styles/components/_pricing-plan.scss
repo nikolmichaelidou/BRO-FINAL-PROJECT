@@ -1,6 +1,17 @@
+@use "sass:color";
+
 .pricing-plan {
-  padding: 80px 0;
-  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
+  }
 
   &__header {
     text-align: center;
@@ -22,6 +33,7 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.2;
+    color: #fff;
   }
 
   &__cards {
@@ -54,12 +66,12 @@
 
   &--featured {
     background: #ffffff;
-    border: 2px solid #0F73F6;
+    border: 2px solid #0f73f6;
     box-shadow: 0 10px 40px rgba(15, 115, 246, 0.2);
     position: relative;
 
     .pricing-card__btn--primary {
-      background-color: #0F73F6;
+      background-color: #0f73f6;
       color: #ffffff;
     }
   }
@@ -69,7 +81,7 @@
   position: absolute;
   top: -15px;
   right: 24px;
-  background-color: #0F73F6;
+  background-color: #0f73f6;
   color: #ffffff;
   font-weight: 600;
   font-size: 14px;
@@ -146,14 +158,14 @@
   &:hover {
     background-color: #f8f9fa;
   }
-
+  
   &--primary {
     background-color: #0f73f6;
     color: #ffffff;
     border-color: #0f73f6;
-
+    
     &:hover {
-      background-color: darken(#0f73f6, 5%);
+      background-color: color.adjust(#0f73f6, $lightness: -5%);
     }
   }
 }
@@ -162,7 +174,7 @@
   .pricing-plan__title {
     font-size: 36px;
   }
-
+  
   .pricing-card {
     width: 100%;
     max-width: 100%;
