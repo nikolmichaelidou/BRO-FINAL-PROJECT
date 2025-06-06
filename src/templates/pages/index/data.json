@@ -38,15 +38,15 @@
 ,
   "illustrations": [
     {
-      "icon": "/img/ui-kits.svg",
+      "icon": "/img/illustration-icon-1x.webp",
       "label": "UI Kits"
     },
     {
-      "icon": "/img/social-media.svg",
+      "icon": "/img/illustration-icon-1x.webp",
       "label": "Social Media"
     },
     {
-      "icon": "img/Illustration-presentations-1x.avif",
+      "icon": "img/Illustration-presentations-1x.webp",
       "label": "Presentation"
     },
     {
@@ -54,7 +54,7 @@
       "label": "Fonts"
     },
     {
-      "icon": "/img/illustrations.svg",
+      "icon": "/img/illustration-icon-1x.webp",
       "label": "Illustrations"
     }
   ]
