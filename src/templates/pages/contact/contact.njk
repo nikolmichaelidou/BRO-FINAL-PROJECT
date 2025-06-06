@@ -52,18 +52,19 @@
         <label for="message" class="contact-form__label">Message</label>
         <textarea id="message" name="message" class="contact-form__input" placeholder="Enter your message ..." required></textarea>
 
-        <div class="contact-form__options">
-          <label class="contact-form__checkbox">
-            <input type="checkbox" name="newsletter">
-            Subscribe me to Newsletter
-          </label>
-          <label class="contact-form__checkbox">
-            <input type="checkbox" name="privacy" required checked>
-            I have read the User & Privacy Policy
-          </label>
+        <div class="contact-form__bottom">
+          <div class="contact-form__options">
+            <label class="contact-form__checkbox">
+              <input type="checkbox" name="newsletter">
+              <span>Subscribe me to Newsletter</span>
+            </label>
+            <label class="contact-form__checkbox">
+              <input type="checkbox" name="privacy" required checked>
+              <span>I have read the User & Privacy Policy</span>
+            </label>
+          </div>
+          <button type="submit" class="contact-form__btn">Send Message</button>
         </div>
-
-        <button type="submit" class="contact-form__btn">Send Message</button>
       </form>
     </section>
   </main>
