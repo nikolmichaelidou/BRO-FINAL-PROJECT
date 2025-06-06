@@ -1,25 +1,31 @@
 .contact-layout-wrapper {
-      display: flex;
-      /* Add gap for spacing between the sections */
-      gap: 20px; /* Adjust as needed */
-      /* Consider flex-wrap if you want them to stack on smaller screens */
-      /* flex-wrap: wrap; */
-      /* You might also want to control alignment */
-      /* align-items: flex-start; */
-    }
+  display: flex;
+  /* Add gap for spacing between the sections */
+  gap: 20px; /* Adjust as needed */
+  /* Consider flex-wrap if you want them to stack on smaller screens */
+  /* flex-wrap: wrap; */
+  /* You might also want to control alignment */
+  /* align-items: flex-start; */
+}
 
-    /* Optional: Adjust flex properties for the sections themselves */
-    // .contact-layout-wrapper .contact-section,
-    // .contact-layout-wrapper .contact-form-section {
-       /* You can set flex-grow, flex-shrink, or flex-basis here */
-       /* Example: Make them share space equally */
-       /* flex: 1; */
-       /* Example: Give the form section a fixed width and let the map section grow */
-       /* .contact-form-section { width: 300px; flex-shrink: 0; } */
-       /* .contact-section { flex-grow: 1; } */
-    
+/* Optional: Adjust flex properties for the sections themselves */
+// .contact-layout-wrapper .contact-section,
+// .contact-layout-wrapper .contact-form-section {
+/* You can set flex-grow, flex-shrink, or flex-basis here */
+/* Example: Make them share space equally */
+/* flex: 1; */
+/* Example: Give the form section a fixed width and let the map section grow */
+/* .contact-form-section { width: 300px; flex-shrink: 0; } */
+/* .contact-section { flex-grow: 1; } */
 
 // Contact Form Styles
+.contact-section__title {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 62px;
+  letter-spacing: -0.5px;
+}
+
 .contact-form-section {
   display: flex;
   justify-content: center;
@@ -40,7 +46,7 @@
   gap: 18px;
 }
 
-.contact-section__label{
+.contact-section__label {
   color: #0059c9;
   font-weight: 400;
 }
@@ -110,4 +116,10 @@
     padding: 24px 8px;
     max-width: 100%;
   }
+}
+
+span {
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 28px;
 }
