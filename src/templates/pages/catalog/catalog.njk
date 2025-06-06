@@ -118,52 +118,53 @@
         </aside>
 
         <section class="catalog-grid">
-              <div class="catalog-header-bar">
-          <div class="catalog-header-bar__left">
-            <div class="catalog-sort-dropdown">
-              <button class="sort-btn">
+            <div class="catalog-header-bar">
+                <div class="catalog-header-bar__left">
+                    <div class="catalog-sort-dropdown">
+                        <button class="sort-btn">
                 Best Seller
                 <span class="icon-chevron">&#9662;</span>
-              </button>
+                        </button>
+                    </div>
+                    <div class="catalog-active-filters">
+                        {% for filter in activeFilters %}
+                            <button class="filter-tag">
+                                {{ filter }}
+                                <span class="filter-tag__remove">&#10005;</span>
+                            </button>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="catalog-header-bar__right">
+                    <span class="catalog-results">Showing 12 out of 120 results.</span>
+                    <div class="catalog-view-toggle">
+                        <button class="view-btn active">
+                            <span class="icon-grid"></span>
+                        </button>
+                        <button class="view-btn">
+                            <span class="icon-list"></span>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="catalog-active-filters">
-              {% for filter in activeFilters %}
-                <button class="filter-tag">
-                  {{ filter }} <span class="filter-tag__remove">&#10005;</span>
-                </button>
-              {% endfor %}
-            </div>
-          </div>
-          <div class="catalog-header-bar__right">
-            <span class="catalog-results">Showing 12 out of 120 results.</span>
-            <div class="catalog-view-toggle">
-              <button class="view-btn active">
-                <span class="icon-grid"></span>
-              </button>
-              <button class="view-btn">
-                <span class="icon-list"></span>
-              </button>
-            </div>
-          </div>
-        </div>
 
             <div class="product-grid-flex">
-                {% for product in product %}
-  <div class="product-card">
-    {% if product.status %}
-      <span class="badge badge-{{ product.status | lower }}">{{ product.status }}</span>
-    {% endif %}
-    <img src="{{ product.image }}" alt="{{ product.title }}">
-    <div class="product-info">
-      <div class="product-title">{{ product.title }}</div>
-      <div class="product-category">{{ product.category }}{% if product.subcategory %} · {{ product.subcategory }}{% endif %}</div>
-      <div class="product-price">€{{ product.price }}</div>
-      <div class="product-actions">
-        <button class="wishlist-btn"><span class="icon-heart"></span></button>
-        <button class="cart-btn"><span class="icon-bag"></span></button>
-      </div>
-    </div>
-  </div>
+                {% for item in product %}
+                    <div class="product-card">
+                        {% if item.badge %}
+                            <span class="badge badge-{{ item.badge | lower | replace(" ", "-") }}">{{ item.badge }}</span>
+                        {% endif %}
+                        <img src="{{ item.image }}" alt="{{ item.title }}">
+                        <div class="product-info">
+                            <div class="product-title">{{ item.title }}</div>
+                            <div class="product-category">{{ item.category }}</div>
+                            <div class="product-price">{{ item.price }}</div>
+                            <div class="product-actions">
+                                <button class="wishlist-btn"><span class="icon-heart"></span></button>
+                                <button class="cart-btn"><span>🛍️</span></button>
+                            </div>
+                        </div>
+                    </div>
                 {% endfor %}
             </div>
             <button class="load-more-btn">Load more</button>
