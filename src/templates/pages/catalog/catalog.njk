@@ -18,9 +18,13 @@
     <section class="catalog-flex-wrapper">
         <aside class="catalog-filter">
             <form>
+                <button type="reset" class="filter-clear-btn">
+                    <span>×</span> Clear all filters
+                </button>
+                
                 <div class="filter-section">
-                    <h2 class="filter-title" data-toggle="categories">Categories</h2>
-                    <div class="filter-content" id="categories">
+                    <h2 class="filter-title">Categories</h2>
+                    <div class="filter-content">
                         <label class="filter-checkbox">
                             <input type="checkbox" checked>
                             <span class="checkbox-custom"></span>
@@ -61,36 +65,51 @@
                             <span class="checkbox-custom"></span>
                             <span>Others</span>
                         </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Others</span>
+                        </label>
                     </div>
                 </div>
 
                 <div class="filter-section">
-                    <h2 class="filter-title" data-toggle="format-type">Format Type</h2>
-                    <div class="filter-content" id="format-type">
-                        <label class="filter-radio">
-                            <input type="radio" name="format" checked>
-                            <span class="radio-custom"></span>
+                    <h2 class="filter-title">Format Type</h2>
+                    <div class="filter-content">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-custom"></span>
+                            <span>All Categories</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
                             <span>Figma</span>
                         </label>
-                        <label class="filter-radio">
-                            <input type="radio" name="format">
-                            <span class="radio-custom"></span>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
                             <span>Sketch</span>
                         </label>
-                        <label class="filter-radio">
-                            <input type="radio" name="format">
-                            <span class="radio-custom"></span>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
                             <span>Adobe XD</span>
                         </label>
-                        <label class="filter-radio">
-                            <input type="radio" name="format">
-                            <span class="radio-custom"></span>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
                             <span>Adobe Photoshop</span>
                         </label>
-                        <label class="filter-radio">
-                            <input type="radio" name="format">
-                            <span class="radio-custom"></span>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
                             <span>Adobe Illustration</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Others</span>
                         </label>
                     </div>
                 </div>
@@ -129,7 +148,7 @@
                 </div>
 
                 <button type="reset" class="filter-clear-btn">
-                    <span>&#10005;</span> Clear all filters
+                    <span>×</span> Clear all filters
                 </button>
             </form>
         </aside>
