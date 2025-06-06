@@ -273,8 +273,7 @@
   <div class="latest-articles__header">
     <h2 class="latest-articles__title">Latest Articles</h2>
     <a href="#" class="latest-articles__explore">Explore All Articles &rsaquo;</a>
-  </div>
-  <div class="latest-articles__content">
+  </div>  <div class="latest-articles__content">
     <div class="latest-articles__blog-list">
       <div class="blog-card">
         <img src="img/binabox-img-2x.avif" alt="Blog 1" class="blog-card__img">
@@ -283,18 +282,24 @@
           <span class="blog-card__date">15 APRIL 2024</span>
         </div>
       </div>
-      <!-- Repeat .blog-card for more articles -->
+      <div class="blog-card">
+        <img src="img/best-dishes-2x.avif" alt="Blog 2" class="blog-card__img">
+        <div class="blog-card__meta">
+          <span class="blog-card__author">Best Dishes</span>
+          <span class="blog-card__date">5 MAY 2024</span>
+        </div>
+      </div>
     </div>
   </div>
 </section>
-<script>
-  let questionButton = document.querySelectorAll('.faq-accordion__question');
-  questionButton.forEach((elem) => {
-    elem.addEventListener("click", () => {
-      elem
-        .classList
-        .toggle("show");
+  <script>
+    let questionButton = document.querySelectorAll('.faq-accordion__question');
+    questionButton.forEach((elem) => {
+      elem.addEventListener("click", () => {
+        elem
+          .classList
+          .toggle("show");
+      });
     });
-  });
-</script>
+  </script>
 {%endblock %}
