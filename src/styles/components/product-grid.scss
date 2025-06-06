@@ -1,5 +1,5 @@
 $badge-colors: (
-  "sold-out": #e0e0e0,
+  "sold-out": #FFFFFF,
   "new": #1abc9c,
   "popular": #2d9cdb,
 );
@@ -213,6 +213,20 @@ $badge-colors: (
     aspect-ratio: 16/9;
     object-fit: cover;
     display: block;
+  }
+  
+  &.sold-out {
+    img {
+      opacity: 0.5;
+      filter: grayscale(50%);
+    }
+    
+    .badge-sold-out {
+      background: #ffffff;
+      color: #666;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      font-weight: 700;
+    }
   }
 }
 

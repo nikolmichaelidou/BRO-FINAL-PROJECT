@@ -190,7 +190,7 @@
 
             <div class="product-grid-flex">
                 {% for item in product %}
-                    <div class="product-card">
+                    <div class="product-card {% if item.badge == 'SOLD OUT' %}sold-out{% endif %}">
                         {% if item.badge %}
                             <span class="badge badge-{{ item.badge | lower | replace(" ", "-") }}">{{ item.badge }}</span>
                         {% endif %}
