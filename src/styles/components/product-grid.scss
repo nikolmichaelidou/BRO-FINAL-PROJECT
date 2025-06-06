@@ -268,17 +268,17 @@ $badge-colors: (
   letter-spacing: 0.5px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   
-  &.badge-popular { 
+  &-popular { 
     background: #007aff; 
     color: #fff;
   }
   
-  &.badge-new { 
+  &-new { 
     background: #00b894; 
     color: #fff;
   }
   
-  &.badge-sold-out { 
+  &-sold-out { 
     background: #fff; 
     color: #666;
   }
