@@ -19,63 +19,80 @@
         <aside class="catalog-filter">
             <form>
                 <div class="filter-section">
-                    <h2 class="filter-title">Categories</h2>
-                    <label class="filter-checkbox">
-                        <input type="checkbox" checked>
-                        <span>All Categories</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>Technology</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>Travel &amp; Tourism</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>Health &amp; Fitness</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>E-Commerce</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>Education</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>Entertainment</span>
-                    </label>
-                    <label class="filter-checkbox">
-                        <input type="checkbox">
-                        <span>Others</span>
-                    </label>
+                    <h2 class="filter-title" data-toggle="categories">Categories</h2>
+                    <div class="filter-content" id="categories">
+                        <label class="filter-checkbox">
+                            <input type="checkbox" checked>
+                            <span class="checkbox-custom"></span>
+                            <span>All Categories</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Technology</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Travel &amp; Tourism</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Health &amp; Fitness</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>E-Commerce</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Education</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Entertainment</span>
+                        </label>
+                        <label class="filter-checkbox">
+                            <input type="checkbox">
+                            <span class="checkbox-custom"></span>
+                            <span>Others</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="filter-section">
-                    <h2 class="filter-title">Format Type</h2>
-                    <label class="filter-radio">
-                        <input type="radio" name="format" checked>
-                        <span>Figma</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="format">
-                        <span>Sketch</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="format">
-                        <span>Adobe XD</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="format">
-                        <span>Adobe Photoshop</span>
-                    </label>
-                    <label class="filter-radio">
-                        <input type="radio" name="format">
-                        <span>Adobe Illustration</span>
-                    </label>
+                    <h2 class="filter-title" data-toggle="format-type">Format Type</h2>
+                    <div class="filter-content" id="format-type">
+                        <label class="filter-radio">
+                            <input type="radio" name="format" checked>
+                            <span class="radio-custom"></span>
+                            <span>Figma</span>
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="format">
+                            <span class="radio-custom"></span>
+                            <span>Sketch</span>
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="format">
+                            <span class="radio-custom"></span>
+                            <span>Adobe XD</span>
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="format">
+                            <span class="radio-custom"></span>
+                            <span>Adobe Photoshop</span>
+                        </label>
+                        <label class="filter-radio">
+                            <input type="radio" name="format">
+                            <span class="radio-custom"></span>
+                            <span>Adobe Illustration</span>
+                        </label>
+                    </div>
                 </div>
 
                 <div class="filter-section">
@@ -112,7 +129,7 @@
                 </div>
 
                 <button type="reset" class="filter-clear-btn">
-                    &#10005; Clear all filters
+                    <span>&#10005;</span> Clear all filters
                 </button>
             </form>
         </aside>
@@ -121,18 +138,17 @@
             <div class="catalog-header-bar">
                 <div class="catalog-header-bar__left">
                     <div class="catalog-sort-dropdown">
-                        <button class="sort-btn">
+                        <button class="sort-btn" id="sortDropdownBtn">
                 Best Seller
                 <span class="icon-chevron">&#9662;</span>
                         </button>
-                    </div>
-                    <div class="catalog-active-filters">
-                        {% for filter in activeFilters %}
-                            <button class="filter-tag">
-                                {{ filter }}
-                                <span class="filter-tag__remove">&#10005;</span>
-                            </button>
-                        {% endfor %}
+                        <div class="sort-dropdown" id="sortDropdown">
+                            <div class="sort-option selected">Best Seller</div>
+                            <div class="sort-option">Newest</div>
+                            <div class="sort-option">Price: Low to High</div>
+                            <div class="sort-option">Price: High to Low</div>
+                            <div class="sort-option">Most Popular</div>
+                        </div>
                     </div>
                 </div>
                 <div class="catalog-header-bar__right">
@@ -148,6 +164,15 @@
                 </div>
             </div>
 
+            <div class="catalog-active-filters">
+                {% for filter in activeFilters %}
+                    <button class="filter-tag">
+                        {{ filter }}
+                        <span class="filter-tag__remove">&#10005;</span>
+                    </button>
+                {% endfor %}
+            </div>
+
             <div class="product-grid-flex">
                 {% for item in product %}
                     <div class="product-card">
@@ -158,10 +183,12 @@
                         <div class="product-info">
                             <div class="product-title">{{ item.title }}</div>
                             <div class="product-category">{{ item.category }}</div>
-                            <div class="product-price">{{ item.price }}</div>
-                            <div class="product-actions">
-                                <button class="wishlist-btn"><span class="icon-heart"></span></button>
-                                <button class="cart-btn"><span>🛍️</span></button>
+                            <div class="product-price-action-wrapper">
+                                <div class="product-price">{{ item.price }}</div>
+                                <div class="product-actions">
+                                    <button class="wishlist-btn"><span class="icon-heart"></span></button>
+                                    <button class="cart-btn"><span class="icon-bag"></span></button>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -170,4 +197,56 @@
             <button class="load-more-btn">Load more</button>
         </section>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sortBtn = document.getElementById('sortDropdownBtn');
+            const sortDropdown = document.getElementById('sortDropdown');
+            const sortOptions = document.querySelectorAll('.sort-option');
+            
+            // Toggle dropdown when button is clicked
+            sortBtn.addEventListener('click', function() {
+                sortDropdown.classList.toggle('show');
+                sortBtn.classList.toggle('active');
+            });
+            
+            // Select option when clicked
+            sortOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Remove selected class from all options
+                    sortOptions.forEach(opt => opt.classList.remove('selected'));
+                    
+                    // Add selected class to clicked option
+                    this.classList.add('selected');
+                    
+                    // Update button text
+                    sortBtn.innerHTML = this.textContent + ' <span class="icon-chevron">&#9662;</span>';
+                    
+                    // Hide dropdown
+                    sortDropdown.classList.remove('show');
+                    sortBtn.classList.remove('active');
+                });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!sortBtn.contains(e.target) && !sortDropdown.contains(e.target)) {
+                    sortDropdown.classList.remove('show');
+                    sortBtn.classList.remove('active');
+                }
+            });
+            
+            // Filter sections toggle
+            const filterTitles = document.querySelectorAll('.filter-title');
+            filterTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-toggle');
+                    const targetContent = document.getElementById(targetId);
+                    
+                    this.classList.toggle('collapsed');
+                    targetContent.classList.toggle('collapsed');
+                });
+            });
+        });
+    </script>
 {% endblock %}
