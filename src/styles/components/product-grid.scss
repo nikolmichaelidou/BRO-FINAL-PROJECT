@@ -16,22 +16,14 @@ $badge-colors: (
 
 .product-card {
   background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 32px 0 rgba(0, 102, 255, 0.1),
-    0 0 0 4px rgba(0, 102, 255, 0.08);
-  border: 1.5px solid #e6e6e6;
-  flex: 0 0 340px;
-  max-width: 360px;
-  min-width: 320px;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  position: relative;
-  transition: box-shadow 0.2s, border 0.2s;
-  overflow: hidden;
-  transition: box-shadow 0.2s, border 0.2s, transform 0.2s;
-  height: 100%;
-  justify-content: flex-start;
+  min-height: 320px;
+  transition: box-shadow 0.2s;
 
   &:hover {
     box-shadow: 0 8px 40px 0 rgba(0, 102, 255, 0.18),
@@ -50,9 +42,11 @@ $badge-colors: (
 }
 
   img {
+    width: 100%;
+    aspect-ratio: 16/9;
     object-fit: cover;
+    border-radius: 18px 18px 0 0;
     display: block;
-    border-radius: 20px;
   }
 
 .product-card--active {
@@ -85,21 +79,22 @@ $badge-colors: (
 }
 
 .product-card__info {
-  padding: 24px 18px 18px 18px;
-  text-align: left;
+  padding: 18px 18px 12px 18px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
 .product-card__name {
-  font-size: 1.25rem;
+  font-size: 1.15em;
   font-weight: 700;
-  color: #222;
-  margin-bottom: 6px;
+  margin-bottom: 2px;
 }
 
 .product-card__price {
-  font-size: 1.1rem;
+  font-size: 1.15em;
   font-weight: 700;
-  margin-bottom: 8px;
+  margin-bottom: 12px;
 }
 
 
@@ -149,11 +144,30 @@ $badge-colors: (
 .product-grid-flex {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 40px 32px;
-  align-items: stretch;
-  width: 100%;
-  margin-top: 0;
+  gap: 32px;
 }
+.product-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.badge {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  padding: 4px 18px;
+  border-radius: 16px;
+  font-size: 1em;
+  font-weight: 700;
+  z-index: 2;
+}
+.badge-popular { background: #007aff; color: #fff; }
+.badge-new { background: #a2e86c; color: #222; }
+.badge-sold { background: #e7ecf0; color: #888; }
 
 // Optional: for catalog page grid spacing
 .catalog-grid {
@@ -337,3 +351,16 @@ $badge-colors: (
 .icon-list::before {
   content: "\2630";
 } // placeholder
+
+.load-more-btn {
+  display: block;
+  margin: 32px auto 0 auto;
+  padding: 12px 36px;
+  border-radius: 12px;
+  background: #111;
+  color: #fff;
+  font-size: 1.1em;
+  border: none;
+  cursor: pointer;
+  opacity: 0.7;
+}

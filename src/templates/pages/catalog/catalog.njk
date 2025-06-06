@@ -126,12 +126,11 @@
               </button>
             </div>
             <div class="catalog-active-filters">
-              <button class="filter-tag">
-                UI Kit <span class="filter-tag__remove">&#10005;</span>
-              </button>
-              <button class="filter-tag">
-                UI Kit <span class="filter-tag__remove">&#10005;</span>
-              </button>
+              {% for filter in activeFilters %}
+                <button class="filter-tag">
+                  {{ filter }} <span class="filter-tag__remove">&#10005;</span>
+                </button>
+              {% endfor %}
             </div>
           </div>
           <div class="catalog-header-bar__right">
@@ -149,9 +148,24 @@
 
             <div class="product-grid-flex">
                 {% for product in product %}
-                    {% include "partials/products-card.njk" %}
+  <div class="product-card">
+    {% if product.status %}
+      <span class="badge badge-{{ product.status | lower }}">{{ product.status }}</span>
+    {% endif %}
+    <img src="{{ product.image }}" alt="{{ product.title }}">
+    <div class="product-info">
+      <div class="product-title">{{ product.title }}</div>
+      <div class="product-category">{{ product.category }}{% if product.subcategory %} · {{ product.subcategory }}{% endif %}</div>
+      <div class="product-price">€{{ product.price }}</div>
+      <div class="product-actions">
+        <button class="wishlist-btn"><span class="icon-heart"></span></button>
+        <button class="cart-btn"><span class="icon-bag"></span></button>
+      </div>
+    </div>
+  </div>
                 {% endfor %}
             </div>
+            <button class="load-more-btn">Load more</button>
         </section>
     </section>
 {% endblock %}
