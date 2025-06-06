@@ -9,19 +9,43 @@
     padding: 0;
     position: relative;
   }
+  
+  .categories-section__grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
 }
 
 @media (max-width: 500px) {
   body {
-    width: 100vw;
-    min-width: 0;
-    max-width: 100vw;
-    height: auto;
+    width: 440px;
+    height: 8120px;
+    top: 80px;
+    left: 2744px;
+    gap: 64px; /* Spacing64 */
     margin: 0;
     padding: 0;
-    gap: 32px;
-    position: static;
+    position: relative;
     overflow-x: hidden;
+  }
+
+  .hero-section {
+    width: 440px;
+    height: 868px;
+    gap: 36px;
+    padding-top: 32px; /* Spacing32 */
+    padding-right: 16px; /* Spacing16 */
+    padding-bottom: 64px; /* Spacing64 */
+    padding-left: 16px; /* Spacing16 */
+  }
+
+  .categories-section {
+    width: 440px;
+    height: 856px;
+    gap: 64px; /* Spacing64 */
+    padding-right: 16px; /* Spacing16 */
+    padding-left: 16px; /* Spacing16 */
   }
 
   .container,
