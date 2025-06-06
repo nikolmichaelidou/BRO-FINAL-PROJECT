@@ -86,20 +86,20 @@
         <section class="related-articles">
             <div class="related-header">
                 <h2>Related Articles</h2>
-                <a href="/blog" class="explore-link">Explore All Articles →</a>
+                <a href="/blog" class="explore-link">Explore All Articles</a>
             </div>
 
             <div class="article-grid">
                 {% for article in blogPosts %}
                     <div class="article-card">
                         <div class="article-image">
-                            <span class="tag">{{ article.tag }}</span>
                             <img src="{{ article.image }}" alt="{{ article.title }}">
                         </div>
                         <div class="article-info">
                             <h3>{{ article.title }}</h3>
                             <p class="date">{{ article.date }}</p>
                         </div>
+                        <span class="tag">{{ article.tag }}</span>
                     </div>
                 {% endfor %}
             </div>
