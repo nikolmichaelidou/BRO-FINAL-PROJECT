@@ -129,10 +129,9 @@ $badge-colors: (
 }
 
 .filter-tag {
-  background: #fff;
-  border: 2px solid #181c32;
+  border: 1px solid #1D36532B; // Elements-SeporatorBold
   border-radius: 12px;
-  color: #181c32;
+  color: #0D0D15;  // Updated text color
   font-size: 1rem;
   font-weight: 700;
   padding: 7px 16px;
