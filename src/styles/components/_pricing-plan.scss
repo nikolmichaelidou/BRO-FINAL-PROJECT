@@ -9,7 +9,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
+    background: radial-gradient(circle at center, rgba(15,115,246,0.1) 0%, rgba(255,255,255,0) 70%);
     pointer-events: none;
   }
 
@@ -33,7 +33,7 @@
     max-width: 800px;
     margin: 0 auto;
     line-height: 1.2;
-    color: #fff;
+    color: #121826;
   }
 
   &__cards {
@@ -59,6 +59,8 @@
   color: #333;
   transition: transform 0.3s ease;
   position: relative;
+  box-shadow: 0px 4px 40px 0px #1D395F14;
+
 
   &:hover {
     transform: translateY(-10px);
