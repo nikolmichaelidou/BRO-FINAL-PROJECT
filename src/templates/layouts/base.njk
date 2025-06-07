@@ -1,14 +1,55 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"> <!-- Ensure proper viewport settings -->
+    <title>{{ title }} - Binabox</title>
     <link rel="stylesheet" href="/css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&display=swap" rel="stylesheet">
-    <title>Pixmart</title>
   </head>
   <body>
     {% include "partials/header.njk" %}
     {% block content %}default content{% endblock %}
     {% include "partials/footer.njk" %}
+
+    <!-- Add JavaScript for mobile menu functionality -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // Burger menu toggle
+            const burgerBtn = document.querySelector('.navbar__burger');
+            const mobileMenu = document.querySelector('.navbar__links');
+            
+            if(burgerBtn && mobileMenu) {
+                burgerBtn.addEventListener('click', function() {
+                    burgerBtn.classList.toggle('navbar__burger--open');
+                    mobileMenu.classList.toggle('navbar__links--open');
+                    // Prevent scrolling when menu is open
+                    document.body.classList.toggle('menu-open');
+                });
+            }
+            
+            // Filter toggle for mobile
+            const filterToggleBtn = document.querySelector('.filter-mobile-toggle');
+            const filterPanel = document.querySelector('.catalog-filter');
+            
+            if(filterToggleBtn && filterPanel) {
+                // Create close button dynamically
+                const closeBtn = document.createElement('button');
+                closeBtn.classList.add('filter-close-btn');
+                closeBtn.innerHTML = '×';
+                filterPanel.prepend(closeBtn);
+                
+                filterToggleBtn.addEventListener('click', function() {
+                    filterPanel.classList.add('active');
+                    document.body.classList.add('filter-open');
+                });
+                
+                closeBtn.addEventListener('click', function() {
+                    filterPanel.classList.remove('active');
+                    document.body.classList.remove('filter-open');
+                });
+            }
+        });
+    </script>
   </body>
 </html>

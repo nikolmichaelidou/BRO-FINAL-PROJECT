@@ -174,7 +174,7 @@
 // Mobile styles
 @media (max-width: 768px) {
   .catalog-filter {
-    display: none; // Hide by default on mobile, shown via JS toggle
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -182,12 +182,33 @@
     bottom: 0;
     background: #fff;
     z-index: 1000;
-    padding: 24px 16px;
+    padding: 24px 16px 80px; // Add bottom padding for mobile filter button
     overflow-y: auto;
+    transition: all 0.3s ease-in-out;
+    transform: translateX(100%);
     
     &.active {
       display: block;
+      transform: translateX(0);
     }
+  }
+  
+  .filter-close-btn {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    font-size: 24px;
+    color: #181C32;
+    padding: 8px;
+    cursor: pointer;
+    z-index: 1001;
+    min-height: 44px;
+    min-width: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   
   .filter-toggle {
@@ -321,7 +342,7 @@
   }
 }
 
-// Add mobile filter toggle button
+// Fix filter mobile toggle button
 .filter-mobile-toggle {
   display: none;
   
@@ -334,10 +355,10 @@
     background: #0F73F6;
     color: white;
     border-radius: 100px;
-    padding: 12px 24px;
+    padding: 14px 28px; // Larger touch target
     font-weight: 500;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-    z-index: 100;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    z-index: 99;
     align-items: center;
     gap: 8px;
     

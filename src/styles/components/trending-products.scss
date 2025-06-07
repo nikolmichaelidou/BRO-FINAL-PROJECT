@@ -62,13 +62,19 @@
     display: flex;
     gap: 24px;
     overflow-x: auto;
-    padding: 0 20px 20px;
-    max-width: 1400px;
-    margin: 0 auto;
-    scrollbar-width: none;
-
-    &::-webkit-scrollbar {
-      display: none;
+    -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+    padding-bottom: 20px; // Space for scrollbar without affecting layout
+    
+    // Horizontal snapping for better mobile experience
+    scroll-snap-type: x mandatory;
+    
+    // Show scrolling indication on mobile
+    @media (max-width: 768px) {
+      &::after {
+        content: "";
+        min-width: 20px;
+        height: 1px;
+      }
     }
   }
 
@@ -82,6 +88,7 @@
     transition: transform 0.3s ease;
     position: relative;
     box-shadow: none;
+    scroll-snap-align: start; // Enable snapping for each card
 
     &:hover {
       transform: translateY(-10px);
@@ -145,12 +152,17 @@
 
     &__info {
       padding: 20px 8px;
+      overflow: hidden; // Prevent content overflow
     }
 
     &__name {
-      font-size: 32px; // Larger font size for product names
+      font-size: 32px; 
       font-weight: 600;
       margin-bottom: 8px;
+      color: #181a1d;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; // Add ellipsis for long text
     }
 
     &__price {
@@ -162,10 +174,16 @@
 
     &__tags {
       font-size: 14px;
-      color:#2A3541B2;
+      color: #6B7280;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis; // Add ellipsis for long tag text
 
       span {
         display: inline-block;
+        max-width: 100%; // Prevent wide spans from breaking layout
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
 
@@ -185,6 +203,12 @@
       z-index: 2;
       opacity: 0;
       transition: opacity 0.3s ease;
+
+      // Make CTA button more touchable on mobile
+      @media (max-width: 768px) {
+        padding: 14px 28px;
+        font-size: 18px;
+      }
     }
 
     // Active card styles
@@ -205,10 +229,13 @@
 
 @media (max-width: 768px) {
   .trending-products {
+    padding: 60px 0; // Reduce vertical padding on small screens
+
     &__header {
       flex-direction: column;
       align-items: flex-start;
       padding: 0 16px;
+      margin-bottom: 24px;
     }
 
     &__title {
@@ -219,6 +246,8 @@
     &__nav {
       align-self: center;
       margin-top: 8px;
+      width: 100%;
+      justify-content: center;
     }
 
     &__list {

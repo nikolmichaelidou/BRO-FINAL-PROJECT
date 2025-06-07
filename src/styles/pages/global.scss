@@ -234,28 +234,23 @@
   }
 }
 
-html {
-  height: 100%;
+html, body {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  height: auto;
 }
 
 body {
+  // Remove fixed width that could cause horizontal scroll
+  width: auto;
+  min-height: 100%;
   font-family: "Plus Jakarta Sans", "Arial", sans-serif;
   color: #181c25;
-  background: #ffffff;
-  margin: 0;
-  padding: 0;
-  width: 1440px;
-  height: 5535px;
-  top: 80px;
-  left: 80px;
-  gap: 120px;
   display: flex;
   flex-direction: column;
-  min-height: 100%;
-}
-
-.page-content {
-  flex: 1 0 auto; /* Takes up available space, pushing footer down */
 }
 
 // Button Styles
@@ -399,4 +394,94 @@ body {
   flex-shrink: 0; /* Prevents footer from shrinking */
   width: 100%;
   margin-top: auto; /* Ensures footer stays at bottom even with little content */
+}
+
+// Add global image handling to prevent layout breaking
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Fix container overflow issues
+.container,
+.footer__main,
+.trending-products__list,
+.categories-section__grid {
+  overflow: hidden; // Prevent overflow breaking layout
+}
+
+// Product grid cells should maintain their structure
+.product-grid-flex {
+  // ...existing code...
+  
+  > * {
+    min-width: 0; // Allow grid items to shrink below their minimum content size
+  }
+}
+
+// Add general text overflow handling
+h1, h2, h3, h4, h5, h6, p {
+  overflow-wrap: break-word; // Allow long words to break
+  word-wrap: break-word; // Legacy support
+  hyphens: auto; // Add hyphens when breaking words
+}
+
+// Improve mobile touch targets
+button, 
+.btn,
+.navbar__link,
+.footer__link {
+  min-height: 44px; // Minimum touch target size
+  min-width: 44px; // Minimum touch target size
+  
+  // Apply touch sizing to child elements of links when the link itself isn't directly styled
+  a > * {
+    min-height: inherit;
+    min-width: inherit;
+  }
+}
+
+// Better responsive spacing
+:root {
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  
+  @media (max-width: 768px) {
+    --spacing-lg: 20px;
+    --spacing-xl: 24px;
+  }
+  
+  @media (max-width: 480px) {
+    --spacing-lg: 16px;
+    --spacing-xl: 20px;
+  }
+}
+
+// Standard container for consistent layout
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  box-sizing: border-box;
+}
+
+// Fix media queries to use standard breakpoints
+@media (max-width: 1200px) {
+  // ...existing code...
+}
+
+@media (max-width: 992px) {
+  // Medium devices (tablets)
+}
+
+@media (max-width: 768px) {
+  // Small devices (landscape phones)
+  // ...existing code...
+}
+
+@media (max-width: 576px) {
+  // Extra small devices (portrait phones)
 }

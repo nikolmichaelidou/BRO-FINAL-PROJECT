@@ -13,7 +13,7 @@
   padding: 24px 80px;
   margin: 0 auto;
   background: #ffffff;
-  box-sizing: border-box;
+  box-sizing: border-box; // Include padding in width calculation
 }
 
 .navbar__left {
@@ -39,6 +39,28 @@
   gap: 32px;
   margin: 0;
   padding: 0;
+
+  @media (max-width: 900px) {
+    position: fixed; // Change to fixed for better mobile experience
+    top: 92px;
+    left: 0;
+    right: 0;
+    bottom: 0; // Cover full screen height
+    background: rgba(255, 255, 255, 0.98);
+    flex-direction: column;
+    align-items: center; // Center menu items
+    justify-content: flex-start;
+    padding: 32px;
+    gap: 24px; // Increase spacing between items
+    z-index: 1000;
+    transform: translateX(-100%); // Hide off-screen
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; // Scrollable if needed
+  }
+  
+  &--open {
+    transform: translateX(0); // Slide in when open
+  }
 }
 
 .navbar__links li .navbar__link {
@@ -118,25 +140,34 @@
     border-radius: 2px;
     transition: 0.3s;
   }
+
+  &:focus {
+    outline: 2px solid #0F73F6;
+    outline-offset: 2px;
+  }
 }
 
 @media (max-width: 900px) {
   .navbar__links {
-    position: absolute;
+    position: fixed; // Change to fixed for better mobile experience
     top: 92px;
     left: 0;
     right: 0;
-    background: #fff;
+    bottom: 0; // Cover full screen height
+    background: rgba(255, 255, 255, 0.98);
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 24px 32px;
-    display: none;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    align-items: center; // Center menu items
+    justify-content: flex-start;
+    padding: 32px;
+    gap: 24px; // Increase spacing between items
     z-index: 1000;
+    transform: translateX(-100%); // Hide off-screen
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; // Scrollable if needed
   }
+  
   .navbar__links--open {
-    display: flex;
+    transform: translateX(0); // Slide in when open
   }
   .navbar {
     padding: 24px 16px;
@@ -150,6 +181,13 @@
   }
   .navbar__search {
     display: none;
+  }
+  .navbar__link {
+    font-size: 1.3rem; // Larger text for mobile
+    padding: 12px 0; // Larger touch area
+    display: block;
+    width: 100%;
+    text-align: center;
   }
 }
 
