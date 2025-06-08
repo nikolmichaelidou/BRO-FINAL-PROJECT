@@ -38,11 +38,11 @@
 ,
   "illustrations": [
     {
-      "icon": "/img/illustration-icon-1x.webp",
+      "icon": "img/illustration-icon-1x.webp",
       "label": "UI Kits"
     },
     {
-      "icon": "/img/illustration-icon-1x.webp",
+      "icon": "img/illustration-icon-1x.webp",
       "label": "Social Media"
     },
     {
@@ -54,7 +54,7 @@
       "label": "Fonts"
     },
     {
-      "icon": "/img/illustration-icon-1x.webp",
+      "icon": "img/illustration-icon-1x.webp",
       "label": "Illustrations"
     }
   ]

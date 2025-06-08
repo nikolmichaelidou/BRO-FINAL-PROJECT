@@ -9,7 +9,7 @@
     padding: 0;
     position: relative;
   }
-  
+
   .categories-section__grid {
     flex-wrap: wrap;
     justify-content: center;
@@ -119,15 +119,15 @@
     padding: 48px 16px;
     margin-top: auto; /* Pushes footer to the bottom */
   }
-  
+
   .footer__logo {
     margin-bottom: 24px;
   }
-  
+
   .footer__description {
     margin-bottom: 32px;
   }
-  
+
   .footer__main,
   .footer__links {
     flex-direction: column !important;
@@ -157,24 +157,24 @@
     gap: 8px !important;
     text-align: center;
   }
-  
+
   .social-media-links {
     display: flex;
     gap: 16px;
     margin: 32px 0;
   }
-  
+
   .newsletter-container {
     width: 100%;
   }
-  
+
   .newsletter-form {
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 16px;
   }
-  
+
   .newsletter-input {
     width: 100%;
     height: 56px;
@@ -182,34 +182,34 @@
     padding: 0 16px;
     border: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .newsletter-button {
     width: 100%;
     height: 56px;
     border-radius: 8px;
-    background-color: #0F73F6;
+    background-color: #0f73f6;
     color: white;
     border: none;
     font-weight: 600;
   }
-  
+
   .footer-links-container {
     display: flex;
     flex-direction: column;
     gap: 32px;
     width: 100%;
   }
-  
+
   .footer-links-column {
     width: 100%;
   }
-  
+
   .footer-links-title {
     font-weight: 600;
     font-size: 20px;
     margin-bottom: 16px;
   }
-  
+
   .footer-links-list {
     list-style: none;
     padding: 0;
@@ -218,29 +218,20 @@
     flex-direction: column;
     gap: 12px;
   }
-  
+
   .footer-link {
-    color: #4B5563;
+    color: #4b5563;
     text-decoration: none;
   }
-  
+
   .footer-bottom {
     border-top: 1px solid rgba(0, 0, 0, 0.1);
     width: 100%;
     padding-top: 24px;
     margin-top: 32px;
     text-align: center;
-    color: #6B7280;
+    color: #6b7280;
   }
-}
-
-html, body {
-  width: 100%;
-  max-width: 100%;
-  overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  height: auto;
 }
 
 body {
@@ -413,27 +404,33 @@ img {
 // Product grid cells should maintain their structure
 .product-grid-flex {
   // ...existing code...
-  
+
   > * {
     min-width: 0; // Allow grid items to shrink below their minimum content size
   }
 }
 
 // Add general text overflow handling
-h1, h2, h3, h4, h5, h6, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
   overflow-wrap: break-word; // Allow long words to break
   word-wrap: break-word; // Legacy support
   hyphens: auto; // Add hyphens when breaking words
 }
 
 // Improve mobile touch targets
-button, 
+button,
 .btn,
 .navbar__link,
 .footer__link {
   min-height: 44px; // Minimum touch target size
   min-width: 44px; // Minimum touch target size
-  
+
   // Apply touch sizing to child elements of links when the link itself isn't directly styled
   a > * {
     min-height: inherit;
@@ -447,12 +444,12 @@ button,
   --spacing-md: 16px;
   --spacing-lg: 24px;
   --spacing-xl: 32px;
-  
+
   @media (max-width: 768px) {
     --spacing-lg: 20px;
     --spacing-xl: 24px;
   }
-  
+
   @media (max-width: 480px) {
     --spacing-lg: 16px;
     --spacing-xl: 20px;
