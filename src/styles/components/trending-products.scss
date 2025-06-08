@@ -10,11 +10,14 @@
     max-width: 1200px;
     margin: 0 auto 40px;
     padding: 0 20px;
+    box-sizing: border-box; // Fix box sizing
   }
 
   &__left {
     display: flex;
     flex-direction: column;
+    flex-shrink: 1; // Allow shrinking
+    min-width: 0; // Allow text truncation
   }
 
   &__trending {
@@ -31,6 +34,7 @@
     font-weight: 700;
     line-height: 1.1;
     letter-spacing: -0.5px;
+    margin: 0; // Add margin reset
   }
 
   &__nav {
@@ -41,40 +45,37 @@
   &__nav-btn {
     width: 64px;
     height: 64px;
-    gap: 8px;
-    padding: 20px;
-    border-width: 2px;
-    border: 2px solid var(--Elements-SeporatorBold, #1d36532b);
+    padding: 0; // Fix padding
+    border: 2px solid rgba(29, 54, 83, 0.17); // Use rgba value instead of var
+    background: transparent;
     font-size: 18px;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.2s ease;
+    border-radius: 50%; // Add missing border-radius
 
     &:hover {
       border-color: #0f73f6;
       background: #0f73f6;
+      color: #fff; // Add missing color
     }
   }
 
+  // Fix list styling
   &__list {
     display: flex;
     gap: 24px;
     overflow-x: auto;
-    -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
-    padding-bottom: 20px; // Space for scrollbar without affecting layout
-    
-    // Horizontal snapping for better mobile experience
-    scroll-snap-type: x mandatory;
-    
-    // Show scrolling indication on mobile
-    @media (max-width: 768px) {
-      &::after {
-        content: "";
-        min-width: 20px;
-        height: 1px;
-      }
+    padding: 0 20px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch; // Add smooth scrolling for iOS
+
+    &::-webkit-scrollbar {
+      display: none;
     }
   }
 
@@ -152,17 +153,17 @@
 
     &__info {
       padding: 20px 8px;
-      overflow: hidden; // Prevent content overflow
+      overflow: hidden;
     }
-
+    
     &__name {
       font-size: 32px; 
       font-weight: 600;
       margin-bottom: 8px;
       color: #181a1d;
-      white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis; // Add ellipsis for long text
+      text-overflow: ellipsis;
+      white-space: nowrap;
     }
 
     &__price {
