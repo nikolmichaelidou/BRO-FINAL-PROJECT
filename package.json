@@ -3,8 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "cross-env NODE_ENV=production gulp build",
-    "dev": "cross-env NODE_ENV=development gulp serve --lint"
+    "lint:fix": "stylelint \"src/styles/**/*.scss\" --fix",
+    "lint": "stylelint \"src/styles/**/*.scss\"",
+    "dev": "gulp --lint",
+    "build": "gulp --min",
+    "start": "gulp"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

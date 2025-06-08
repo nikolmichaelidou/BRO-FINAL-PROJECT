@@ -45,11 +45,11 @@
   gap: 30px;
   padding: 0 16px;
 
-  @media (max-width: 992px) {
+  @media (width <= 992px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (max-width: 768px) {
+  @media (width <= 768px) {
     grid-template-columns: 1fr;
   }
 }
@@ -59,7 +59,7 @@
   border-radius: 12px;
   overflow: hidden;
   background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 5%);
   transition: transform 0.3s ease;
   
   .tag {
@@ -110,6 +110,6 @@
     color: #6b7280;
     margin: 0;
     text-transform: none;
-    font-weight: normal;
+    font-weight: 400;
   }
 }

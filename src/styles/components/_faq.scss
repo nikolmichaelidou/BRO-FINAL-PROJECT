@@ -1,6 +1,6 @@
 .faq {
   position: relative;
-  margin: 100px auto 0 auto;
+  margin: 100px auto 0;
   max-width: 1200px;
   min-height: 520px;
   display: flex;
@@ -26,7 +26,7 @@
   }
 
   &__subtitle {
-    color: #0066ff;
+    color: #06f;
     font-weight: 700;
     font-size: 1rem;
     letter-spacing: 0.04em;
@@ -42,9 +42,9 @@
   }
 
   &__ask-btn {
-    border: 1.5px solid #0066ff;
+    border: 1.5px solid #06f;
     background: transparent;
-    color: #0066ff;
+    color: #06f;
     font-size: 1.1rem;
     font-weight: 600;
     border-radius: 10px;
@@ -64,7 +64,7 @@
   }
 
   // Blue radial background
-  &:before {
+  &::before {
     content: '';
     position: absolute;
     right: 0;
@@ -72,7 +72,7 @@
     transform: translateY(-50%);
     width: 900px;
     height: 900px;
-    background: radial-gradient(circle, #0090ff 0%, #0066ff 20%, #0052cc 40%, #00c2ff 60%, transparent 80%);
+    background: radial-gradient(circle, #0090ff 0%, #06f 20%, #0052cc 40%, #00c2ff 60%, transparent 80%);
     opacity: 0.22;
     filter: blur(2px);
     z-index: 1;
@@ -90,15 +90,15 @@
   &__item {
     background: #fff;
     border-radius: 14px;
-    box-shadow: 0 4px 32px 0 rgba(0, 102, 255, 0.10), 0 0 0 2px rgba(0, 102, 255, 0.08);
+    box-shadow: 0 4px 32px 0 rgba(0, 102, 255, 10%), 0 0 0 2px rgba(0, 102, 255, 8%);
     border: 1.5px solid #e6e6e6;
     transition: box-shadow 0.2s, border 0.2s;
     overflow: hidden;
     position: relative;
 
     &--active {
-      border: 2px solid #0066ff;
-      box-shadow: 0 8px 40px 0 rgba(0, 102, 255, 0.13);
+      border: 2px solid #06f;
+      box-shadow: 0 8px 40px 0 rgba(0, 102, 255, 13%);
     }
   }
 
@@ -110,7 +110,7 @@
     font-size: 1.25rem;
     font-weight: 700;
     color: #222;
-    padding: 26px 24px 26px 24px;
+    padding: 26px 24px;
     text-align: left;
     cursor: pointer;
     display: flex;
@@ -124,23 +124,24 @@
     }
 
     &.show {
-      color: #0066ff;
+      color: #06f;
       background: #f5faff;
     }
   }
 
   &__icon {
     font-size: 1.5rem;
-    color: #0066ff;
+    color: #06f;
     margin-left: 18px;
     transition: transform 0.2s;
+
     &--open {
       transform: rotate(180deg);
     }
   }
 
   &__answer {
-    padding: 0 24px 24px 24px;
+    padding: 0 24px 24px;
     font-size: 1.08rem;
     color: #444;
     line-height: 1.6;
@@ -168,43 +169,51 @@
   to { opacity: 1; transform: translateY(0);}
 }
 
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .faq__container {
     flex-direction: column;
     align-items: stretch;
   }
+
   .faq__left {
     padding-right: 0;
     margin-bottom: 36px;
     align-items: flex-start;
   }
+
   .faq__right {
     align-items: stretch;
   }
+
   .faq-accordion {
     width: 100%;
   }
-  .faq:before {
+
+  .faq::before {
     width: 600px;
     height: 600px;
   }
 }
 
-@media (max-width: 700px) {
+@media (width <= 700px) {
   .faq {
     margin-top: 48px;
     min-height: 0;
   }
+
   .faq__title {
     font-size: 1.3rem;
   }
+
   .faq-accordion__question {
     font-size: 1rem;
-    padding: 18px 12px 18px 12px;
+    padding: 18px 12px;
   }
+
   .faq-accordion__answer {
-    padding: 0 12px 16px 12px;
+    padding: 0 12px 16px;
   }
+
   .faq-accordion {
     gap: 10px;
   }
