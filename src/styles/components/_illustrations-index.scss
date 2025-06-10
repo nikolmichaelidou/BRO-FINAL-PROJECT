@@ -1,3 +1,14 @@
+/* Illustrations section - Homepage */
+.illustrations {
+  padding: 4rem 0;
+
+  &__categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
 .asset-categories__grid {
   display: flex;
   gap: 2rem;
@@ -11,15 +22,15 @@
   padding: 2rem 1.5rem;
   text-align: center;
   width: 180px;
-}
 
-.asset-category-card__icon img {
-  width: 80px;
-  height: 80px;
-  margin-bottom: 1rem;
-}
+  &__icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
 
-.asset-category-card__label {
-  font-weight: 600;
-  margin-top: 0.5rem;
+  &__label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
 }
