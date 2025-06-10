@@ -1,14 +1,15 @@
 {
   "name": "binabox-build-gulp",
   "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "type": "module",
   "scripts": {
-    "lint:fix": "stylelint \"src/styles/**/*.scss\" --fix",
-    "lint": "stylelint \"src/styles/**/*.scss\"",
-    "dev": "gulp --lint",
-    "build": "gulp --min",
-    "start": "gulp"
+    "start": "cross-env NODE_ENV=production gulp build",
+    "dev": "npx gulp serve --lint"
   },
+  "author": "",
+  "license": "MIT",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
     "browser-sync": "^3.0.3",
@@ -38,8 +39,5 @@
     "stylelint": "^16.16.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "text-table": "^0.2.0"
-  },
-  "overrides": {
-    "sharp": "^0.33.3"
   }
 }
