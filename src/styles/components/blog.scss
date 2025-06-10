@@ -1,3 +1,7 @@
+/* blog.scss - Styles for blog section */
+@use "sass:color";
+@use "sass:math";
+
 .blog--header-backround {
   background: linear-gradient(
     0.23deg,

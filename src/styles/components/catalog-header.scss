@@ -1,3 +1,6 @@
+/* catalog-header.scss - Styling for catalog header bar */
+@use "sass:color";
+
 .catalog-header-bar {
   display: flex;
   justify-content: space-between;

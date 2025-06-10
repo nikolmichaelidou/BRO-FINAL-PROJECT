@@ -1,4 +1,4 @@
-/* catalog-filter.scss - Styling for catalog filters */
+/* catalog-filter-bem.scss - BEM version of catalog filter styles */
 @use "sass:color";
 
 .catalog-filter {
@@ -289,7 +289,7 @@
   &__option {
     // Add your styles for dropdown options here
     
-    &--selected {
+    &__selected {
       // Add your styles for selected option here
     }
   }
