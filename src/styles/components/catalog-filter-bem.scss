@@ -172,8 +172,7 @@
     background: #1769FF;
     color: #fff;
   }
-  
-  // Mobile styles
+    /* Mobile styles */
   @media (width <= 768px) {
     display: none;
     position: fixed;
@@ -285,12 +284,11 @@
     color: #000;
     cursor: pointer;
   }
-  
-  &__option {
-    // Add your styles for dropdown options here
+    &__option {
+    /* Add your styles for dropdown options here */
     
     &__selected {
-      // Add your styles for selected option here
+      /* Add your styles for selected option here */
     }
   }
 }

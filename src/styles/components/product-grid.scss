@@ -75,12 +75,11 @@ $badge-colors: (
     font-weight: 600;
     text-transform: uppercase;
     z-index: 1;
-    
-    @each $type, $color in $badge-colors {
+      @each $type, $color in $badge-colors {
       &--#{$type} {
         background: $color;
-        color: if(lightness($color) > 50%, #000, #fff);
-        box-shadow: 0 2px 8px rgba(mix(#000, $color, 40%), 30%);
+        color: if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
+        box-shadow: 0 2px 8px rgba(color.mix(#000, $color, 40%), 30%);
       }
     }
     
