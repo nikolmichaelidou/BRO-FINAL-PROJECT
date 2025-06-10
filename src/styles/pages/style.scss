@@ -1,5 +1,6 @@
 /* style.scss - Main stylesheet for importing all component styles */
 @use '_reset';
+@use '../components/_typography'; // Import typography first to set base styles
 @use 'global';
 @use '../components/_header';
 @use '../components/_index_hero';
@@ -9,14 +10,11 @@
 @use '../components/_faq';
 @use '../components/_catalog-hero';
 @use '../components/catalog-filter';
-@use '../components/catalog-filter-new';
 @use '../components/blog';
 @use '../components/product-grid';
-@use '../components/product-grid-bem';
 @use '../components/latest-expert';
 @use '../components/_illustrations-index';
 @use '../components/catalog-header';
-@use '../components/filter';
 @use '../components/_categories-showcase';
 @use '../components/_related-articles';
 @use '../components/trending-products';
