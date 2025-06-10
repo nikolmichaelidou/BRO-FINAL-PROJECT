@@ -1,6 +1,5 @@
 /* style.scss - Main stylesheet for importing all component styles */
 @use '../components/_variables'; // Import variables first for access across all files
-@use '_reset';
 @use '../components/_typography'; // Import typography after variables
 @use 'global';
 @use '../components/_header';
