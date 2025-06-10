@@ -64,8 +64,7 @@ $badge-colors: (
       }
     }
   }
-  
-  &__badge {
+    &__badge {
     position: absolute;
     top: 16px;
     left: 16px;
@@ -75,18 +74,16 @@ $badge-colors: (
     font-weight: 600;
     text-transform: uppercase;
     z-index: 1;
-      @each $type, $color in $badge-colors {
-      &--#{$type} {
-        background: $color;
-        color: if(color.channel($color, "lightness", $space: hsl) > 50%, #000, #fff);
-        box-shadow: 0 2px 8px rgba(color.mix(#000, $color, 40%), 30%);
-      }
+      &--sold-out {
+      background: #6c757d;
+      color: white;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 20%);
     }
-    
-    &--sold-out {
-      background: #6c757d !important;
-      color: white !important;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 20%) !important;
+
+    &--popular {
+      background: #0f73f6;
+      color: white;
+      box-shadow: 0 2px 8px rgba(15, 115, 246, 25%);
     }
   }
   
@@ -142,22 +139,32 @@ $badge-colors: (
     opacity: 0.7;
     transition: opacity 0.2s;
   }
-  
-  &__wishlist-btn,
+    &__wishlist-btn,
   &__cart-btn {
     width: 36px;
     height: 36px;
     border-radius: 50%;
     border: none;
-    background: #0265DC;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background 0.2s, transform 0.2s;
+  }
+  
+  &__wishlist-btn {
+    background: #FFFFFF;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
     
     &:hover {
-      background: #0265DC;
+      transform: scale(1.1);
+    }
+  }
+    &__cart-btn {
+    background: #0f73f6;
+    
+    &:hover {
+      background: #0f73f6;
       transform: scale(1.1);
     }
   }
@@ -172,13 +179,11 @@ $badge-colors: (
     background-size: contain;
     color:#000000;
   }
-  
-  &__icon-heart {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");
+    &__icon-heart {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z'%3E%3C/path%3E%3C/svg%3E");
   }
-  
-  &__icon-bag {
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23334155' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'%3E%3C/path%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'%3E%3C/path%3E%3C/svg%3E");
+    &__icon-bag {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'%3E%3C/path%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'%3E%3C/path%3E%3C/svg%3E");
   }
   
   &__load-more {
@@ -274,9 +279,8 @@ $badge-colors: (
     &:hover {
       background: rgba(0, 0, 0, 3%);
     }
-    
-    &--selected {
-      background: #0F73F6 !important;
+      &--selected {
+      background: #0F73F6;
       color: white;
       font-weight: 600;
     }

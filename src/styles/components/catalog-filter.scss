@@ -5,25 +5,25 @@
   background: #fff;
   padding: 32px 24px;
   border-radius: 16px;
-  box-shadow: 0 4px 24px rgba(0,0,0,4%);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 4%);
   width: 320px;
   font-family: inherit;
-  color: #181C32;
+  color: #181c32;
   display: flex;
   flex-direction: column;
   gap: 32px;
-  
+
   &__section {
     margin-bottom: 32px;
   }
-  
+
   &__title {
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: #181C32;
+    color: #181c32;
   }
-  
+
   &__checkbox,
   &__radio,
   &__toggle {
@@ -34,30 +34,30 @@
     font-weight: 600;
     margin-bottom: 12px;
     cursor: pointer;
-    color: #181C32;
+    color: #181c32;
     user-select: none;
   }
-  
+
   &__checkbox input[type="checkbox"],
   &__radio input[type="radio"] {
     appearance: none;
     width: 28px;
     height: 28px;
-    border: 2px solid #D1D5DB;
+    border: 2px solid #d1d5db;
     border-radius: 8px;
     background: #fff;
     margin: 0;
     position: relative;
     transition: border 0.2s;
   }
-  
+
   &__checkbox input[type="checkbox"]:checked {
-    border-color: #1769FF;
-    background: #1769FF;
+    border-color: #1769ff;
+    background: #1769ff;
   }
-  
+
   &__checkbox input[type="checkbox"]:checked::after {
-    content: '';
+    content: "";
     display: block;
     width: 14px;
     height: 14px;
@@ -65,18 +65,18 @@
     border-radius: 4px;
     background: #fff;
   }
-  
+
   &__radio input[type="radio"] {
     border-radius: 50%;
   }
-  
+
   &__radio input[type="radio"]:checked {
-    border-color: #1769FF;
-    background: #1769FF;
+    border-color: #1769ff;
+    background: #1769ff;
   }
-  
+
   &__radio input[type="radio"]:checked::after {
-    content: '';
+    content: "";
     display: block;
     width: 14px;
     height: 14px;
@@ -84,79 +84,67 @@
     border-radius: 50%;
     background: #fff;
   }
-  
+
   &__toggle {
     margin-bottom: 16px;
   }
-  
+
   &__toggle input[type="checkbox"] {
     appearance: none;
     width: 48px;
     height: 28px;
-    background: #E7ECF0;
+    background: #e7ecf0;
     border-radius: 16px;
     position: relative;
     outline: none;
     transition: background 0.2s;
     margin: 0;
   }
-  
+
   &__toggle input[type="checkbox"]:checked {
-    background: #1769FF;
+    background: #1769ff;
   }
-  
-  &__toggle input[type="checkbox"]::before {
-    content: '';
-    position: absolute;
-    left: 4px;
-    top: 4px;
-    width: 20px;
-    height: 20px;
-    background: #fff;
-    border-radius: 50%;
-    transition: transform 0.2s;
-  }
-  
+
   &__toggle input[type="checkbox"]:checked::before {
     transform: translateX(20px);
   }
-  
+
   &__toggle span {
     font-size: 1.15rem;
     font-weight: 600;
     margin-left: 12px;
   }
-  
+
   &__slider {
     display: flex;
     align-items: center;
     gap: 12px;
     margin-top: 16px;
   }
-  
+
   &__slider input[type="range"] {
     flex: 1;
-    accent-color: #1769FF;
+    accent-color: #1769ff;
     height: 4px;
-    background: #E7ECF0;
+    background: #e7ecf0;
     border-radius: 2px;
     outline: none;
     margin: 0 8px;
   }
-  
+
   &__slider span {
     font-size: 1.1rem;
-    color: #181C32;
+    color: #181c32;
     font-weight: 600;
   }
-  
+
   &__clear-btn {
     width: 100%;
     padding: 14px 0;
     background: #fff;
-    border: 2px solid #1769FF;
+    border: 2px solid #1769ff;
     border-radius: 12px;
-    color: #1769FF;
+    color: #1769ff;
     font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
@@ -167,12 +155,12 @@
     margin-top: 24px;
     transition: background 0.2s, color 0.2s;
   }
-  
+
   &__clear-btn:hover {
-    background: #1769FF;
+    background: #1769ff;
     color: #fff;
   }
-  
+
   // Mobile styles
   @media (width <= 768px) {
     display: none;
@@ -187,13 +175,13 @@
     overflow-y: auto;
     transition: all 0.3s ease-in-out;
     transform: translateX(100%);
-    
+
     &.active {
       display: block;
       transform: translateX(0);
     }
   }
-  
+
   &__close-btn {
     position: absolute;
     top: 16px;
@@ -201,7 +189,7 @@
     background: transparent;
     border: none;
     font-size: 24px;
-    color: #181C32;
+    color: #181c32;
     padding: 8px;
     cursor: pointer;
     z-index: 1001;
@@ -211,7 +199,7 @@
     align-items: center;
     justify-content: center;
   }
-  
+
   &__toggle {
     display: flex;
     align-items: center;
@@ -220,11 +208,11 @@
     padding: 10px 16px;
     margin-bottom: 8px;
     border: 1px solid #e0e6ef;
-    
+
     span {
       margin-left: 8px;
     }
-    
+
     input[type="checkbox"] {
       appearance: none;
       width: 20px;
@@ -232,11 +220,11 @@
       border: 1px solid #d1d5db;
       border-radius: 4px;
       position: relative;
-      
+
       &:checked {
-        background-color: #0F73F6;
-        border-color: #0F73F6;
-        
+        background-color: #0f73f6;
+        border-color: #0f73f6;
+
         &::after {
           content: "✓";
           position: absolute;
@@ -254,12 +242,12 @@
 .catalog-header-bar {
   flex-direction: column;
   align-items: flex-start;
-  
+
   &__left {
     width: 100%;
     margin-bottom: 16px;
   }
-  
+
   &__right {
     width: 100%;
     display: flex;
@@ -270,7 +258,7 @@
 
 .catalog-sort-dropdown {
   width: 100%;
-  
+
   &__btn {
     width: 100%;
     border-radius: 8px;
@@ -285,7 +273,7 @@
     color: #000;
     cursor: pointer;
   }
-  
+
   // &__option {
   //   // Add your styles for dropdown options here
   // }
@@ -294,7 +282,7 @@
 .catalog-view-toggle {
   display: flex;
   gap: 8px;
-  
+
   &__btn {
     width: 48px;
     height: 48px;
@@ -306,11 +294,11 @@
     background: transparent;
     border: 1px solid rgba(0, 0, 0, 10%);
     cursor: pointer;
-    
+
     &--active {
-      background: #0F73F6;
+      background: #0f73f6;
     }
-    
+
     svg {
       width: 20px;
       height: 20px;
@@ -323,7 +311,7 @@
   flex-wrap: wrap;
   gap: 8px;
   margin: 16px 0;
-  
+
   &__tag {
     display: flex;
     align-items: center;
@@ -334,7 +322,7 @@
     font-size: 14px;
     color: #000;
     cursor: pointer;
-    
+
     &-remove {
       margin-left: 8px;
       font-size: 12px;
@@ -344,19 +332,19 @@
 
 .catalog-results {
   font-size: 14px;
-  color: #6B7280;
+  color: #6b7280;
 }
 
 .catalog-filter-toggle {
   display: none;
-  
+
   @media (width <= 768px) {
     display: flex;
     position: fixed;
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: #0F73F6;
+    background: #0f73f6;
     color: white;
     border-radius: 100px;
     padding: 14px 28px; // Larger touch target
@@ -365,7 +353,7 @@
     z-index: 99;
     align-items: center;
     gap: 8px;
-    
+
     svg {
       width: 18px;
       height: 18px;
