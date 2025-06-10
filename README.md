@@ -13,7 +13,7 @@ Run these commands to get something in your public folder
 Separate commands per task:
 * `npx gulp` will build all the static
 * `npx gulp clean` will clean up your public folder
-* `npx gulp styles` will process your scss styles with entry points at `src/styles/pages` into css files at * `public/css`
+* `npx gulp styles` will process your scss styles with entry points at `src/styles/pages` into css files at `public/css`
 * `npx gulp markup` will process your nunjucks templates with entry points at `src/templates/pages` into html files in `public` folder
 * `npx gulp images` will convert & compress images into webp and avif, make 1x less images from your 2x images and put into `public/img` folder
 * `npx gulp sprite` will combine svg files from `src/images/sprite` folder into `public/sprite.svg` file
