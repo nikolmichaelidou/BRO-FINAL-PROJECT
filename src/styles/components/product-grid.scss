@@ -4,7 +4,7 @@
 
 $badge-colors: (
   "sold-out": #FFF,
-  "new": #1abc9c,
+  "new": #007772,
   "popular": #2d9cdb
 );
 
@@ -73,11 +73,16 @@ $badge-colors: (
     font-size: 0.8rem;
     font-weight: 600;
     text-transform: uppercase;
-    z-index: 1;
-      &--sold-out {
-      background: #6c757d;
+    z-index: 1;    &--sold-out {
+      background: white;
+      color: #2A3541B2;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
+    }
+
+    &--new {
+      background: #007772;
       color: white;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 20%);
+      box-shadow: 0 2px 8px rgba(0, 119, 114, 25%);
     }
 
     &--popular {

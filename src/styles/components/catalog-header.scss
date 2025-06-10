@@ -112,3 +112,43 @@
 .icon-list {
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 10h16M4 14h16M4 18h16' /%3E%3C/svg%3E");
 }
+
+.catalog-header-bar__view-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.catalog-header-bar__view-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e7ecf0;
+  border-radius: 8px;
+  background: #ffffff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .catalog-header-bar__view-path {
+    stroke: #0d0d15;
+  }
+
+  &--active {
+    background: #0066ff;
+    border-color: #0066ff;
+
+    .catalog-header-bar__view-path {
+      stroke: #ffffff;
+    }
+  }
+
+  &:hover:not(&--active) {
+    background: #f8f9fa;
+  }
+}
