@@ -452,18 +452,95 @@ button,
 }
 
 @media (width <= 1200px) {
-  // ...existing code...
+  // Large devices and down
+  .catalog-flex-wrapper,
+  .blog-layout,
+  .pricing-plan__cards {
+    padding: 0 16px;
+  }
+  
+  .catalog-grid__products {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .blog-layout,
+  .pricing-plan__cards {
+    gap: 24px;
+  }
 }
 
 @media (width <= 992px) {
   // Medium devices (tablets)
+  .catalog-flex-wrapper {
+    flex-direction: column;
+  }
+  
+  .catalog-filter {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .catalog-grid {
+    padding-left: 0;
+  }
+  
+  .blog-layout {
+    flex-direction: column;
+  }
+  
+  .blog-sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
 }
 
 @media (width <= 768px) {
   // Small devices (landscape phones)
-  // ...existing code...
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  .catalog-grid__products {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  
+  .trending-products__card-name,
+  .catalog-grid__title {
+    font-size: 1.1rem;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  
+  .pricing-plan__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pricing-card {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 @media (width <= 576px) {
   // Extra small devices (portrait phones)
+  .catalog-grid__products {
+    grid-template-columns: 1fr;
+  }
+  
+  .catalog-header-bar {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .blog-quote,
+  .blog-content__text {
+    padding: 0 12px;
+  }
+  
+  .contact-form {
+    padding: 24px 16px;
+  }
 }
