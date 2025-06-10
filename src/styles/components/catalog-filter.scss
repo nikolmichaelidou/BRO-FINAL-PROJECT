@@ -100,13 +100,8 @@
     transition: background 0.2s;
     margin: 0;
   }
-
   &__toggle input[type="checkbox"]:checked {
     background: #1769ff;
-  }
-
-  &__toggle input[type="checkbox"]:checked::before {
-    transform: translateX(20px);
   }
 
   &__toggle span {
