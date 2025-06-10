@@ -150,7 +150,7 @@
     transition: all $transition-normal ease-in-out;
     transform: translateX(100%);
 
-    &.active {
+  &--active, &.active {
       display: block;
       transform: translateX(0);
     }
@@ -307,7 +307,7 @@
   color: #6b7280;
 }
 
-.catalog-filter-toggle {
+.catalog-filter__mobile-toggle {
   display: none;
 
   @media (width <= 768px) {
@@ -316,7 +316,7 @@
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: #0f73f6;
+    background: #0066FF;
     color: white;
     border-radius: 100px;
     padding: 14px 28px; // Larger touch target
@@ -325,6 +325,8 @@
     z-index: 99;
     align-items: center;
     gap: 8px;
+    border: none;
+    cursor: pointer;
 
     svg {
       width: 18px;

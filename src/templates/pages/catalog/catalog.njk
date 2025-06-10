@@ -18,6 +18,7 @@
 
     <section class="catalog-flex-wrapper">
         <aside class="catalog-filter">
+            <button type="button" class="catalog-filter__close-btn">×</button>
             <form>
                 <button type="reset" class="catalog-filter__clear-btn">
                     <span>×</span> Clear all filters
@@ -297,10 +298,19 @@
             // Mobile filter toggle
             const filterMobileToggle = document.querySelector('.catalog-filter__mobile-toggle');
             const catalogFilter = document.querySelector('.catalog-filter');
+            const closeFilterBtn = document.querySelector('.catalog-filter__close-btn');
             
             if (filterMobileToggle) {
                 filterMobileToggle.addEventListener('click', function() {
-                    catalogFilter.classList.toggle('catalog-filter--active');
+                    catalogFilter.classList.add('catalog-filter--active');
+                    document.body.classList.add('filter-open');
+                });
+            }
+            
+            if (closeFilterBtn) {
+                closeFilterBtn.addEventListener('click', function() {
+                    catalogFilter.classList.remove('catalog-filter--active');
+                    document.body.classList.remove('filter-open');
                 });
             }
         });
