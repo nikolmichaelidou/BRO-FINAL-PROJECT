@@ -1,112 +1,98 @@
 /* catalog-filter.scss - Styling for catalog filters */
 @use "sass:color";
+@use "../components/_typography" as *;
+@use "../components/_variables" as *;
 
-.catalog-filter {
-  background: #fff;
+.catalog-filter {  background: $color-white;
   padding: 32px 24px;
-  border-radius: 16px;
+  border-radius: $border-radius-xl;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 4%);
   width: 320px;
   font-family: inherit;
-  color: #181c32;
+  color: $color-dark;
   display: flex;
   flex-direction: column;
   gap: 32px;
 
   &__section {
     margin-bottom: 32px;
-  }
-
-  &__title {
+  }  &__title {
     font-size: 2rem;
-    font-weight: 700;
+    font-weight: $font-bold;
     margin-bottom: 20px;
-    color: #181c32;
-  }
-
-  &__checkbox,
+    color: $color-dark;
+  }  &__checkbox,
   &__radio,
   &__toggle {
     display: flex;
     align-items: center;
     gap: 12px;
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: $font-semibold;
     margin-bottom: 12px;
     cursor: pointer;
-    color: #181c32;
+    color: $color-dark;
     user-select: none;
   }
-
   &__checkbox input[type="checkbox"],
   &__radio input[type="radio"] {
     appearance: none;
     width: 28px;
     height: 28px;
-    border: 2px solid #d1d5db;
-    border-radius: 8px;
-    background: #fff;
+    border: 2px solid $color-gray-400;
+    border-radius: $border-radius-md;
+    background: $color-white;
     margin: 0;
     position: relative;
-    transition: border 0.2s;
+    transition: border $transition-fast;
   }
-
   &__checkbox input[type="checkbox"]:checked {
-    border-color: #1769ff;
-    background: #1769ff;
-  }
-
-  &__checkbox input[type="checkbox"]:checked::after {
+    border-color: $color-primary-accent;
+    background: $color-primary-accent;
+  }  &__checkbox input[type="checkbox"]:checked::after {
     content: "";
     display: block;
     width: 14px;
     height: 14px;
     margin: 5px auto;
-    border-radius: 4px;
-    background: #fff;
+    border-radius: $border-radius-sm;
+    background: $color-white;
   }
-
   &__radio input[type="radio"] {
-    border-radius: 50%;
+    border-radius: $border-radius-circle;
   }
 
   &__radio input[type="radio"]:checked {
-    border-color: #1769ff;
-    background: #1769ff;
+    border-color: $color-primary-accent;
+    background: $color-primary-accent;
   }
-
   &__radio input[type="radio"]:checked::after {
     content: "";
     display: block;
     width: 14px;
     height: 14px;
     margin: 5px auto;
-    border-radius: 50%;
-    background: #fff;
+    border-radius: $border-radius-circle;
+    background: $color-white;
   }
 
   &__toggle {
     margin-bottom: 16px;
-  }
-
-  &__toggle input[type="checkbox"] {
+  }  &__toggle input[type="checkbox"] {
     appearance: none;
     width: 48px;
     height: 28px;
-    background: #e7ecf0;
-    border-radius: 16px;
+    background: $color-gray-200;
+    border-radius: $border-radius-xl;
     position: relative;
     outline: none;
-    transition: background 0.2s;
+    transition: background $transition-fast;
     margin: 0;
-  }
-  &__toggle input[type="checkbox"]:checked {
-    background: #1769ff;
-  }
-
-  &__toggle span {
+  }  &__toggle input[type="checkbox"]:checked {
+    background: $color-primary-accent;
+  }  &__toggle span {
     font-size: 1.15rem;
-    font-weight: 600;
+    font-weight: $font-semibold;
     margin-left: 12px;
   }
 
@@ -116,59 +102,52 @@
     gap: 12px;
     margin-top: 16px;
   }
-
   &__slider input[type="range"] {
     flex: 1;
-    accent-color: #1769ff;
+    accent-color: $color-primary-accent;
     height: 4px;
-    background: #e7ecf0;
-    border-radius: 2px;
+    background: $color-gray-200;
+    border-radius: $border-radius-sm;
     outline: none;
     margin: 0 8px;
   }
-
   &__slider span {
     font-size: 1.1rem;
-    color: #181c32;
-    font-weight: 600;
-  }
-
-  &__clear-btn {
+    color: $color-dark;
+    font-weight: $font-semibold;
+  }  &__clear-btn {
     width: 100%;
     padding: 14px 0;
-    background: #fff;
-    border: 2px solid #1769ff;
-    border-radius: 12px;
-    color: #1769ff;
+    background: $color-white;
+    border: 2px solid $color-primary-accent;
+    border-radius: $border-radius-lg;
+    color: $color-primary-accent;
     font-size: 1.2rem;
-    font-weight: 700;
+    font-weight: $font-bold;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
     margin-top: 24px;
-    transition: background 0.2s, color 0.2s;
+    transition: background $transition-fast, color $transition-fast;
   }
-
   &__clear-btn:hover {
-    background: #1769ff;
-    color: #fff;
-  }
-
-  // Mobile styles
-  @media (width <= 768px) {
+    background: $color-primary-accent;
+    color: $color-white;
+  }  // Mobile styles
+  @media (width <= $breakpoint-md) {
     display: none;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #fff;
+    background: $color-white;
     z-index: 1000;
     padding: 24px 16px 80px; // Add bottom padding for mobile filter button
     overflow-y: auto;
-    transition: all 0.3s ease-in-out;
+    transition: all $transition-normal ease-in-out;
     transform: translateX(100%);
 
     &.active {
@@ -176,7 +155,6 @@
       transform: translateX(0);
     }
   }
-
   &__close-btn {
     position: absolute;
     top: 16px;
@@ -184,7 +162,7 @@
     background: transparent;
     border: none;
     font-size: 24px;
-    color: #181c32;
+    color: $color-dark;
     padding: 8px;
     cursor: pointer;
     z-index: 1001;
@@ -194,15 +172,14 @@
     align-items: center;
     justify-content: center;
   }
-
   &__toggle {
     display: flex;
     align-items: center;
-    background: #f8f9fa;
-    border-radius: 100px;
+    background: $color-gray-100;
+    border-radius: $border-radius-round;
     padding: 10px 16px;
     margin-bottom: 8px;
-    border: 1px solid #e0e6ef;
+    border: 1px solid $color-gray-300;
 
     span {
       margin-left: 8px;
@@ -212,13 +189,13 @@
       appearance: none;
       width: 20px;
       height: 20px;
-      border: 1px solid #d1d5db;
-      border-radius: 4px;
+      border: 1px solid $color-gray-400;
+      border-radius: $border-radius-sm;
       position: relative;
 
       &:checked {
-        background-color: #0f73f6;
-        border-color: #0f73f6;
+        background-color: $color-primary;
+        border-color: $color-primary;
 
         &::after {
           content: "✓";
