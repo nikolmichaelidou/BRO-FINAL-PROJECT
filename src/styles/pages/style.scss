@@ -9,8 +9,7 @@
 @use '../components/_faq';
 @use '../components/_catalog-hero';
 @use '../components/catalog-filter';
-@use '../components/catalog-filter-bem';
-@use '../components/catalog-filter-new.scss' as catalog-filter-new;
+@use '../components/catalog-filter-new';
 @use '../components/blog';
 @use '../components/product-grid';
 @use '../components/product-grid-bem';
