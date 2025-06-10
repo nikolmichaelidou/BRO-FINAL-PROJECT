@@ -149,7 +149,7 @@ $badge-colors: (
     height: 36px;
     border-radius: 50%;
     border: none;
-    background: #F3F4F6;
+    background: #0265DC;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +157,7 @@ $badge-colors: (
     transition: background 0.2s, transform 0.2s;
     
     &:hover {
-      background: #E5E7EB;
+      background: #0265DC;
       transform: scale(1.1);
     }
   }
@@ -170,6 +170,7 @@ $badge-colors: (
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+    color:#000000;
   }
   
   &__icon-heart {
@@ -183,19 +184,14 @@ $badge-colors: (
   &__load-more {
     margin: 40px auto;
     background: transparent;
-    border: 2px solid #0F73F6;
-    color: #0F73F6;
+    border: 2px solid #2735448C;
+    color: #000000;
     font-size: 1rem;
     font-weight: 600;
     padding: 12px 24px;
     border-radius: 8px;
     cursor: pointer;
     transition: all 0.2s;
-    
-    &:hover {
-      background: #0F73F6;
-      color: white;
-    }
   }
 }
 
