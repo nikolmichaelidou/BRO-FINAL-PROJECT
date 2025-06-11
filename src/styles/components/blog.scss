@@ -1,11 +1,13 @@
 /* blog.scss - Styles for blog section */
 @use "sass:color";
 @use "sass:math";
+@use "variables" as *;
+@use "typography" as *;
 
 .blog--header-backround {
   background: linear-gradient(
     0.23deg,
-    #f0f6fd 0.2%,
+    $background-filter 0.2%,
     rgba(255, 255, 255, 0%) 99.8%
   );
 }
@@ -31,11 +33,11 @@
 
   &__tag {
     display: inline-block;
-    background: #1769ff;
-    color: #fff;
+    background: $color-primary-accent;
+    color: $color-white;
     font-size: 1.4rem;
-    font-weight: 500;
-    border-radius: 32px;
+    font-weight: $font-medium;
+    border-radius: $border-radius-round;
     padding: 8px 32px;
     margin-bottom: 32px;
     letter-spacing: 1px;
@@ -43,8 +45,8 @@
 
   &__title {
     font-size: 3.2rem;
-    font-weight: 800;
-    color: #181a1d;
+    font-weight: $font-bold;
+    color: $color-dark;
     line-height: 1.1;
     margin: 0;
     letter-spacing: -1px;
@@ -89,21 +91,21 @@
   }
 
   &__author-name {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #181a1d;
+    font-size: $text-2xl;
+    font-weight: $font-bold;
+    color: $color-dark;
     margin-bottom: 2px;
   }
 
   &__date {
-    font-size: 1.3rem;
-    color: #444851;
+    font-size: $text-sm;
+    color: $color-gray-700;
     opacity: 0.7;
   }
 
   &__divider {
     border: none;
-    border-top: 2px solid #181a1d;
+    border-top: 2px solid $color-dark;
     opacity: 0.07;
     margin: 32px 0;
   }
@@ -113,30 +115,30 @@
   }
 
   &__heading {
-    font-size: 2.2rem;
-    font-weight: 700;
+    font-size: $text-2xl;
+    font-weight: $font-bold;
     margin-bottom: 18px;
-    color: #181a1d;
+    color: $color-dark;
   }
 
   &__categories {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 1.35rem;
+    font-size: $text-sm;
 
     li {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 14px;
-      color: #3b4656;
-      font-weight: 500;
+      color: $color-gray-600;
+      font-weight: $font-medium;
     }
 
     .blog-sidebar__active {
-      color: #181a1d;
-      font-weight: 700;
+      color: $color-dark;
+      font-weight: $font-bold;
       padding-left: 15px;
     }
   }
@@ -144,8 +146,8 @@
   &__dot {
     width: 10px;
     height: 10px;
-    background: #1769ff;
-    border-radius: 50%;
+    background: $color-primary-accent;
+    border-radius: $border-radius-circle;
     display: inline-block;
   }
 
@@ -154,15 +156,15 @@
   }
 
   &__article-title {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #23232b;
+    font-size: $text-xl;
+    font-weight: $font-bold;
+    color: $color-dark;
     margin-bottom: 6px;
   }
 
   &__article-date {
-    font-size: 1.2rem;
-    color: #3b4656;
+    font-size: $text-xs;
+    color: $color-gray-600;
     opacity: 0.7;
   }
 
@@ -181,21 +183,21 @@
 }
 
 .typography-header {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0;
+  font-weight: $font-regular;
+  font-size: $text-base;
+  line-height: $leading-normal;
+  letter-spacing: $tracking-normal;
   width: 273;
   height: 24;
   opacity: 0.7;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #222;
+  color: $color-dark;
 }
 
 .get-asset-link {
-  color: #0265dc;
+  color: $color-primary-dark;
   width: 105;
   height: 24;
 }
@@ -214,11 +216,11 @@
   }
 
   &_h4 {
-    font-size: 2rem;
-    font-weight: 700;
-    color: #181a1d;
-    line-height: 1.2;
-    letter-spacing: -0.5px;
+    font-size: $text-3xl;
+    font-weight: $font-bold;
+    color: $color-dark;
+    line-height: $leading-tight;
+    letter-spacing: $tracking-tight;
   }
 }
 

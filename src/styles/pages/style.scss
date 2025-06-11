@@ -1,22 +1,27 @@
 /* style.scss - Main stylesheet for importing all component styles */
-@use '../components/_variables'; // Import variables first for access across all files
-@use '../components/_typography'; // Import typography after variables
+@use '../components/variables'; // Import variables first for access across all files
+@use '../components/typography'; // Import typography after variables
 @use 'global';
-@use '../components/_header';
-@use '../components/_index_hero';
+@use '../components/header';
+@use '../components/index-hero';
 @use '../components/footer';
-@use '../components/_contact-form';
-@use '../components/_pricing-plan';
-@use '../components/_faq';
-@use '../components/_catalog-hero';
+@use '../components/contact-form';
+@use '../components/pricing-plan';
+@use '../components/faq';
+@use '../components/catalog-hero';
 @use '../components/catalog-filter';
 @use '../components/blog';
 @use '../components/product-grid';
 @use '../components/latest-expert';
-@use '../components/_illustrations-index';
+@use '../components/illustrations-index';
 @use '../components/catalog-header';
-@use '../components/_categories-showcase';
-@use '../components/_related-articles';
+@use '../components/categories-showcase';
+@use '../components/related-articles';
 @use '../components/trending-products';
 @use '../components/overflow-fixes';
 @use '../components/filter-overrides';
+/* The following files exist but are currently empty */
+@use '../components/filter'; // Empty file
+@use '../components/catalog-filter-new'; // Empty file 
+@use '../components/catalog-filter-bem'; // Empty file
+@use '../components/product-grid-bem'; // Empty file

@@ -1,6 +1,9 @@
+@use "../components/variables" as *;
+@use "../components/typography" as *;
+
 .related-articles {
   padding: 80px 0;
-  background-color: #f8fafc;
+  background-color: $color-gray-100;
 
   &__header {
     display: flex;
@@ -10,18 +13,18 @@
     padding: 0 16px;
 
     h2 {
-      font-size: 42px;
-      font-weight: 600;
+      font-size: $text-4xl;
+      font-weight: $font-semibold;
       margin: 0;
-      color: #333;
+      color: $color-dark;
     }
   }
 
   &__link {
-    color: #0f73f6;
-    font-size: 18px;
+    color: $color-primary;
+    font-size: $text-md;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: $font-medium;
     display: flex;
     align-items: center;
 
@@ -54,15 +57,15 @@
 
 .related-articles__card {
   position: relative;
-  border-radius: 12px;
+  border-radius: $border-radius-lg;
   overflow: hidden;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 5%);
-  transition: transform 0.3s ease;
+  background-color: $color-white;
+  box-shadow: $shadow-light;
+  transition: transform $transition-normal;
 
   &:hover {
     transform: translateY(-8px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 8%);
+    box-shadow: $shadow-medium;
   }
 }
 
@@ -70,17 +73,17 @@
   position: absolute;
   left: 15px;
   top: 224px;
-  background-color: #0f73f6;
-  color: #fff;
+  background-color: $color-primary;
+  color: $color-white;
   height: 28px;
   padding: 0 16px;
-  border-radius: 100px;
-  font-weight: 500;
+  border-radius: $border-radius-round;
+  font-weight: $font-medium;
   text-transform: uppercase;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 14px;
+  font-size: $text-sm;
 }
 
 .related-articles__image-container {

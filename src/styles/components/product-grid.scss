@@ -1,8 +1,8 @@
 /* product-grid.scss - Styling for product grid layout */
 @use "sass:color";
 @use "sass:map";
-@use "../components/_variables" as *;
-@use "../components/_typography" as *;
+@use "../components/variables" as *;
+@use "../components/typography" as *;
 
 $badge-colors: (
   "sold-out": $color-white,

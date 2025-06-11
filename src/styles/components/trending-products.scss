@@ -1,5 +1,7 @@
 /* trending-products.scss - Styling for trending products section */
 @use "sass:math";
+@use "../components/variables" as *;
+@use "../components/typography" as *;
 
 .trending-products {
   padding: 80px 0;
@@ -24,19 +26,19 @@
   }
 
   &__trending {
-    color: #0f73f6; // Blue color for "TRENDING" text
-    font-size: 16px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    color: $color-primary; // Blue color for "TRENDING" text
+    font-size: $text-base;
+    font-weight: $font-semibold;
+    letter-spacing: $tracking-wide;
     text-transform: uppercase;
     margin-bottom: 8px;
   }
 
   &__title {
-    font-size: 36px; 
-    font-weight: 700;
-    line-height: 1.1;
-    letter-spacing: -0.5px;
+    font-size: $text-4xl; 
+    font-weight: $font-bold;
+    line-height: $leading-tight;
+    letter-spacing: $tracking-tight;
     margin: 0; // Add margin reset
   }
 
@@ -50,19 +52,19 @@
     height: 64px;
     border: 2px solid rgba(29, 54, 83, 17%); // Use direct value instead of var()
     background: transparent;
-    color: #333; // Add explicit color
-    font-size: 18px;
+    color: $color-gray-800; // Add explicit color
+    font-size: $text-md;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.2s ease;
-    border-radius: 50%; // Add border-radius
+    transition: all $transition-fast ease;
+    border-radius: $border-radius-circle; // Add border-radius
 
     &:hover {
-      border-color: #0f73f6;
-      background: #0f73f6;
-      color: #fff;
+      border-color: $color-primary;
+      background: $color-primary;
+      color: $color-white;
     }
   }
 

@@ -1,4 +1,6 @@
 @use "sass:color";
+@use "../components/variables" as *;
+@use "../components/typography" as *;
 
 .pricing-plan {
   &::before {

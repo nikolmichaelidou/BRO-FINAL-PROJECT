@@ -1,5 +1,8 @@
+@use "../components/variables" as *;
+@use "../components/typography" as *;
+
 .catalog-hero {
-  background: linear-gradient(180deg, #fff 0%, #e7ecf0 100%);
+  background: linear-gradient(180deg, $color-white 0%, $color-gray-200 100%);
   padding: 64px 0 0;
 
   &__container {

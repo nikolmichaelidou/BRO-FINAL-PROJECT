@@ -1,8 +1,11 @@
+@use "../components/variables" as *;
+@use "../components/typography" as *;
+
 .contact-layout-wrapper {
   display: flex;
   gap: 40px; /* Spacing40 */
   padding: 64px 80px; /* padding-top: Spacing64, padding-right/left: 80px */
-  background: #f8fafc;
+  background: $color-gray-100;
   max-width: 1440px; /* width: 1440 */
   min-height: 890px; /* height: 890 */
   margin: 0 auto;
