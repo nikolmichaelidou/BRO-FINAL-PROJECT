@@ -1,11 +1,13 @@
 /* product-grid.scss - Styling for product grid layout */
 @use "sass:color";
 @use "sass:map";
+@use "../components/_variables" as *;
+@use "../components/_typography" as *;
 
 $badge-colors: (
-  "sold-out": #FFF,
-  "new": #007772,
-  "popular": #2d9cdb
+  "sold-out": $color-white,
+  "new": #007772, // Keep custom green
+  "popular": $color-info
 );
 
 // Catalog layout
@@ -63,32 +65,33 @@ $badge-colors: (
         filter: grayscale(80%);
       }
     }
-  }
-    &__badge {
+  }    &__badge {
     position: absolute;
     top: 16px;
     left: 16px;
     padding: 6px 12px;
-    border-radius: 30px;
-    font-size: 0.8rem;
-    font-weight: 600;
+    border-radius: $border-radius-round;
+    font-size: $text-xs;
+    font-weight: $font-semibold;
     text-transform: uppercase;
-    z-index: 1;    &--sold-out {
-      background: white;
-      color: #2A3541B2;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 10%);
+    z-index: 1;
+    
+    &--sold-out {
+      background: $color-white;
+      color: #2A3541B2; // Specific opacity color
+      box-shadow: $shadow-light;
     }
 
     &--new {
-      background: #007772;
-      color: white;
+      background: map.get($badge-colors, "new");
+      color: $color-white;
       box-shadow: 0 2px 8px rgba(0, 119, 114, 25%);
     }
 
     &--popular {
-      background: #0f73f6;
-      color: white;
-      box-shadow: 0 2px 8px rgba(15, 115, 246, 25%);
+      background: $color-primary;
+      color: $color-white;
+      box-shadow: $shadow-primary;
     }
   }
   

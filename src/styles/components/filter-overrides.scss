@@ -1,4 +1,6 @@
 // Filter overrides
+@use "../components/_variables" as *;
+@use "../components/_typography" as *;
 body.filter-open {
   overflow: hidden;
 }

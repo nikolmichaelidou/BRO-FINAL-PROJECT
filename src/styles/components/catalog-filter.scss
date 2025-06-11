@@ -303,25 +303,25 @@
 }
 
 .catalog-results {
-  font-size: 14px;
-  color: #6b7280;
+  font-size: $text-sm;
+  color: $color-gray-600;
 }
 
 .catalog-filter__mobile-toggle {
   display: none;
 
-  @media (width <= 768px) {
+  @media (width <= $breakpoint-md) {
     display: flex;
     position: fixed;
     bottom: 24px;
     left: 50%;
     transform: translateX(-50%);
-    background: #0066FF;
-    color: white;
-    border-radius: 100px;
+    background: $color-primary;
+    color: $color-white;
+    border-radius: $border-radius-round;
     padding: 14px 28px; // Larger touch target
-    font-weight: 500;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 20%);
+    font-weight: $font-medium;
+    box-shadow: $shadow-primary;
     z-index: 99;
     align-items: center;
     gap: 8px;
