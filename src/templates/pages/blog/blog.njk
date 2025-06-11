@@ -70,7 +70,7 @@
                 <p>A well-defined typographic hierarchy organizes information, making it easier for readers to navigate through the content. Use different font sizes, weights, and styles to differentiate between headings, subheadings, and body text. This hierarchy not only improves readability but also adds visual interest to your next future design.</p>
                 <img src="img/blog-photo-content-1x.webp" alt="Typography Example" class="blog-content__image">
                 <h4>3. Experiment with Alignment</h4>
-                <p> While center and right alignments have their place, left-aligned text is generally the most legible and comfortable for readers, especially for longer passages. However, donâ€™t shy away from experimenting with different alignments in headings or callouts to add dynamism to your layout.</p>
+                <p>While center and right alignments have their place, left-aligned text is generally the most legible and comfortable for readers, especially for longer passages. However, don’t shy away from experimenting with different alignments in headings or callouts to add dynamism to your layout.</p>
                 <h4>4. Embrace White Space</h4>
                 <p>White space, or negative space, is a powerful tool in typography. It helps in decluttering designs and allows each typographic element to breathe. Proper use of white space can significantly improve the overall balance and composition of your design.</p>
                 <div class="blog-quote">
@@ -85,26 +85,26 @@
             </div>
         </section>
     </div>
-        <section class="related-articles">
-            <div class="related-articles__header">
-                <h2>Related Articles</h2>
-                <a href="blog.html" class="related-articles__link">Explore All Articles</a>
-            </div>
+    <section class="related-articles">
+        <div class="related-articles__header">
+            <h2>Related Articles</h2>
+            <a href="blog.html" class="related-articles__link">Explore All Articles</a>
+        </div>
 
-            <div class="related-articles__grid">
-                {% for article in blogPosts %}
-                    <div class="related-articles__card">
-                        <div class="related-articles__image-container">
-                            <img src="{{ article.image }}" alt="{{ article.title }}" class="related-articles__image">
-                        </div>
-                        <div class="related-articles__info">
-                            <h3 class="related-articles__title">{{ article.title }}</h3>
-                            <p class="related-articles__date">{{ article.date }}</p>
-                        </div>
-                        <span class="related-articles__tag">{{ article.tag }}</span>
+        <div class="related-articles__grid">
+            {% for article in blogPosts %}
+                <div class="related-articles__card">
+                    <div class="related-articles__image-container">
+                        <img src="{{ article.image }}" alt="{{ article.title }}" class="related-articles__image">
                     </div>
-                {% endfor %}
-            </div>
-        </section>
+                    <div class="related-articles__info">
+                        <h3 class="related-articles__title">{{ article.title }}</h3>
+                        <p class="related-articles__date">{{ article.date }}</p>
+                    </div>
+                    <span class="related-articles__tag">{{ article.tag }}</span>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
 
-    {% endblock %}
+{% endblock %}

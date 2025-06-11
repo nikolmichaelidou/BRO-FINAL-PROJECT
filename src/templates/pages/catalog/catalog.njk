@@ -18,7 +18,9 @@
 
     <section class="catalog-flex-wrapper">
         <aside class="catalog-filter">
-            <button type="button" class="catalog-filter__close-btn">✕</button>
+            <button type="button" class="catalog-filter__close-btn" aria-label="Close filters">
+                <span aria-hidden="true">✕</span>
+            </button>
             <form>
                 <button type="reset" class="catalog-filter__clear-btn">
                     <span>✕</span> Clear all filters
@@ -140,8 +142,8 @@
                     <h2 class="catalog-filter__title">Price</h2>
                     <div class="catalog-filter__slider">
                         <input type="range" min="5" max="50" value="15" class="catalog-filter__range" id="price_range">
-                        <span>â‚¬5</span>
-                        <span>â‚¬50</span>
+                        <span>€5</span>
+                        <span>€50</span>
                     </div>
                 </div>
             </form>
