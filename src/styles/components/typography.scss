@@ -22,6 +22,8 @@ $font-regular: 400;
 $font-medium: 500;
 $font-semibold: 600;
 $font-bold: 700;
+$font-extrabold: 800;
+$font-black: 900;
 
 /* Font sizes - Desktop */
 $text-xs: 0.75rem;    /* 12px */
@@ -148,8 +150,12 @@ strong, b {
   font-weight: $font-bold;
 }
 
-em, i {
+em, i, .font-italic {
   font-style: italic;
+}
+
+.font-normal {
+  font-style: normal;
 }
 
 /* Font utilities */
@@ -170,6 +176,8 @@ em, i {
 .font-medium { font-weight: $font-medium; }
 .font-semibold { font-weight: $font-semibold; }
 .font-bold { font-weight: $font-bold; }
+.font-extrabold { font-weight: $font-extrabold; }
+.font-black { font-weight: $font-black; }
 
 .tracking-tighter { letter-spacing: $tracking-tighter; }
 .tracking-tight { letter-spacing: $tracking-tight; }
