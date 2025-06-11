@@ -39,5 +39,8 @@
     "stylelint": "^16.16.0",
     "stylelint-config-standard-scss": "^14.0.0",
     "text-table": "^0.2.0"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.1"
   }
 }
