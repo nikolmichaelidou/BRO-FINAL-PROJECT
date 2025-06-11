@@ -1,7 +1,8 @@
 @use 'variables-main' as *;
 @use '../components/typography' as *;
+@use 'breakpoints' as *;
 
-@media (width <= 1100px) {
+@media (max-width: $breakpoint-xl) {
   body {
     width: 100%; // Remove fixed width
     height: auto;
@@ -14,16 +15,25 @@
   }
 }
 
-@media (width <= 500px) {
+@media (max-width: $breakpoint-sm) {
   body {
     width: 100%; // Remove fixed width
     height: auto;
     overflow-x: hidden;
   }
+}
 
+// Special breakpoint for minimum supported width
+@media (max-width: $breakpoint-xs) {
+  body {
+    min-width: $breakpoint-xs; // Ensure minimum width
+  }
+  
   .hero-section {
-    width: 440px;
-    height: 868px;
+    width: 100%; // Make it responsive instead of fixed
+    max-width: 100%;
+    height: auto; // Auto height for better responsiveness
+    min-height: 868px;
     gap: 36px;
     padding-top: 32px; /* Spacing32 */
     padding-right: 16px; /* Spacing16 */

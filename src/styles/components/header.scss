@@ -1,5 +1,6 @@
 @use "../components/variables-main" as *;
 @use "../components/typography" as *;
+@use "../components/breakpoints" as *;
 
 // Header Styles
 .header {
@@ -151,7 +152,7 @@
   }
 }
 
-@media (width <= 900px) {
+@media (max-width: $breakpoint-lg) {
   .navbar__links {
     position: fixed; // Change to fixed for better mobile experience
     top: 92px;
@@ -190,13 +191,27 @@
   .navbar__search {
     display: none;
   }
-
   .navbar__link {
     font-size: 1.3rem; // Larger text for mobile
     padding: 12px 0; // Larger touch area
     display: block;
     width: 100%;
     text-align: center;
+  }
+}
+
+// Extra small screens
+@media (max-width: $breakpoint-xs) {
+  .navbar {
+    padding: 16px 12px;
+  }
+  
+  .navbar__logo {
+    font-size: 2rem; // Smaller logo text
+  }
+  
+  .navbar__cart-btn {
+    transform: scale(0.9); // Slightly smaller cart button
   }
 }
 

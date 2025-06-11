@@ -58,7 +58,8 @@ $transition-fast: 0.2s;
 $transition-normal: 0.3s;
 
 /* Breakpoints */
-$breakpoint-sm: 500px;
-$breakpoint-md: 768px;
-$breakpoint-lg: 900px;
-$breakpoint-xl: 1100px;
+$breakpoint-xs: 440px; // Support for minimum width of 440px
+$breakpoint-sm: 576px; // Standard small breakpoint
+$breakpoint-md: 768px; // Medium/tablet breakpoint
+$breakpoint-lg: 992px; // Large/small desktop breakpoint
+$breakpoint-xl: 1200px; // Extra large/desktop breakpoint

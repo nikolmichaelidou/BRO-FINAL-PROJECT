@@ -1,5 +1,6 @@
 /* style.scss - Main stylesheet for importing all component styles */
 @use '../components/variables-main' as variables; // Import variables first for access across all files
+@use '../components/breakpoints' as breakpoints; // Import breakpoints mixins
 @use '../components/typography'; // Import typography after variables
 @use '../components/global';
 @use '../components/header';

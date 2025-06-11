@@ -222,7 +222,7 @@
       opacity: 0;
       transition: opacity 0.3s ease;
 
-      @media (width <= 768px) {
+      @media (max-width: $breakpoint-md) {
         padding: 14px 28px;
         font-size: 18px;
       }
@@ -235,7 +235,7 @@
   }
 }
 
-@media (width <= 1200px) {
+@media (max-width: $breakpoint-xl) {
   .trending-products {
     &__title {
       font-size: 36px;
@@ -243,7 +243,7 @@
   }
 }
 
-@media (width <= 768px) {
+@media (max-width: $breakpoint-md) {
   .trending-products {
     padding: 60px 0;
 
@@ -258,7 +258,24 @@
       font-size: 28px;
       margin: 8px 0 16px;
     }
+  }
+}
 
+// Extra small screens
+@media (max-width: $breakpoint-xs) {
+  .trending-products {
+    &__card {
+      width: 100%; // Make cards fully responsive
+      max-width: 305px; // But ensure they don't exceed original design width
+    }
+    
+    &-image {
+      width: 100%; // Make images fully responsive
+      max-width: 305px; // But ensure they don't exceed original design width
+      height: auto; // Maintain aspect ratio
+      min-height: 272px; // Ensure minimum height matches design
+    }
+    
     &__nav {
       align-self: center;
       margin-top: 8px;
