@@ -232,67 +232,37 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            // Sort dropdown functionality
-            const sortBtn = document.getElementById('sort_dropdown_btn');
-            const sortDropdown = document.getElementById('sort_dropdown');
-            
-            if (sortBtn && sortDropdown) {
-                const sortOptions = document.querySelectorAll('.catalog-sort-dropdown__option');
-                
-                // Toggle dropdown when button is clicked
-                sortBtn.addEventListener('click', function () {
-                    sortDropdown.classList.toggle('show');
-                    sortBtn.classList.toggle('active');
-                });
+            // Filter sections toggle functionality
 
-                // Select option when clicked
-                sortOptions.forEach(option => {
-                    option.addEventListener('click', function () {
-                        // Remove selected class from all options
-                        sortOptions.forEach(opt => opt.classList.remove('catalog-sort-dropdown__option--selected'));
-
-                        // Add selected class to clicked option
-                        this.classList.add('catalog-sort-dropdown__option--selected');
-
-                        // Update button text
-                        sortBtn.innerHTML = this.textContent + ' <span class="icon-chevron">&#9662;</span>';
-
-                        // Hide dropdown
-                        sortDropdown.classList.remove('show');
-                        sortBtn.classList.remove('active');
-                    });
-                });
-
-                // Close dropdown when clicking outside
-                document.addEventListener('click', function (e) {
-                    if (!sortBtn.contains(e.target) && !sortDropdown.contains(e.target)) {
-                        sortDropdown.classList.remove('show');
-                        sortBtn.classList.remove('active');
-                    }
-                });
-            }
-            
             // Filter sections toggle
             const filterTitles = document.querySelectorAll('.catalog-filter__title');
             filterTitles.forEach(title => {
                 title.addEventListener('click', function () {
                     const targetId = this.getAttribute('data-toggle');
-                    
+
                     // Make sure we have a valid target ID
                     if (targetId) {
                         const targetContent = document.getElementById(targetId);
-                        
+
                         // Only toggle classes if the target content exists
                         if (targetContent) {
-                            this.classList.toggle('catalog-filter__title--collapsed');
-                            targetContent.classList.toggle('catalog-filter__content--collapsed');
+                            this
+                                .classList
+                                .toggle('catalog-filter__title--collapsed');
+                            targetContent
+                                .classList
+                                .toggle('catalog-filter__content--collapsed');
                         }
                     } else {
                         // If no data-toggle attribute, toggle next sibling (assuming it's the content)
                         const targetContent = this.nextElementSibling;
                         if (targetContent && targetContent.classList.contains('catalog-filter__content')) {
-                            this.classList.toggle('catalog-filter__title--collapsed');
-                            targetContent.classList.toggle('catalog-filter__content--collapsed');
+                            this
+                                .classList
+                                .toggle('catalog-filter__title--collapsed');
+                            targetContent
+                                .classList
+                                .toggle('catalog-filter__content--collapsed');
                         }
                     }
                 });
