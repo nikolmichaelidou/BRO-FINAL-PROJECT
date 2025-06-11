@@ -1,7 +1,7 @@
 /* style.scss - Main stylesheet for importing all component styles */
 @use '../components/variables'; // Import variables first for access across all files
 @use '../components/typography'; // Import typography after variables
-@use 'global';
+@use '../global';
 @use '../components/header';
 @use '../components/index-hero';
 @use '../components/footer';

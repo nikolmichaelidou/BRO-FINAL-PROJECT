@@ -87,9 +87,9 @@
   // Product card styling specifically for trending section
   &__card {
     flex: 0 0 auto;
-    width: 320px;
+    width: 305px; // Updated to match the image width
     background: transparent;
-    border-radius: 16px;
+    border-radius: 20px; // Updated to match the image border-radius
     overflow: hidden;
     transition: transform 0.3s ease;
     position: relative;
@@ -109,9 +109,10 @@
     }
 
     &-image {
-      height: 240px;
+      height: 272px; // Updated per requirement
+      width: 305px; // Updated per requirement
       position: relative;
-      border-radius: 16px;
+      border-radius: 20px; // Updated to match Spacing20
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -147,7 +148,7 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0%);
         transition: background 0.3s ease;
-        border-radius: 16px;
+        border-radius: 20px; // Updated to match Spacing20
         z-index: 1;
       }
     }
@@ -274,14 +275,15 @@
       gap: 16px;
     }
 
-    .product-card {
+    &__card {
       width: 280px;
 
-      &__image {
-        height: 200px;
+      &-image {
+        width: 280px;
+        height: 240px;
       }
 
-      &__name {
+      &-name {
         font-size: 24px;
       }
     }
