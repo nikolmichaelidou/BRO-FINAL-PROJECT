@@ -28,27 +28,68 @@
                     // Prevent scrolling when menu is open
                     document.body.classList.toggle('menu-open');
                 });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!burgerBtn.contains(e.target) && 
+                        !mobileMenu.contains(e.target) && 
+                        mobileMenu.classList.contains('navbar__links--open')) {
+                        burgerBtn.classList.remove('navbar__burger--open');
+                        mobileMenu.classList.remove('navbar__links--open');
+                        document.body.classList.remove('menu-open');
+                    }
+                });
+                
+                // Close menu when ESC key is pressed
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && mobileMenu.classList.contains('navbar__links--open')) {
+                        burgerBtn.classList.remove('navbar__burger--open');
+                        mobileMenu.classList.remove('navbar__links--open');
+                        document.body.classList.remove('menu-open');
+                    }
+                });
             }
             
             // Filter toggle for mobile
-            const filterToggleBtn = document.querySelector('.filter-mobile-toggle');
+            const filterToggleBtn = document.querySelector('.catalog-filter__mobile-toggle') || 
+                                    document.querySelector('.filter-mobile-toggle');
             const filterPanel = document.querySelector('.catalog-filter');
             
             if(filterToggleBtn && filterPanel) {
-                // Create close button dynamically
-                const closeBtn = document.createElement('button');
-                closeBtn.classList.add('filter-close-btn');
-                closeBtn.innerHTML = 'Ã—';
-                filterPanel.prepend(closeBtn);
+                // Check if close button already exists
+                let closeBtn = filterPanel.querySelector('.filter-close-btn') || 
+                               filterPanel.querySelector('.catalog-filter__close-btn');
+                               
+                // Create close button if it doesn't exist
+                if (!closeBtn) {
+                    closeBtn = document.createElement('button');
+                    closeBtn.classList.add('filter-close-btn');
+                    closeBtn.innerHTML = '&times;'; // Using proper HTML entity for the times symbol
+                    closeBtn.setAttribute('aria-label', 'Close filter');
+                    filterPanel.prepend(closeBtn);
+                }
                 
                 filterToggleBtn.addEventListener('click', function() {
                     filterPanel.classList.add('active');
+                    filterPanel.classList.add('catalog-filter--active');
                     document.body.classList.add('filter-open');
                 });
                 
                 closeBtn.addEventListener('click', function() {
                     filterPanel.classList.remove('active');
+                    filterPanel.classList.remove('catalog-filter--active');
                     document.body.classList.remove('filter-open');
+                });
+                
+                // Close filter when ESC key is pressed
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape' && 
+                        (filterPanel.classList.contains('active') || 
+                         filterPanel.classList.contains('catalog-filter--active'))) {
+                        filterPanel.classList.remove('active');
+                        filterPanel.classList.remove('catalog-filter--active');
+                        document.body.classList.remove('filter-open');
+                    }
                 });
             }
         });

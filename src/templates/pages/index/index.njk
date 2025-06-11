@@ -364,13 +364,51 @@
   </div>
 </section>
 <script>
-  let questionButton = document.querySelectorAll('.faq-accordion__question');
-  questionButton.forEach((elem) => {
-    elem.addEventListener("click", () => {
-      elem
-        .classList
-        .toggle("show");
+  document.addEventListener('DOMContentLoaded', function() {
+    let questionButtons = document.querySelectorAll('.faq-accordion__question');
+    
+    // Initialize answers - hide them initially
+    document.querySelectorAll('.faq-accordion__answer').forEach(answer => {
+      answer.style.display = 'none';
+    });
+    
+    questionButtons.forEach((elem) => {
+      elem.addEventListener("click", () => {
+        // Toggle the show class on the question
+        elem.classList.toggle("show");
+        
+        // Find and toggle the corresponding answer
+        let answer = elem.nextElementSibling;
+        if (answer && answer.classList.contains('faq-accordion__answer')) {
+          if (elem.classList.contains('show')) {
+            // Close any other open answers first
+            document.querySelectorAll('.faq-accordion__question.show').forEach(openQuestion => {
+              if (openQuestion !== elem) {
+                openQuestion.classList.remove('show');
+                const siblingAnswer = openQuestion.nextElementSibling;
+                if (siblingAnswer && siblingAnswer.classList.contains('faq-accordion__answer')) {
+                  siblingAnswer.style.display = 'none';
+                }
+              }
+            });
+            
+            // Open this answer with smooth animation
+            answer.style.display = 'block';
+            answer.style.maxHeight = '0';
+            answer.style.transition = 'max-height 0.3s ease-in-out';
+            setTimeout(() => {
+              answer.style.maxHeight = answer.scrollHeight + 'px';
+            }, 10);
+          } else {
+            // Close this answer with smooth animation
+            answer.style.maxHeight = '0';
+            setTimeout(() => {
+              answer.style.display = 'none';
+            }, 300);
+          }
+        }
+      });
     });
   });
 </script>
-{%endblock %}
+{% endblock %}
