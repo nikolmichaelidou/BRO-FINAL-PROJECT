@@ -1,0 +1,64 @@
+/* _variables.scss - Global variables for colors, spacing, and other design tokens */
+
+/* Colors - Primary */
+$color-primary: #0f73f6; 
+$color-primary-dark: #0265DC;
+$color-primary-light: #3FA6FF;
+$color-primary-accent: #1769FF;
+
+/* Colors - Neutral */
+$color-white: #FFFFFF;
+$color-black: #000000;
+$color-dark: #181C32;
+$color-dark-secondary: #181C25;
+$color-gray-100: #f8f9fa;
+$color-gray-200: #E7ECF0;
+$color-gray-300: #e0e6ef;
+$color-gray-400: #d1d5db;
+$color-gray-500: #94A3B8;
+$color-gray-600: #6B7280;
+$color-gray-700: #6c757d;
+$color-gray-800: #333333;
+
+/* Colors - Background */
+$background-light: #f5f9ff;
+$background-light-alt: #f5f8fb;
+$background-filter: #f0f6fd;
+
+/* Colors - States */
+$color-success: #1abc9c;
+$color-info: #2d9cdb;
+$color-warning: #f1c40f;
+$color-error: #e74c3c;
+
+/* Colors - Products */
+$color-bg-blue: #E6F0FA;
+$color-bg-green: #E6FAD7;
+$color-bg-light-blue: #D6F3FF;
+
+/* Shadows */
+$shadow-light: 0 2px 8px rgba(0, 0, 0, 10%);
+$shadow-medium: 0 4px 20px rgba(0, 0, 0, 8%);
+$shadow-large: 0 8px 30px rgba(0, 0, 0, 12%);
+$shadow-primary: 0 4px 16px rgba(15, 115, 246, 20%);
+
+/* Border radius */
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 12px;
+$border-radius-xl: 16px;
+$border-radius-round: 100px;
+$border-radius-circle: 50%;
+
+/* Spacing */
+$Spacing20: 20px;
+
+/* Transitions */
+$transition-fast: 0.2s;
+$transition-normal: 0.3s;
+
+/* Breakpoints */
+$breakpoint-sm: 500px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 900px;
+$breakpoint-xl: 1100px;

@@ -1,7 +1,6 @@
 /* trending-products.scss - Styling for trending products section */
-@use "sass:math";
-@use "variables-main" as *;
-@use "typography" as *;
+@use "../components/variables-main";
+@use "../components/typography";
 
 .trending-products {
   padding: 80px 0;
@@ -15,18 +14,18 @@
     max-width: 1200px;
     margin: 0 auto 40px;
     padding: 0 20px;
-    box-sizing: border-box;
+    box-sizing: border-box; // Fix box sizing
   }
 
   &__left {
     display: flex;
     flex-direction: column;
-    flex-shrink: 1;
-    min-width: 0;
+    flex-shrink: 1; // Allow shrinking
+    min-width: 0; // Allow text truncation
   }
 
   &__trending {
-    color: $color-primary;
+    color: $color-primary; // Blue color for "TRENDING" text
     font-size: $text-base;
     font-weight: $font-semibold;
     letter-spacing: $tracking-wide;
@@ -39,7 +38,7 @@
     font-weight: $font-bold;
     line-height: $leading-tight;
     letter-spacing: $tracking-tight;
-    margin: 0;
+    margin: 0; // Add margin reset
   }
 
   &__nav {
@@ -50,16 +49,16 @@
   &__nav-btn {
     width: 64px;
     height: 64px;
-    border: 2px solid rgba(29, 54, 83, 17%);
+    border: 2px solid rgba(29, 54, 83, 17%); // Use direct value instead of var()
     background: transparent;
-    color: $color-gray-800;
+    color: $color-gray-800; // Add explicit color
     font-size: $text-md;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all $transition-fast ease;
-    border-radius: $border-radius-circle;
+    border-radius: $border-radius-circle; // Add border-radius
 
     &:hover {
       border-color: $color-primary;
@@ -68,6 +67,7 @@
     }
   }
 
+  // Fix list styling
   &__list {
     display: flex;
     gap: 24px;
@@ -76,23 +76,24 @@
     max-width: 1400px;
     margin: 0 auto;
     scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    -webkit-overflow-scrolling: touch; // Add smooth scrolling for iOS
 
     &::-webkit-scrollbar {
       display: none;
     }
   }
 
+  // Product card styling specifically for trending section
   &__card {
     flex: 0 0 auto;
-    width: 305px;
+    width: 305px; // Updated to match the image width
     background: transparent;
-    border-radius: $Spacing20;
+    border-radius: $Spacing20; // Using the Spacing20 variable
     overflow: hidden;
     transition: transform 0.3s ease;
     position: relative;
     box-shadow: none;
-    scroll-snap-align: start;
+    scroll-snap-align: start; // Enable snapping for each card
 
     &:hover {
       transform: translateY(-10px);
@@ -107,16 +108,17 @@
     }
 
     &-image {
-      height: 272px;
-      width: 305px;
+      height: 272px; // Updated per requirement
+      width: 305px; // Updated per requirement
       position: relative;
-      border-radius: $Spacing20;
+      border-radius: $Spacing20; // Using the Spacing20 variable
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: #f5f8fb;
+      background: #f5f8fb; // Default background
 
+      // Background color variations
       &--blue {
         background: #E6F0FA;
       }
@@ -145,7 +147,7 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0%);
         transition: background 0.3s ease;
-        border-radius: $Spacing20;
+        border-radius: $Spacing20; // Using the Spacing20 variable
         z-index: 1;
       }
     }
@@ -186,7 +188,7 @@
     &-price {
       font-size: 20px;
       font-weight: 700;
-      color: #0f73f6;
+      color: #0f73f6; // Blue price text
       margin-bottom: 8px;
     }
 
@@ -195,11 +197,11 @@
       color: #6B7280;
       white-space: nowrap;
       overflow: hidden;
-      text-overflow: ellipsis;
+      text-overflow: ellipsis; // Add ellipsis for long tag text
 
       span {
         display: inline-block;
-        max-width: 100%;
+        max-width: 100%; // Prevent wide spans from breaking layout
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -222,12 +224,14 @@
       opacity: 0;
       transition: opacity 0.3s ease;
 
+      // Make CTA button more touchable on mobile
       @media (width <= 768px) {
         padding: 14px 28px;
         font-size: 18px;
       }
     }
 
+    // Active card styles
     &--active {
       position: relative;
       z-index: 1;
@@ -245,7 +249,7 @@
 
 @media (width <= 768px) {
   .trending-products {
-    padding: 60px 0;
+    padding: 60px 0; // Reduce vertical padding on small screens
 
     &__header {
       flex-direction: column;

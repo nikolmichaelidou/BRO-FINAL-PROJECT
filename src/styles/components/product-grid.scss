@@ -1,7 +1,7 @@
 /* product-grid.scss - Styling for product grid layout */
 @use "sass:color";
 @use "sass:map";
-@use "../components/variables" as *;
+@use "../components/variables-main" as *;
 @use "../components/typography" as *;
 
 $badge-colors: (
