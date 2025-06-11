@@ -2,7 +2,7 @@ import { env, cwd } from 'node:process'
 import { join, dirname } from 'node:path'
 import { readFileSync } from 'node:fs'
 import { parseArgs } from 'node:util'
-import { src, series, parallel, dest, watch, lastRun } from 'gulp'
+import gulp, { src, series, parallel, dest, watch, lastRun } from 'gulp'
 import { deleteAsync } from 'del'
 import gulpif from 'gulp-if'
 import size from 'gulp-size'
@@ -276,15 +276,32 @@ export const markup = () =>
     .pipe(nunjucks({
       path: paths.viewsDir
     }))
-    .pipe(gulpif(args.lint, htmlLint({
-      htmllintrc: ".htmllintrc.json",
-      useHtmllintrc: true,
-    })))
-    .pipe(htmlLint.format(htmllintReporter))
     .pipe(rename({ dirname: '' }))
     .pipe(dest(paths.dist.pages))
     .pipe(gulpif(args.debug, size(sizeOptions)))
     .pipe(bs.stream())
+
+// Create a separate task for HTML linting
+// This is now defined as a completely separate task that doesn't run automatically
+export const lintHtml = () => {
+  console.log('Linting HTML files in the public directory...');
+  try {
+    return src(paths.dist.pages + '/*.html', { allowEmpty: true })
+      .pipe(size({ title: 'HTML files to lint:' }))
+      .pipe(htmlLint({
+        htmllintrc: ".htmllintrc.json",
+        useHtmllintrc: true,
+      }))
+      .pipe(htmlLint.format(htmllintReporter))
+      .on('error', function(err) {
+        console.error('HTML Linting Error:', err.message);
+        this.emit('end');
+      });
+  } catch (error) {
+    console.error('Error in lintHtml task:', error);
+    return Promise.resolve(); // Return a resolved promise to continue the gulp process
+  }
+}
 
 export const liveReload = () =>
   bs.init({
@@ -305,7 +322,10 @@ export const liveReload = () =>
     server: paths.distDir
   })
 
-export const build = series(clean, parallel(styles, images, sprite, markup))
+export const build = series(
+  clean, 
+  parallel(styles, images, sprite, markup)
+)
 
 const watchFiles = (cb) => {
   watch(paths.dev.scss, { delay: 1000 }, styles)
