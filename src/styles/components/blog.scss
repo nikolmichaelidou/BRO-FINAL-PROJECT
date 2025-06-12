@@ -13,17 +13,18 @@
 }
 
 .blog-hero__image {
-  gap: 48px;
   padding-right: 80px;
   padding-left: 80px;
-  max-width: 90%;
   padding-bottom: 25px;
+  width: 1280px;
+  height: 398px;
+  border-radius: 20px;
 }
 
 .blog-content__image {
-  width: 644;
-  height: 504;
-  gap: 10px;
+  width: 980px;
+  height: 462px;
+  border-radius: 20px;
 }
 
 .blog-hero {

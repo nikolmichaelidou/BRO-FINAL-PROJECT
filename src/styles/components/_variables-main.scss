@@ -1,12 +1,13 @@
 /* _variables.scss - Global variables for colors, spacing, and other design tokens */
+@use "sass:color";
 
 /* Colors - Primary */
 $color-primary: #0f73f6; 
 $color-primary-dark: #0265DC;
 $color-primary-light: #3FA6FF;
 $color-primary-accent: #1769FF;
-$color-primary-hover: darken($color-primary, 10%);
-$color-primary-focus: lighten($color-primary, 30%);
+$color-primary-hover: color.scale($color-primary, $lightness: -10%);
+$color-primary-focus: color.scale($color-primary, $lightness: 30%);
 
 /* Colors - Neutral */
 $color-white: #FFFFFF;

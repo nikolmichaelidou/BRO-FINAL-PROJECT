@@ -1,4 +1,7 @@
 /* _mixins.scss - Reusable style patterns and functions */
+@use 'variables-main' as variables;
+@use 'typography' as typography;
+@forward 'typography';
 
 // Flexbox mixins
 @mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
@@ -45,31 +48,30 @@
 }
 
 @mixin heading($level: 2) {
-  font-family: $font-primary;
-  font-weight: $font-bold;
-  letter-spacing: $tracking-tight;
-  
-  @if $level == 1 {
-    font-size: $text-5xl;
-    line-height: $leading-tight;
-    @media (max-width: $breakpoint-md) {
-      font-size: $text-4xl;
+  font-family: typography.$font-primary;
+  font-weight: typography.$font-bold;
+  letter-spacing: typography.$tracking-tight;
+    @if $level == 1 {
+    font-size: typography.$text-5xl;
+    line-height: typography.$leading-tight;
+    @media (max-width: variables.$breakpoint-md) {
+      font-size: typography.$text-4xl;
     }
   } @else if $level == 2 {
-    font-size: $text-4xl;
-    line-height: $leading-tight;
-    @media (max-width: $breakpoint-md) {
-      font-size: $text-3xl;
+    font-size: typography.$text-4xl;
+    line-height: typography.$leading-tight;
+    @media (max-width: variables.$breakpoint-md) {
+      font-size: typography.$text-3xl;
     }
   } @else if $level == 3 {
-    font-size: $text-3xl;
-    line-height: $leading-snug;
-    @media (max-width: $breakpoint-md) {
-      font-size: $text-2xl;
+    font-size: typography.$text-3xl;
+    line-height: typography.$leading-snug;
+    @media (max-width: variables.$breakpoint-md) {
+      font-size: typography.$text-2xl;
     }
   } @else if $level == 4 {
-    font-size: $text-2xl;
-    line-height: $leading-snug;
+    font-size: typography.$text-2xl;
+    line-height: typography.$leading-snug;
   }
 }
 
@@ -85,60 +87,60 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-family: $font-primary;
-  font-weight: $font-semibold;
+  font-family: typography.$font-primary;
+  font-weight: typography.$font-semibold;
   line-height: 1;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: $border-radius-md;
-  transition: all $transition-fast ease;
+  border-radius: variables.$border-radius-md;
+  transition: all variables.$transition-fast ease;
   border: none;
   padding: 12px 24px;
 }
 
 @mixin button-primary {
   @include button-base;
-  background-color: $color-primary;
-  color: $color-white;
+  background-color: variables.$color-primary;
+  color: variables.$color-white;
   
   &:hover {
-    background-color: $color-primary-dark;
+    background-color: variables.$color-primary-dark;
   }
 }
 
 @mixin button-secondary {
   @include button-base;
-  background-color: $color-white;
-  border: 2px solid $color-gray-300;
-  color: $color-dark;
+  background-color: variables.$color-white;
+  border: 2px solid variables.$color-gray-300;
+  color: variables.$color-dark;
   
   &:hover {
-    border-color: $color-primary;
-    color: $color-primary;
+    border-color: variables.$color-primary;
+    color: variables.$color-primary;
   }
 }
 
 // Media queries
 @mixin responsive($breakpoint) {
   @if $breakpoint == xs {
-    @media (max-width: $breakpoint-xs) {
+    @media (max-width: variables.$breakpoint-xs) {
       @content;
     }
   } @else if $breakpoint == sm {
-    @media (max-width: $breakpoint-sm) {
+    @media (max-width: variables.$breakpoint-sm) {
       @content;
     }
   } @else if $breakpoint == md {
-    @media (max-width: $breakpoint-md) {
+    @media (max-width: variables.$breakpoint-md) {
       @content;
     }
   } @else if $breakpoint == lg {
-    @media (max-width: $breakpoint-lg) {
+    @media (max-width: variables.$breakpoint-lg) {
       @content;
     }
   } @else if $breakpoint == xl {
-    @media (max-width: $breakpoint-xl) {
+    @media (max-width: variables.$breakpoint-xl) {
       @content;
     }
   }
@@ -146,11 +148,11 @@
 
 // Card style mixin
 @mixin card {
-  background-color: $color-white;
-  border-radius: $border-radius-lg;
+  background-color: variables.$color-white;
+  border-radius: variables.$border-radius-lg;
   overflow: hidden;
   @include shadow('default');
-  transition: transform $transition-normal ease, box-shadow $transition-normal ease;
+  transition: transform variables.$transition-normal ease, box-shadow variables.$transition-normal ease;
   
   &:hover {
     transform: translateY(-5px);
@@ -179,11 +181,11 @@
 }
 
 // Border styles
-@mixin border($color: $color-gray-300, $width: 1px, $style: solid) {
+@mixin border($color: variables.$color-gray-300, $width: 1px, $style: solid) {
   border: $width $style $color;
 }
 
 // Gradient backgrounds
-@mixin gradient($direction: to right, $start-color: $color-primary, $end-color: $color-primary-light) {
+@mixin gradient($direction: to right, $start-color: variables.$color-primary, $end-color: variables.$color-primary-light) {
   background: linear-gradient($direction, $start-color, $end-color);
 }
