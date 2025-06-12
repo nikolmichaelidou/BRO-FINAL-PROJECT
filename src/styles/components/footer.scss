@@ -3,6 +3,7 @@
 @use "../components/variables-main" as *;
 @use "../components/typography" as *;
 @use "../components/breakpoints" as *;
+@use "../components/_mixins" as *;
 
 .footer {
   color: $color-dark;
@@ -11,10 +12,7 @@
 }
 
 .footer__main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+  @include flex(row, space-between, flex-start, wrap);
   padding: 64px 0 0;
   margin: 0 auto;
   gap: 110px;
@@ -26,20 +24,17 @@
 }
 
 .footer__logo {
-  font-size: 64px;
-  font-weight: 700;
-  color: #0070f3;
+  @include font-style($text-6xl, $font-bold, $leading-tight, $color-primary);
   margin-bottom: 16px;
   letter-spacing: -2px;
 }
 
 .footer__desc {
-  font-size: 22px;
-  color: #222;
+  @include font-style($text-xl, $font-regular, $leading-normal, $color-text-primary);
 }
 
 .footer__socials {
-  display: flex;
+  @include flex;
   gap: 20px;
   margin-top: 32px;
 }
@@ -47,8 +42,7 @@
 .footer__social {
   width: 56px;
   height: 56px;
-  display: flex;
-  align-items: center;
+  @include flex-center;
   justify-content: center;
   border: 2px solid #e3e7ed;
   border-radius: 12px;

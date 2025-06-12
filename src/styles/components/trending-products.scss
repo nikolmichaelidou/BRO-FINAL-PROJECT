@@ -2,25 +2,21 @@
 @use "sass:math";
 @use "variables-main" as *;
 @use "typography" as *;
+@use "_mixins" as *;
 
 .trending-products {
   padding: 80px 0;
   position: relative;
 
   &__header {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    @include flex(row, space-between, center, wrap);
     max-width: 1200px;
     margin: 0 auto 40px;
     padding: 0 20px;
     box-sizing: border-box;
   }
-
   &__left {
-    display: flex;
-    flex-direction: column;
+    @include flex(column);
     flex-shrink: 1;
     min-width: 0;
   }
@@ -35,29 +31,23 @@
   }
 
   &__title {
-    font-size: $text-4xl;
-    font-weight: $font-bold;
-    line-height: $leading-tight;
-    letter-spacing: $tracking-tight;
+    @include heading(2);
     margin: 0;
   }
 
   &__nav {
-    display: flex;
+    @include flex;
     gap: 16px;
   }
-
   &__nav-btn {
     width: 64px;
     height: 64px;
-    border: 2px solid rgba(29, 54, 83, 17%);
+    @include border($color-gray-300, 2px);
     background: transparent;
     color: $color-gray-800;
     font-size: $text-md;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @include flex-center;
     transition: all $transition-fast ease;
     border-radius: $border-radius-circle;
 
@@ -69,7 +59,7 @@
   }
 
   &__list {
-    display: flex;
+    @include flex;
     gap: 24px;
     overflow-x: auto;
     padding: 0 20px 20px;
@@ -84,16 +74,15 @@
       display: none;
     }
   }
-
   &__card {
     flex: 0 0 auto;
     width: 305px;
     background: transparent;
     border-radius: $Spacing20;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    transition: transform $transition-normal ease;
     position: relative;
-    box-shadow: none;
+    @include shadow('none');
     scroll-snap-align: start; /* Add scroll snap alignment */
 
     &:hover {
@@ -108,33 +97,26 @@
       }
     }
     &-image {
-      height: 272px;
-      width: 305px;
-      position: relative;
-      border-radius: 20px;
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #f5f8fb;
-
-      &--blue {
-        background: #e6f0fa;
+      @include aspect-ratio(305, 272);
+      border-radius: $border-radius-lg;
+      @include flex-center;
+      background: $background-light-alt;      &--blue {
+        background: $color-bg-blue;
       }
 
       &--green {
-        background: #e6fad7;
+        background: $color-bg-green;
       }
 
       &--light-blue {
-        background: #d6f3ff;
+        background: $color-bg-light-blue;
       }
       img {
         max-width: 100%;
         max-height: 100%;
         object-fit: cover;
-        transition: transform 0.3s ease;
-        border-radius: 20px;
+        transition: transform $transition-normal ease;
+        border-radius: $border-radius-lg;
       }
       &::after {
         content: "";
@@ -143,62 +125,45 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: rgba(0, 0, 0, 0%);
-        transition: background 0.3s ease;
+        background: rgba($color-black, 0%);
+        transition: background $transition-normal ease;
         border-radius: 20px;
         z-index: 1;
       }
-    }
-
-    &-badge {
+    }    &-badge {
       position: absolute;
       top: 16px;
       left: 16px;
       z-index: 2;
 
       &--trophy {
-        background: #0f73f6;
-        border-radius: 50%;
+        background: $color-primary;
+        border-radius: $border-radius-circle;
         width: 40px;
         height: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        box-shadow: 0 0 20px rgba(15, 115, 246, 40%);
+        @include flex-center;
+        @include shadow('primary');
       }
-    }    &-info {
+    }&-info {
       padding: 16px 16px 8px;
       overflow: visible;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      align-items: center;
+      @include flex(row, space-between, center, wrap);
       width: 100%;
       box-sizing: border-box;
     }    &-name {
-      font-size: 18px;
-      font-weight: 600;
-      color: #181a1d;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      @include font-style($text-md, $font-semibold, $leading-tight, $color-text-primary);
+      @include text-truncate;
       flex: 1;
       padding-right: 10px;
       max-width: 60%;
     }    &-price {
-      font-size: 16px;
-      font-weight: 700;
-      color: #0f73f6;
+      @include font-style($text-base, $font-bold, $leading-normal, $color-primary);
       text-align: right;
       min-width: 70px;
       flex-shrink: 0;
-    }
-    &-tags {
-      font-size: 12px;
-      color: #6b7280;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
+    }    &-tags {
+      @include font-style($text-xs, $font-regular, $leading-normal, $color-text-secondary);
+      @include text-truncate;
       width: 100%;
       margin-top: 6px;
       box-sizing: border-box;
@@ -206,31 +171,21 @@
       span {
         display: inline-block;
         max-width: 45%;
-        overflow: hidden;
-        text-overflow: ellipsis;
+        @include text-truncate;
       }
-    }
-
-    &-cta {
+    }    &-cta {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      background: #0f73f6;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 16px;
-      cursor: pointer;
+      @include button-primary;
       z-index: 2;
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity $transition-normal ease;
 
-      @media (max-width: $breakpoint-md) {
+      @include responsive(md) {
         padding: 14px 28px;
-        font-size: 18px;
+        font-size: $text-md;
       }
     }
 
@@ -241,15 +196,15 @@
   }
 }
 
-@media (max-width: $breakpoint-xl) {
+@include responsive(xl) {
   .trending-products {
     &__title {
-      font-size: 36px;
+      font-size: $text-3xl;
     }
   }
 }
 
-@media (max-width: $breakpoint-md) {
+@include responsive(md) {
   .trending-products {
     padding: 60px 0;
 
@@ -261,14 +216,14 @@
     }
 
     &__title {
-      font-size: 28px;
+      font-size: $text-2xl;
       margin: 8px 0 16px;
     }
   }
 }
 
 // Extra small screens
-@media (max-width: $breakpoint-xs) {
+@include responsive(xs) {
   .trending-products {
     &__card {
       width: 100%; // Make cards fully responsive
@@ -278,7 +233,7 @@
       width: 100%; // Make images fully responsive
       max-width: 305px; // But ensure they don't exceed original design width
       height: 272px; // Fixed height as per requirements
-      border-radius: 20px; // Consistent border radius
+      border-radius: $border-radius-lg; // Consistent border radius
     }
 
     &__nav {

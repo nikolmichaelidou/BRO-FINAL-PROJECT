@@ -5,12 +5,16 @@ $color-primary: #0f73f6;
 $color-primary-dark: #0265DC;
 $color-primary-light: #3FA6FF;
 $color-primary-accent: #1769FF;
+$color-primary-hover: darken($color-primary, 10%);
+$color-primary-focus: lighten($color-primary, 30%);
 
 /* Colors - Neutral */
 $color-white: #FFFFFF;
 $color-black: #000000;
 $color-dark: #181C32;
 $color-dark-secondary: #181C25;
+$color-text-primary: #181a1d;
+$color-text-secondary: #6B7280;
 $color-gray-100: #f8f9fa;
 $color-gray-200: #E7ECF0;
 $color-gray-300: #e0e6ef;

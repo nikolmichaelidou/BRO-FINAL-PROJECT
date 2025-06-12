@@ -1,19 +1,18 @@
+@use "../components/variables-main" as *;
+@use "../components/typography" as *;
+@use "../components/_mixins" as *;
+
 .hero {
-  background: #f5f9ff;
+  background: $background-light;
   padding: 60px 0;
 }
 
 .hero__container {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  width: 1440;
-  height: 638;
+  @include flex(row, space-evenly, center, nowrap);
+  width: 1440px;
+  height: 638px;
   gap: 36px;
-  padding-top: 120px;
-  padding-right: 80px;
-  padding-bottom: 120px;
-  padding-left: 80px;
+  padding: 120px 80px;
 }
 
 .hero__left {
@@ -22,13 +21,11 @@
 }
 
 .hero__left h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.1;
+  @include heading(1);
 }
 
 .hero__left .highlight {
-  color: #2176ff;
+  color: $color-primary;
 }
 
 .hero__actions {
