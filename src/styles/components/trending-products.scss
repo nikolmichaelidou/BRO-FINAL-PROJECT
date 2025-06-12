@@ -106,13 +106,11 @@
       .trending-products__card-cta {
         opacity: 1;
       }
-    }
-
-    &-image {
+    }    &-image {
       height: 272px;
       width: 305px;
       position: relative;
-      border-radius: $Spacing20;
+      border-radius: 20px;
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -129,16 +127,13 @@
       
       &--light-blue {
         background: #D6F3FF;
-      }
-
-      img {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
+      }      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;
         transition: transform 0.3s ease;
-      }
-
-      &::after {
+        border-radius: 20px;
+      }&::after {
         content: "";
         position: absolute;
         top: 0;
@@ -147,7 +142,7 @@
         bottom: 0;
         background: rgba(0, 0, 0, 0%);
         transition: background 0.3s ease;
-        border-radius: $Spacing20;
+        border-radius: 20px;
         z-index: 1;
       }
     }
@@ -168,36 +163,38 @@
         justify-content: center;
         box-shadow: 0 0 20px rgba(15, 115, 246, 40%);
       }
-    }
-
-    &-info {
+    }    &-info {
       padding: 20px 8px;
       overflow: hidden;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
     }
     
     &-name {
       font-size: 32px; 
       font-weight: 600;
-      margin-bottom: 8px;
       color: #181a1d;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
+      flex: 1;
     }
 
     &-price {
-      font-size: 20px;
+      font-size: 16px;
       font-weight: 700;
       color: #0f73f6;
-      margin-bottom: 8px;
-    }
-
-    &-tags {
+      text-align: right;
+    }    &-tags {
       font-size: 14px;
       color: #6B7280;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
+      width: 100%;
+      margin-top: 8px;
 
       span {
         display: inline-block;
@@ -270,12 +267,11 @@
       width: 100%; // Make cards fully responsive
       max-width: 305px; // But ensure they don't exceed original design width
     }
-    
-    &-image {
+      &-image {
       width: 100%; // Make images fully responsive
       max-width: 305px; // But ensure they don't exceed original design width
-      height: auto; // Maintain aspect ratio
-      min-height: 272px; // Ensure minimum height matches design
+      height: 272px; // Fixed height as per requirements
+      border-radius: 20px; // Consistent border radius
     }
     
     &__nav {
@@ -290,15 +286,20 @@
     }
 
     &__card {
-      width: 280px;
-
-      &-image {
+      width: 280px;      &-image {
         width: 280px;
-        height: 240px;
-      }
-
-      &-name {
+        height: 272px; // Maintain consistent height as required
+        border-radius: 20px; // Consistent border radius
+      }      &-name {
         font-size: 24px;
+      }
+      
+      &-price {
+        font-size: 16px;
+      }
+      
+      &-info {
+        padding: 16px 8px;
       }
     }
   }
