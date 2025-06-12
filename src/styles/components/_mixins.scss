@@ -51,21 +51,25 @@
   font-family: typography.$font-primary;
   font-weight: typography.$font-bold;
   letter-spacing: typography.$tracking-tight;
-    @if $level == 1 {
+  
+  @if $level == 1 {
     font-size: typography.$text-5xl;
     line-height: typography.$leading-tight;
+    
     @media (max-width: variables.$breakpoint-md) {
       font-size: typography.$text-4xl;
     }
   } @else if $level == 2 {
     font-size: typography.$text-4xl;
     line-height: typography.$leading-tight;
+    
     @media (max-width: variables.$breakpoint-md) {
       font-size: typography.$text-3xl;
     }
   } @else if $level == 3 {
     font-size: typography.$text-3xl;
     line-height: typography.$leading-snug;
+    
     @media (max-width: variables.$breakpoint-md) {
       font-size: typography.$text-2xl;
     }
@@ -163,11 +167,10 @@
 // Image aspect ratio
 @mixin aspect-ratio($width, $height) {
   position: relative;
-  
-  &::before {
+    &::before {
     content: "";
     display: block;
-    padding-top: ($height / $width) * 100%;
+    padding-top: calc(($height / $width) * 100%);
   }
   
   > * {

@@ -1,13 +1,14 @@
 /* blog.scss - Styles for blog section */
 @use "sass:color";
 @use "sass:math";
-@use "variables-main" as *;
-@use "typography" as *;
+@use "variables-main" as variables;
+@use "typography" as typography;
+@use "_mixins" as mixins;
 
 .blog--header-backround {
   background: linear-gradient(
     0.23deg,
-    $background-filter 0.2%,
+    variables.$background-filter 0.2%,
     rgba(255, 255, 255, 0%) 99.8%
   );
 }
@@ -15,39 +16,36 @@
 .blog-hero__image {
   padding-right: 80px;
   padding-left: 80px;
-  padding-bottom: 25px;
-  width: 1280px;
+  padding-bottom: 25px;  width: 1280px;
   height: 398px;
-  border-radius: 20px;
+  border-radius: variables.$border-radius-lg;
 }
 
-.blog-content__image {
-  width: 980px;
+.blog-content__image {  width: 980px;
   height: 462px;
-  border-radius: 20px;
+  border-radius: variables.$border-radius-lg;
 }
 
 .blog-hero {
   margin-top: 32px;
   margin-bottom: 48px;
   padding-left: 8vw;
-
   &__tag {
     display: inline-block;
-    background: $color-primary-accent;
-    color: $color-white;
-    font-size: 1.4rem;
-    font-weight: $font-medium;
-    border-radius: $border-radius-round;
+    background: variables.$color-primary-accent;
+    color: variables.$color-white;
+    font-size: typography.$text-sm;
+    font-weight: typography.$font-medium;
+    border-radius: variables.$border-radius-round;
     padding: 8px 32px;
     margin-bottom: 32px;
     letter-spacing: 1px;
   }
 
   &__title {
-    font-size: 3.2rem;
-    font-weight: $font-bold;
-    color: $color-dark;
+    font-size: typography.$text-4xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
     line-height: 1.1;
     margin: 0;
     letter-spacing: -1px;
@@ -55,9 +53,7 @@
 }
 
 .blog-layout {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center; // Center the flex items horizontally
+  @include mixins.flex(row, center, flex-start, nowrap);
   gap: 48px;
   max-width: 1200px; // Limit the width for better centering
   margin: 0 auto; // Center the container itself
@@ -76,10 +72,8 @@
   height: 689px;
   min-width: 260px;
   gap: 40px;
-
   &__author {
-    display: flex;
-    align-items: center;
+    @include mixins.flex(row, flex-start, center, nowrap);
     gap: 18px;
     margin-bottom: 12px;
   }
@@ -87,26 +81,24 @@
   &__avatar {
     width: 72px;
     height: 72px;
-    border-radius: 50%;
+    border-radius: variables.$border-radius-circle;
     object-fit: cover;
   }
 
   &__author-name {
-    font-size: $text-2xl;
-    font-weight: $font-bold;
-    color: $color-dark;
+    font-size: typography.$text-2xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
     margin-bottom: 2px;
   }
-
   &__date {
-    font-size: $text-sm;
-    color: $color-gray-700;
+    font-size: typography.$text-sm;
+    color: variables.$color-gray-700;
     opacity: 0.7;
   }
-
   &__divider {
     border: none;
-    border-top: 2px solid $color-dark;
+    border-top: 2px solid variables.$color-dark;
     opacity: 0.07;
     margin: 32px 0;
   }
@@ -116,30 +108,28 @@
   }
 
   &__heading {
-    font-size: $text-2xl;
-    font-weight: $font-bold;
+    font-size: typography.$text-2xl;
+    font-weight: typography.$font-bold;
     margin-bottom: 18px;
-    color: $color-dark;
+    color: variables.$color-dark;
   }
 
-  &__categories {
-    list-style: none;
+  &__categories {    list-style: none;
     padding: 0;
     margin: 0;
-    font-size: $text-sm;
-
+    font-size: typography.$text-sm;
+    
     li {
-      display: flex;
-      align-items: center;
+      @include mixins.flex(row, flex-start, center, nowrap);
       gap: 10px;
       margin-bottom: 14px;
-      color: $color-gray-600;
-      font-weight: $font-medium;
+      color: variables.$color-gray-600;
+      font-weight: typography.$font-medium;
     }
 
     .blog-sidebar__active {
-      color: $color-dark;
-      font-weight: $font-bold;
+      color: variables.$color-dark;
+      font-weight: typography.$font-bold;
       padding-left: 15px;
     }
   }
@@ -147,25 +137,24 @@
   &__dot {
     width: 10px;
     height: 10px;
-    background: $color-primary-accent;
-    border-radius: $border-radius-circle;
+    background: variables.$color-primary-accent;
+    border-radius: variables.$border-radius-circle;
     display: inline-block;
   }
 
   &__article {
     margin-bottom: 32px;
   }
-
   &__article-title {
-    font-size: $text-xl;
-    font-weight: $font-bold;
-    color: $color-dark;
+    font-size: typography.$text-xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
     margin-bottom: 6px;
   }
 
   &__article-date {
-    font-size: $text-xs;
-    color: $color-gray-600;
+    font-size: typography.$text-xs;
+    color: variables.$color-gray-600;
     opacity: 0.7;
   }
 
@@ -184,28 +173,25 @@
 }
 
 .typography-header {
-  font-weight: $font-regular;
-  font-size: $text-base;
-  line-height: $leading-normal;
-  letter-spacing: $tracking-normal;
-  width: 273;
-  height: 24;
+  font-weight: typography.$font-regular;
+  font-size: typography.$text-base;
+  line-height: typography.$leading-normal;
+  letter-spacing: typography.$tracking-normal;
+  width: 273px;
+  height: 24px;
   opacity: 0.7;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: $color-dark;
+  @include mixins.flex(row, space-between, center, nowrap);
+  color: variables.$color-dark;
 }
 
 .get-asset-link {
-  color: $color-primary-dark;
-  width: 105;
-  height: 24;
+  color: variables.$color-primary-dark;
+  width: 105px;
+  height: 24px;
 }
 
 .blog-quote {
-  display: flex;
-  align-items: flex-start;
+  @include mixins.flex(row, flex-start, flex-start, nowrap);
   gap: 18px;
   margin: 48px 0 32px;
 
@@ -215,13 +201,11 @@
     height: 48px;
     margin-top: 4px;
   }
-
   &_h4 {
-    font-size: $text-3xl;
-    font-weight: $font-bold;
-    color: $color-dark;
-    line-height: $leading-tight;
-    letter-spacing: $tracking-tight;
+    font-size: typography.$text-3xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;    line-height: typography.$leading-tight;
+    letter-spacing: typography.$tracking-tight;
   }
 }
 

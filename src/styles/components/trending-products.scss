@@ -1,65 +1,56 @@
 /* trending-products.scss - Styling for trending products section */
 @use "sass:math";
-@use "variables-main" as *;
-@use "typography" as *;
-@use "_mixins" as *;
+@use "sass:color";
+@use "variables-main" as variables;
+@use "typography" as typography;
+@use "_mixins" as mixins;
 
 .trending-products {
   padding: 80px 0;
   position: relative;
-
   &__header {
-    @include flex(row, space-between, center, wrap);
+    @include mixins.flex(row, space-between, center, wrap);
     max-width: 1200px;
     margin: 0 auto 40px;
     padding: 0 20px;
     box-sizing: border-box;
-  }
-  &__left {
-    @include flex(column);
+  }  &__left {
+    @include mixins.flex(column);
     flex-shrink: 1;
     min-width: 0;
   }
 
-  &__trending {
-    color: $color-primary;
-    font-size: $text-base;
-    font-weight: $font-semibold;
-    letter-spacing: $tracking-wide;
+  &__trending {    color: variables.$color-primary;
+    font-size: typography.$text-base;
+    font-weight: typography.$font-semibold;
+    letter-spacing: typography.$tracking-wide;
     text-transform: uppercase;
     margin-bottom: 8px;
-  }
-
-  &__title {
-    @include heading(2);
+  }  &__title {
     margin: 0;
+    @include mixins.heading(2);
   }
-
   &__nav {
-    @include flex;
+    @include mixins.flex;
     gap: 16px;
   }
   &__nav-btn {
     width: 64px;
     height: 64px;
-    @include border($color-gray-300, 2px);
-    background: transparent;
-    color: $color-gray-800;
-    font-size: $text-md;
+    @include mixins.border(variables.$color-gray-300, 2px);
+    background: transparent;    color: variables.$color-gray-800;
+    font-size: typography.$text-md;
     cursor: pointer;
-    @include flex-center;
-    transition: all $transition-fast ease;
-    border-radius: $border-radius-circle;
-
-    &:hover {
-      border-color: $color-primary;
-      background: $color-primary;
-      color: $color-white;
+    @include mixins.flex-center;
+    transition: all variables.$transition-fast ease;
+    border-radius: variables.$border-radius-circle;    &:hover {
+      border-color: variables.$color-primary;
+      background: variables.$color-primary;
+      color: variables.$color-white;
     }
   }
-
   &__list {
-    @include flex;
+    @include mixins.flex;
     gap: 24px;
     overflow-x: auto;
     padding: 0 20px 20px;
@@ -77,12 +68,11 @@
   &__card {
     flex: 0 0 auto;
     width: 305px;
-    background: transparent;
-    border-radius: $Spacing20;
+    background: transparent;    border-radius: variables.$Spacing20;
     overflow: hidden;
-    transition: transform $transition-normal ease;
+    transition: transform variables.$transition-normal ease;
     position: relative;
-    @include shadow('none');
+    @include mixins.shadow('none');
     scroll-snap-align: start; /* Add scroll snap alignment */
 
     &:hover {
@@ -95,28 +85,28 @@
       .trending-products__card-cta {
         opacity: 1;
       }
-    }
-    &-image {
-      @include aspect-ratio(305, 272);
-      border-radius: $border-radius-lg;
-      @include flex-center;
-      background: $background-light-alt;      &--blue {
-        background: $color-bg-blue;
+    }    &-image {
+      @include mixins.aspect-ratio(305, 272);
+      border-radius: variables.$border-radius-lg;
+      background: variables.$background-light-alt;
+      @include mixins.flex-center;
+      
+      &--blue {
+        background: variables.$color-bg-blue;
       }
 
       &--green {
-        background: $color-bg-green;
+        background: variables.$color-bg-green;
       }
 
       &--light-blue {
-        background: $color-bg-light-blue;
+        background: variables.$color-bg-light-blue;
       }
       img {
         max-width: 100%;
         max-height: 100%;
-        object-fit: cover;
-        transition: transform $transition-normal ease;
-        border-radius: $border-radius-lg;
+        object-fit: cover;        transition: transform variables.$transition-normal ease;
+        border-radius: variables.$border-radius-lg;
       }
       &::after {
         content: "";
@@ -124,46 +114,43 @@
         top: 0;
         left: 0;
         right: 0;
-        bottom: 0;
-        background: rgba($color-black, 0%);
-        transition: background $transition-normal ease;
-        border-radius: 20px;
+        bottom: 0;        background: rgba(variables.$color-black, 0%);
+        transition: background variables.$transition-normal ease;
+        border-radius: variables.$border-radius-lg;
         z-index: 1;
       }
     }    &-badge {
       position: absolute;
       top: 16px;
       left: 16px;
-      z-index: 2;
-
-      &--trophy {
-        background: $color-primary;
-        border-radius: $border-radius-circle;
+      z-index: 2;      &--trophy {
+        background: variables.$color-primary;
+        border-radius: variables.$border-radius-circle;
         width: 40px;
         height: 40px;
-        @include flex-center;
-        @include shadow('primary');
+        @include mixins.flex-center;
+        @include mixins.shadow('primary');
       }
     }&-info {
       padding: 16px 16px 8px;
       overflow: visible;
-      @include flex(row, space-between, center, wrap);
+      @include mixins.flex(row, space-between, center, wrap);
       width: 100%;
       box-sizing: border-box;
     }    &-name {
-      @include font-style($text-md, $font-semibold, $leading-tight, $color-text-primary);
-      @include text-truncate;
+      @include mixins.font-style(typography.$text-md, typography.$font-semibold, typography.$leading-tight, variables.$color-text-primary);
+      @include mixins.text-truncate;
       flex: 1;
       padding-right: 10px;
       max-width: 60%;
     }    &-price {
-      @include font-style($text-base, $font-bold, $leading-normal, $color-primary);
+      @include mixins.font-style(typography.$text-base, typography.$font-bold, typography.$leading-normal, variables.$color-primary);
       text-align: right;
       min-width: 70px;
       flex-shrink: 0;
     }    &-tags {
-      @include font-style($text-xs, $font-regular, $leading-normal, $color-text-secondary);
-      @include text-truncate;
+      @include mixins.font-style(typography.$text-xs, typography.$font-regular, typography.$leading-normal, variables.$color-text-secondary);
+      @include mixins.text-truncate;
       width: 100%;
       margin-top: 6px;
       box-sizing: border-box;
@@ -171,21 +158,21 @@
       span {
         display: inline-block;
         max-width: 45%;
-        @include text-truncate;
+        @include mixins.text-truncate;
       }
     }    &-cta {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      @include button-primary;
+      @include mixins.button-primary;
       z-index: 2;
       opacity: 0;
-      transition: opacity $transition-normal ease;
+      transition: opacity variables.$transition-normal ease;
 
-      @include responsive(md) {
+      @include mixins.responsive(md) {
         padding: 14px 28px;
-        font-size: $text-md;
+        font-size: typography.$text-md;
       }
     }
 
@@ -196,15 +183,15 @@
   }
 }
 
-@include responsive(xl) {
+@include mixins.responsive(xl) {
   .trending-products {
     &__title {
-      font-size: $text-3xl;
+      font-size: typography.$text-3xl;
     }
   }
 }
 
-@include responsive(md) {
+@include mixins.responsive(md) {
   .trending-products {
     padding: 60px 0;
 
@@ -215,15 +202,14 @@
       margin-bottom: 24px;
     }
 
-    &__title {
-      font-size: $text-2xl;
+    &__title {      font-size: typography.$text-2xl;
       margin: 8px 0 16px;
     }
   }
 }
 
 // Extra small screens
-@include responsive(xs) {
+@include mixins.responsive(xs) {
   .trending-products {
     &__card {
       width: 100%; // Make cards fully responsive
@@ -233,7 +219,7 @@
       width: 100%; // Make images fully responsive
       max-width: 305px; // But ensure they don't exceed original design width
       height: 272px; // Fixed height as per requirements
-      border-radius: $border-radius-lg; // Consistent border radius
+      border-radius: variables.$border-radius-lg; // Consistent border radius
     }
 
     &__nav {
@@ -252,14 +238,13 @@
       &-image {
         width: 280px;
         height: 272px; // Maintain consistent height as required
-        border-radius: 20px; // Consistent border radius
+        border-radius: variables.$border-radius-lg; // Consistent border radius
       }
-      &-name {
-        font-size: 16px;
+      &-name {        font-size: typography.$text-base;
         max-width: 65%;
       }
       &-price {
-        font-size: 16px;
+        font-size: typography.$text-base;
       }
 
       &-info {
