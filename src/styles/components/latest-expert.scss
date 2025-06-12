@@ -1,0 +1,140 @@
+/* latest-expert.scss - Latest articles and expert content styles */
+@use "sass:color";
+
+.latest-articles {
+  text-align: left;
+  padding: 40px 15px 80px;
+}
+
+.latest-articles__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.latest-articles__title {
+  font-size: 2rem;
+  color: #000;
+  font-weight: 700;
+}
+
+.latest-articles__explore {
+  color: #0f73f6;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.latest-articles__explore:hover {
+  color: #0059c9;
+}
+
+.latest-articles__content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+}
+
+.latest-articles__blog-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  min-width: 0;
+  width: 100%;
+  max-width: 1200px;
+}
+
+.blog-card {
+  background: transparent;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 0;
+  width: 100%;
+}
+
+.blog-card__img {
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.blog-card__title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 2px;
+}
+
+.blog-card__author {
+  color: #000;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+}
+
+.blog-card__date {
+  color: #2A3541B2;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.blog-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (width <= 1100px) {
+  .latest-articles__content {
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .latest-articles__blog-list,
+  .latest-articles__featured {
+    width: 100%;
+    min-width: 0;
+  }
+
+  .latest-articles__featured-img {
+    height: 220px;
+  }
+}
+
+@media (width <= 700px) {
+  .latest-articles {
+    padding: 0 15px;
+  }
+
+  .latest-articles__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .latest-articles__title {
+    font-size: 1.5rem;
+  }
+
+  .latest-articles__blog-list {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .blog-card__img {
+    max-height: 200px;
+  }
+
+  .blog-card__author {
+    font-size: 22px;
+    line-height: 28px;
+  }
+}

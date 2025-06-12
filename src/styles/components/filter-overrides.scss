@@ -1,0 +1,6 @@
+// Filter overrides
+@use "variables-main" as *;
+@use "typography" as *;
+body.filter-open {
+  overflow: hidden;
+}

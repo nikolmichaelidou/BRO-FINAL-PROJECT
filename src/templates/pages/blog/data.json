@@ -1,0 +1,58 @@
+
+{
+  "footerLinks": [
+    {
+      "title": "Company",
+      "links": [
+        "Homepage v1",
+        "Homepage v2",
+        "Homepage v3",
+        "About Us",
+        "About Us",
+        "Blog Articles"
+      ]
+    },
+    {
+      "title": "Products",
+      "links": [
+        "Website",
+        "Mobile App",
+        "Social Media Feeds",
+        "Presentation",
+        "Product Mockups",
+        "Illustrations"
+      ]
+    },
+    {
+      "title": "Account",
+      "links": [
+        "Your Cart",
+        "Check Out",
+        "Refund Policy",
+        "Company Policy",
+        "Send A Message",
+        "Customer Support"
+      ]
+    }
+  ],
+  "blogPosts": [
+    {
+      "title": "Best Dishes",
+      "date": "15 April 2024",
+      "image": "/img/best-dishes-1x.webp",
+      "tag": "Tag"
+    },
+    {
+      "title": "Contact Us Lotus Spa",
+      "date": "5 May 2024",
+      "image": "/img/lotus-spa-1x.webp",
+      "tag": "Tag"
+    },
+    {
+      "title": "Creative Blog",
+      "date": "20 June 2024",
+      "image": "/img/creative-blog-1x.webp",
+      "tag": "Tag"
+    }
+  ]
+}

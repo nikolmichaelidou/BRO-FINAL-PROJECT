@@ -1,0 +1,295 @@
+/* overflow-fixes.scss - Comprehensive fixes for content overflow issues */
+@use "sass:color";
+
+/* Global overflow handling */
+html,
+body {
+  overflow-x: hidden; // Prevent horizontal scrolling on the entire page
+  width: 100%;
+}
+
+/* Container elements overflow handling */
+.container,
+.hero__container,
+.catalog-flex-wrapper,
+.catalog-grid,
+.blog-layout,
+.contact-form-section,
+.pricing-plan__cards,
+.faq__container,
+.latest-articles__content,
+.trending-products__header,
+.footer__main,
+.footer__bottom-inner {
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+/* Card components overflow handling */
+.catalog-grid__card,
+.pricing-card,
+.blog-card,
+.article-card,
+.trending-products__card,
+.category-card {
+  overflow: hidden;
+
+  img {
+    max-width: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Text content overflow fixes */
+.trending-products__card-name,
+.trending-products__card-tags,
+.catalog-grid__title,
+.catalog-grid__category,
+.pricing-card__title,
+.blog-sidebar__article-title,
+.blog-content p,
+.blog-content h1,
+.blog-content h2,
+.blog-content h3,
+.blog-content h4,
+.blog-content h5,
+.blog-content h6,
+.article-card h3,
+.category-card__title,
+.category-card__desc,
+.faq-accordion__question,
+.faq-accordion__answer {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  overflow-wrap: break-word;
+}
+
+/* Fix for long text in grid items */
+.catalog-grid__title {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  max-height: 2.6em;
+}
+
+/* Fix for long text in badges and tags */
+.catalog-grid__badge,
+.trending-products__card-badge,
+.blog-sidebar__tag,
+.blog-hero__tag {
+  max-width: 90%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Better flex item handling */
+.catalog-flex-wrapper,
+.blog-layout,
+.pricing-plan__cards,
+.trending-products__list,
+.categories-showcase__container {
+  > * {
+    min-width: 0; // Allow flex children to shrink below content size
+  }
+}
+
+/* Table handling */
+table {
+  table-layout: fixed;
+  width: 100%;
+  overflow-wrap: break-word;
+
+  td,
+  th {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+}
+
+/* Form field overflow handling */
+input,
+textarea,
+select,
+.contact-form__input {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Image handling for responsive layouts */
+.blog-hero__image,
+.contact-section__map-image,
+.hero__mockup {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Fix overflow in mobile navigation */
+.navbar__links {
+  @media (max-width: 768px) {
+    max-height: 80vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch; // Smooth scrolling on iOS
+  }
+}
+
+/* Fix for filter panel on mobile */
+.catalog-filter {
+  @media (max-width: 768px) {
+    max-height: 90vh;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}
+
+/* SVG responsiveness */
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for code blocks if present in content */
+pre,
+code {
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+/* Make sure images don't break out of their containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Fix for horizontal scrolling issues on small screens */
+.footer__col,
+.footer__links,
+.footer__newsletter,
+.navbar__right {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Make sure all flex containers properly handle overflow */
+[class*="flex"],
+[class*="grid"] {
+  min-width: 0;
+}
+
+/* Ensure horizontal scrollbar doesn't appear due to absolutely positioned elements */
+.catalog-sort-dropdown__menu,
+.filter-mobile-toggle,
+.trending-products__card-badge {
+  max-width: calc(100vw - 20px);
+}
+
+/* Horizontal scrolling for mobile devices */
+@media (max-width: 768px) {
+  /* Enable horizontal scrolling for trending products */
+  .trending-products__list {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 16px;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Hide scrollbar for Firefox */
+
+    &::-webkit-scrollbar {
+      display: none; /* Hide scrollbar for Chrome/Safari/Edge */
+    }
+
+    .trending-products__card {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 85%; /* Card takes up most of the viewport width */
+      max-width: 305px; /* But not larger than designed size */
+    }
+  }
+
+  /* Enable horizontal scrolling for asset categories */
+  .asset-categories__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .asset-category-card {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 160px; /* Fixed width for consistent sizing */
+    }
+  }
+
+  /* Enable horizontal scrolling for categories showcase grid */
+  .categories-showcase__grid {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 12px;
+    gap: 16px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .category-card {
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+      width: 180px; /* Fixed width for consistent sizing */
+    }
+  }
+
+  /* Enable horizontal scrolling for catalog active filters */
+  .catalog-active-filters {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 8px;
+    gap: 12px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    &__tag {
+      flex: 0 0 auto;
+    }
+  }
+
+  /* Enable horizontal scrolling for footer links on small screens */
+  .footer__links {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    white-space: nowrap;
+    padding-bottom: 16px;
+    gap: 24px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .footer__col {
+      flex: 0 0 auto;
+      min-width: 160px;
+    }
+  }
+}

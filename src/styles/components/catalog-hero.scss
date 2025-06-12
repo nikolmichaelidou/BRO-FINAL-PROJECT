@@ -1,0 +1,54 @@
+@use "../components/variables-main" as *;
+@use "../components/typography" as *;
+
+.catalog-hero {
+  background: linear-gradient(180deg, $color-white 0%, $color-gray-200 100%);
+  padding: 64px 0 0;
+
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 48px;
+  }
+
+  &__title {
+    font-size: 4rem;
+    font-weight: 800;
+    color: #181a1d;
+    line-height: 1.1;
+    margin-bottom: 0;
+    margin-top: 0;
+    letter-spacing: -1px;
+  }
+
+  &__highlight {
+    color: #1769FF;
+    font-weight: 900;
+    font-size: 1.1em;
+    letter-spacing: -1px;
+  }
+
+  &__wave {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    line-height: 0;
+
+    svg {
+      display: block;
+      width: 100%;
+      height: 120px;
+    }
+  }
+}
+
+@media (width <= 900px) {
+  .catalog-hero__title {
+    font-size: 2.5rem;
+  }
+
+  .catalog-hero__container {
+    padding: 0 16px;
+  }
+}

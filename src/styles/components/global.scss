@@ -1,0 +1,581 @@
+@use 'variables-main' as *;
+@use '../components/typography' as *;
+@use 'breakpoints' as *;
+
+@media (max-width: $breakpoint-xl) {
+  body {
+    width: 100%; // Remove fixed width
+    height: auto;
+  }
+  
+  .categories-section__grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 24px;
+  }
+}
+
+@media (max-width: $breakpoint-sm) {
+  body {
+    width: 100%; // Remove fixed width
+    height: auto;
+    overflow-x: hidden;
+  }
+}
+
+// Special breakpoint for minimum supported width
+@media (max-width: $breakpoint-xs) {
+  body {
+    min-width: $breakpoint-xs; // Ensure minimum width
+  }
+  
+  .hero-section {
+    width: 100%; // Make it responsive instead of fixed
+    max-width: 100%;
+    height: auto; // Auto height for better responsiveness
+    min-height: 868px;
+    gap: 36px;
+    padding-top: 32px; /* Spacing32 */
+    padding-right: 16px; /* Spacing16 */
+    padding-bottom: 64px; /* Spacing64 */
+    padding-left: 16px; /* Spacing16 */
+  }
+
+  .categories-section {
+    width: 440px;
+    height: 856px;
+    gap: 64px; /* Spacing64 */
+    padding-right: 16px; /* Spacing16 */
+    padding-left: 16px; /* Spacing16 */
+  }
+
+  .container,
+  .footer__main,
+  .trending-products__list,
+  .categories-section__grid {
+    padding: 0 16px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .product-card,
+  .pricing-card,
+  .category-card {
+    min-width: 0;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto 16px;
+  }
+
+  .product-card__image img,
+  .category-card__icon img {
+    width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+
+  .footer__newsletter,
+  .footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .footer__newsletter-input,
+  .footer__newsletter-btn {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .catalog-flex-wrapper {
+    width: 440px;
+    height: 5256px;
+    gap: 24px;
+    padding-right: 16px; /* Spacing16 */
+    padding-left: 16px; /* Spacing16 */
+    flex-direction: column;
+  }
+
+  .filter-toggle {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .footer-section {
+    width: 440px;
+    height: 1440px;
+    gap: 32px;
+    padding: 48px 16px;
+    margin-top: auto; /* Pushes footer to the bottom */
+  }
+
+  .footer__logo {
+    margin-bottom: 24px;
+  }
+
+  .footer__description {
+    margin-bottom: 32px;
+  }
+
+  .footer__main,
+  .footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .footer__newsletter,
+  .footer__links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .footer__newsletter-input,
+  .footer__newsletter-btn {
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .footer__bottom-inner {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .social-media-links {
+    display: flex;
+    gap: 16px;
+    margin: 32px 0;
+  }
+
+  .newsletter-container {
+    width: 100%;
+  }
+
+  .newsletter-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 16px;
+  }
+
+  .newsletter-input {
+    width: 100%;
+    height: 56px;
+    border-radius: 8px;
+    padding: 0 16px;
+    border: 1px solid rgba(0, 0, 0, 10%);
+  }
+
+  .newsletter-button {
+    width: 100%;
+    height: 56px;
+    border-radius: $border-radius-md;
+    background-color: $color-primary;
+    color: $color-white;
+    border: none;
+    font-weight: $font-semibold;
+  }
+
+  .footer-links-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+  }
+
+  .footer-links-column {
+    width: 100%;
+  }
+
+  .footer-links-title {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 16px;
+  }
+
+  .footer-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .footer-link {
+    color: $color-gray-600;
+    text-decoration: none;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba($color-black, 10%);
+    width: 100%;
+    padding-top: 24px;
+    margin-top: 32px;
+    text-align: center;
+    color: $color-gray-600;
+  }
+}
+
+html, body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: $font-primary; /* Using the font variable with proper fallbacks from typography.scss */
+  color: $color-dark;
+  background: $color-white;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: auto;
+  height: auto;
+  position: relative;
+}
+
+// Button Styles
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+  font-weight: $font-bold;
+  border: none;
+  border-radius: $border-radius-xl;
+  background: $color-primary;
+  color: $color-white;
+  cursor: pointer;
+  transition: background $transition-fast;
+  gap: 12px;
+
+  &:hover, &:focus {
+    outline: none;
+  }
+}
+
+.btn--primary {
+  background: $color-primary-accent;
+  color: $color-white;
+  padding: 16px 32px;
+  border-radius: $border-radius-lg;
+  font-weight: $font-semibold;
+}
+
+.btn--secondary {
+  background: $color-white;
+  color: $color-dark;
+  border: 1px solid $color-gray-300;
+  padding: 16px 32px;
+  border-radius: $border-radius-lg;
+  font-weight: $font-semibold;
+  display: flex;
+  align-items: center;
+}
+
+.btn svg {
+  display: inline-block;
+}
+
+// Button Sizes
+.btn--lg {
+  font-size: 1.5rem;
+  padding: 20px 40px;
+  min-width: 240px;
+  min-height: 80px;
+}
+
+.btn--md {
+  font-size: 1.25rem;
+  padding: 16px 32px;
+  min-width: 180px;
+  min-height: 64px;
+}
+
+.btn--sm {
+  font-size: 1rem;
+  padding: 12px 24px;
+  min-width: 120px;
+  min-height: 48px;
+}
+
+.btn--icon-lg {
+  width: 80px;
+  height: 80px;
+  padding: 0;
+}
+
+.btn--icon-md {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+}
+
+.btn--icon-sm {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+// Button Hover State
+.btn:hover {
+  background: $color-primary-light;
+}
+
+//Button Focus State
+.btn:focus {
+  background: $color-primary-dark;
+}
+
+// Link Styles
+a {
+  text-decoration: none;
+}
+
+// Link Hover State
+a:hover {
+  background: transparent; // Remove background that could cause issues
+}
+
+// Link Focus State
+a:focus {
+  outline: 2px solid var(--marina-600); // Use outline instead of border
+  outline-offset: 2px;
+  background: transparent; // Remove problematic background
+}
+
+// Modern hover effect for product cards
+.product-card {
+  transition: box-shadow $transition-normal cubic-bezier(0.4, 0, 0.2, 1),
+    transform $transition-fast cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: $shadow-light;
+  background: $color-white;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card:hover {
+  box-shadow: $shadow-large;
+  transform: translateY(-4px) scale(1.03);
+  z-index: 2;
+}
+
+/* Footer positioning for all screen sizes */
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1 0 auto; /* Takes up available space, pushing footer down */
+}
+
+.footer-section {
+  flex-shrink: 0; /* Prevents footer from shrinking */
+  width: 100%;
+  margin-top: auto; /* Ensures footer stays at bottom even with little content */
+}
+
+// Add global image handling to prevent layout breaking
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+// Fix container overflow issues
+.container,
+.footer__main,
+.trending-products__list,
+.categories-section__grid {
+  overflow: hidden; // Prevent overflow breaking layout
+}
+
+// Product grid cells should maintain their structure
+.product-grid-flex {
+  // ...existing code...
+
+  > * {
+    min-width: 0; // Allow grid items to shrink below their minimum content size
+  }
+}
+
+// Add general text overflow handling
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  overflow-wrap: break-word; // Allow long words to break
+  word-wrap: break-word; // Legacy support
+  hyphens: auto; // Add hyphens when breaking words
+}
+
+// Improve mobile touch targets
+button,
+.btn,
+.navbar__link,
+.footer__link {
+  min-height: 44px; // Minimum touch target size
+  min-width: 44px; // Minimum touch target size
+
+  // Apply touch sizing to child elements of links when the link itself isn't directly styled
+  a > * {
+    min-height: inherit;
+    min-width: inherit;
+  }
+}
+
+// Better responsive spacing
+:root {
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-20: 20px;
+  --elements-separator-bold: rgba(29, 54, 83, 17%);
+  --marina-600: #3892f3;
+}
+
+@media (width <= 1200px) {
+  // Large devices and down
+  .catalog-flex-wrapper,
+  .blog-layout,
+  .pricing-plan__cards {
+    padding: 0 16px;
+  }
+  
+  .catalog-grid__products {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+  
+  .blog-layout,
+  .pricing-plan__cards {
+    gap: 24px;
+  }
+}
+
+@media (width <= 992px) {
+  // Medium devices (tablets)
+  .catalog-flex-wrapper {
+    flex-direction: column;
+  }
+  
+  .catalog-filter {
+    width: 100%;
+    margin-bottom: 24px;
+  }
+  
+  .catalog-grid {
+    padding-left: 0;
+  }
+  
+  .blog-layout {
+    flex-direction: column;
+  }
+  
+  .blog-sidebar {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 32px;
+  }
+}
+
+@media (width <= 768px) {
+  // Small devices (landscape phones)
+  html, body {
+    overflow-x: hidden;
+  }
+  
+  .catalog-grid__products {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+  
+  .trending-products__card-name,
+  .catalog-grid__title {
+    font-size: 1.1rem;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
+  }
+  
+  .pricing-plan__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pricing-card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+@media (width <= 576px) {
+  // Extra small devices (portrait phones)
+  .catalog-grid__products {
+    grid-template-columns: 1fr;
+  }
+  
+  .catalog-header-bar {
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .blog-quote,
+  .blog-content__text {
+    padding: 0 12px;
+  }
+  
+  .contact-form {
+    padding: 24px 16px;
+  }
+}
+
+// Apply font family to all form elements for consistency
+input,
+button,
+select,
+textarea,
+optgroup {
+  font-family: inherit;
+}
+
+// Add font smoothing to inputs and textareas
+input, 
+textarea {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Ensure proper button styling with fonts
+button {
+  font-weight: $font-medium;
+}

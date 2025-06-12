@@ -1,0 +1,228 @@
+@use "../components/variables-main" as *;
+@use "../components/typography" as *;
+@use "../components/breakpoints" as *;
+
+// Header Styles
+.header {
+  background: linear-gradient(90deg, $background-filter 44%, $color-white 100%);
+  box-shadow: 0 2px 0 0 $color-gray-300;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 92px;
+  padding: 24px 80px;
+  margin: 0 auto;
+  background: $color-white;
+  box-sizing: border-box; // Include padding in width calculation
+}
+
+.navbar__left {
+  display: flex;
+  align-items: center;
+  gap: 20px; // smaller gap between burger and logo
+}
+
+.navbar__logo {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #0F73F6;
+  margin-right: 32px;
+  letter-spacing: -1px;
+}
+
+.navbar__dot {
+  color: #0F73F6;
+}
+
+.navbar__links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+
+  @media (width <= 900px) {
+    position: fixed; // Change to fixed for better mobile experience
+    top: 92px;
+    left: 0;
+    right: 0;
+    bottom: 0; // Cover full screen height
+    background: rgba(255, 255, 255, 98%);
+    flex-direction: column;
+    align-items: center; // Center menu items
+    justify-content: flex-start;
+    padding: 32px;
+    gap: 24px; // Increase spacing between items
+    z-index: 1000;
+    transform: translateX(-100%); // Hide off-screen
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; // Scrollable if needed
+  }
+  
+  &--open {
+    transform: translateX(0); // Slide in when open
+  }
+}
+
+.navbar__links li .navbar__link {
+  text-decoration: none;
+  color: #181C25;
+  font-size: 1.5rem;
+  font-weight: 700;
+  transition: color 0.2s;
+}
+
+.navbar__links li .navbar__link:hover {
+  color: #0F73F6;
+}
+
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.navbar__search {
+  padding: 16px 24px;
+  border: 2px solid #E5EAF1;
+  border-radius: 12px;
+  font-size: 1.25rem;
+  width: 340px;
+  outline: none;
+  transition: border 0.2s;
+  background: #fff;
+  color: #181C25;
+}
+
+.navbar__search:focus {
+  border-color: #0F73F6;
+}
+
+.navbar__cart-btn {
+  background: #0F73F6;
+  border: none;
+  border-radius: 10px;
+  padding: 6px 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  transition: background 0.2s;
+}
+
+.navbar__cart-btn:hover {
+  background: #3FA6FF;
+}
+
+.navbar__cart-btn svg {
+  display: block;
+}
+
+.navbar__burger {
+  display: none; // hide by default
+  flex-direction: column;
+  justify-content: center;
+  gap: 6px;
+  width: 48px;
+  height: 48px;
+  background: #0F73F6;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 8px;
+  z-index: 1001;
+  align-items: center;
+
+  span {
+    display: block;
+    height: 4px;
+    width: 28px;
+    background: #fff;
+    border-radius: 2px;
+    transition: 0.3s;
+  }
+
+  &:focus {
+    outline: 2px solid #0F73F6;
+    outline-offset: 2px;
+  }
+}
+
+@media (max-width: $breakpoint-lg) {
+  .navbar__links {
+    position: fixed; // Change to fixed for better mobile experience
+    top: 92px;
+    left: 0;
+    right: 0;
+    bottom: 0; // Cover full screen height
+    background: rgba(255, 255, 255, 98%);
+    flex-direction: column;
+    align-items: center; // Center menu items
+    justify-content: flex-start;
+    padding: 32px;
+    gap: 24px; // Increase spacing between items
+    z-index: 1000;
+    transform: translateX(-100%); // Hide off-screen
+    transition: transform 0.3s ease-in-out;
+    overflow-y: auto; // Scrollable if needed
+  }
+  
+  .navbar__links--open {
+    transform: translateX(0); // Slide in when open
+  }
+
+  .navbar {
+    padding: 24px 16px;
+    position: relative;
+  }
+
+  .navbar__burger {
+    display: flex; // show only on mobile
+  }
+
+  .navbar__left {
+    flex: 1;
+  }
+
+  .navbar__search {
+    display: none;
+  }
+  .navbar__link {
+    font-size: 1.3rem; // Larger text for mobile
+    padding: 12px 0; // Larger touch area
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+// Extra small screens
+@media (max-width: $breakpoint-xs) {
+  .navbar {
+    padding: 16px 12px;
+  }
+  
+  .navbar__logo {
+    font-size: 2rem; // Smaller logo text
+  }
+  
+  .navbar__cart-btn {
+    transform: scale(0.9); // Slightly smaller cart button
+  }
+}
+
+.navbar__burger--open span:nth-child(1) {
+  transform: translateY(10px) rotate(45deg);
+}
+
+.navbar__burger--open span:nth-child(2) {
+  opacity: 0;
+}
+
+.navbar__burger--open span:nth-child(3) {
+  transform: translateY(-10px) rotate(-45deg);
+}

@@ -1,0 +1,119 @@
+@use "../components/variables-main" as *;
+@use "../components/typography" as *;
+
+.related-articles {
+  padding: 80px 0;
+  background-color: $color-gray-100;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+    padding: 0 16px;
+
+    h2 {
+      font-size: $text-4xl;
+      font-weight: $font-semibold;
+      margin: 0;
+      color: $color-dark;
+    }
+  }
+
+  &__link {
+    color: $color-primary;
+    font-size: $text-md;
+    text-decoration: none;
+    font-weight: $font-medium;
+    display: flex;
+    align-items: center;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &::after {
+      content: "→";
+      margin-left: 6px;
+      font-size: 20px;
+    }
+  }
+}
+
+.related-articles__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  padding: 0 16px;
+
+  @media (width <= 992px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.related-articles__card {
+  position: relative;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  background-color: $color-white;
+  box-shadow: $shadow-light;
+  transition: transform $transition-normal;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: $shadow-medium;
+  }
+}
+
+.related-articles__tag {
+  position: absolute;
+  left: 15px;
+  top: 224px;
+  background-color: $color-primary;
+  color: $color-white;
+  height: 28px;
+  padding: 0 16px;
+  border-radius: $border-radius-round;
+  font-weight: $font-medium;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: $text-sm;
+}
+
+.related-articles__image-container {
+  position: relative;
+  height: 240px;
+  overflow: hidden;
+}
+
+.related-articles__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.related-articles__info {
+  padding: 24px 20px;
+}
+
+.related-articles__title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  color: #333;
+  line-height: 1.3;
+}
+
+.related-articles__date {
+  font-size: 16px;
+  color: #6b7280;
+  margin: 0;
+  text-transform: none;
+  font-weight: 400;
+}

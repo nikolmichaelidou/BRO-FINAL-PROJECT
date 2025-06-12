@@ -1,0 +1,199 @@
+/* catalog-header.scss - Styling for catalog header bar */
+@use "sass:color";
+@use "variables-main" as *;
+@use "typography" as *;
+
+.catalog-header-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 0;
+  border-bottom: 1px solid $color-gray-200;
+  margin-bottom: 32px;
+}
+
+.catalog-header-bar__left {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.catalog-header-bar__right {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.catalog-sort-dropdown {
+  position: relative;
+
+  &__btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: $color-white;
+    border: 1px solid $color-gray-400;
+    border-radius: $border-radius-md;
+    font-size: $text-base;
+    font-weight: $font-semibold;
+    color: $color-dark;
+    cursor: pointer;
+    transition: border-color $transition-fast;
+    justify-content: space-between;
+  }
+
+  &__btn:hover {
+    border-color: $color-primary-accent;
+  }
+
+  &__btn.active {
+    border-color: $color-primary;
+  }
+
+  &__chevron {
+    font-size: 0.9rem;
+    color: #666;
+    margin-left: 8px;
+    display: inline-block;
+    transition: transform 0.2s;
+  }
+
+  &__btn.active &__chevron {
+    transform: rotate(180deg);
+  }
+
+  &__menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    left: 0;
+    width: 100%;
+    background: $color-white;
+    border-radius: $border-radius-md;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    display: none;
+    overflow: hidden;
+  }
+
+  &__menu.show {
+    display: block;
+  }
+
+  &__option {
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+
+    &:hover {
+      background: $color-gray-100;
+    }    &--selected {
+      color: $color-primary;
+      font-weight: $font-semibold;
+      background: color.adjust($color-primary, $lightness: 45%);
+    }
+  }
+}
+
+.catalog-active-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.filter-tag__remove {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.catalog-results {
+  font-size: $text-base;
+  color: $color-gray-600;
+  font-weight: $font-medium;
+}
+
+.catalog-view-toggle {
+  display: flex;
+  gap: 4px;
+  overflow: hidden;
+}
+
+.view-btn {
+  padding: 12px;
+  background: $color-white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all $transition-fast;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--elements-separator-bold);
+}
+
+.view-btn.active {
+  background: $color-primary-accent;
+  color: $color-white;
+}
+
+.view-btn:not(.active):hover {
+  background: $color-gray-100;
+}
+
+.icon-grid,
+.icon-list {
+  width: 16px;
+  height: 16px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.icon-grid {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z' /%3E%3C/svg%3E");
+}
+
+.icon-list {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='currentColor'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M4 6h16M4 10h16M4 14h16M4 18h16' /%3E%3C/svg%3E");
+}
+
+.catalog-header-bar__view-toggle {
+  display: flex;
+  gap: 8px;
+}
+
+.catalog-header-bar__view-btn {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $color-gray-200;
+  border-radius: $border-radius-md;
+  background: $color-white;
+  cursor: pointer;
+  transition: all $transition-normal ease;
+
+  svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .catalog-header-bar__view-path {
+    stroke: $color-dark;
+  }
+
+  &--active {
+    background: $color-primary;
+    border-color: $color-primary;
+
+    .catalog-header-bar__view-path {
+      stroke: $color-white;
+    }
+  }
+
+  &:hover:not(&--active) {
+    background: $color-gray-100;
+  }
+}

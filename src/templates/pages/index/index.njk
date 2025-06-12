@@ -1,0 +1,419 @@
+<!-- index template -->
+{% extends "layouts/base.njk" %}
+{% block content %}
+  <section class="hero">
+    <div class="hero__container">
+      <div class="hero__left">
+        <h1>Craft Your<br>Success with<br>Our <span class="highlight">Digital</span> Assets</h1>
+        <p>From our inspiring illustrations to dynamic UI/UX kits, elevate your projects with our premium digital design resources.</p>
+        <div class="hero__actions">
+          <a href="#" class="btn btn--primary">Shop Now</a>
+          <a href="#" class="btn btn--secondary">
+            <span class="icon-play"></span>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M20.5 11.134C21.1667 11.5189 21.1667 12.4811 20.5 12.866L8.5 19.7942C7.83333 20.1791 7 19.698 7 18.9282L7 5.0718C7 4.302 7.83333 3.82087 8.5 4.20577L20.5 11.134Z" fill="#0265DC"/>
+            </svg> Watch About Us</a>
+        </div>
+      </div>
+      <div class="hero__right">
+        <!-- Place your product mockup images here, layered and overlapping -->
+        <img src="img/ornaments-2x.webp" class="hero__mockup hero__mockup--main" alt="Main Mockup" width="600" height="450">
+      </div>
+    </div>
+  </section>
+  <section class="illustrations">
+    <div class="illustrations__categories">
+      <section class="asset-categories">
+        <div class="asset-categories__grid">
+          {% for cat in illustrations %}
+            <div class="asset-category-card">
+              <div class="asset-category-card__icon">
+                <img src="{{ cat.icon }}" alt="{{ cat.label }}" width="80" height="80">
+              </div>
+              <div class="asset-category-card__label">{{ cat.label }}</div>
+            </div>
+          {% endfor %}
+        </div>
+
+        <section class="categories-showcase">
+          <div class="categories-showcase__container">
+            <div class="categories-showcase__grid">
+              <a href="#" class="category-card">
+                <div class="category-card__icon">
+                  <img src="img/illustration-icon-1x.webp" alt="Templates icon" width="80" height="80">
+                </div>
+                <h4 class="category-card__title">Templates</h4>
+                <p class="category-card__desc">For all needs • Modern</p>
+              </a>
+
+              <a href="#" class="category-card">
+                <div class="category-card__icon">
+                  <img src="img/illustration-icon-1x.webp" alt="App Icons" width="80" height="80">
+                </div>
+                <h4 class="category-card__title">App Icons</h4>
+                <p class="category-card__desc">High-quality • Elegant</p>
+              </a>
+
+              <a href="#" class="category-card">
+                <div class="category-card__icon">
+                  <img src="img/illustration-presentations-1x.webp" alt="Slides icon" width="80" height="80">
+                </div>
+                <h4 class="category-card__title">Slides</h4>
+                <p class="category-card__desc">Pitch-ready • Creative</p>
+              </a>
+
+              <a href="#" class="category-card">
+                <div class="category-card__icon">
+                  <img src="img/illustration-icon-1x.webp" alt="Design Tools" width="80" height="80">
+                </div>
+                <h4 class="category-card__title">Design Tools</h4>
+                <p class="category-card__desc">Easy to use • Unique</p>
+              </a>
+            </div>
+
+            <div class="categories-showcase__content">
+              <h2 class="categories-showcase__title">CATEGORIES</h2>
+              <h3 class="categories-showcase__subtitle">Discover Assets for<br>Every Projects</h3>
+              <p class="categories-showcase__desc">From fonts and icons to mockups and templates, our comprehensive categories ensure that you find exactly what you need to your projects.</p>
+              <a href="#" class="categories-showcase__btn">Shop Now</a>
+            </div>
+          </div>
+        </section>
+      </section>
+    </div>
+  </section>
+  <section class="trending-products">
+  <div class="trending-products__header">
+    <div class="trending-products__left">
+      <span class="trending-products__trending">TRENDING</span>
+      <h2 class="trending-products__title">Popular Products</h2>
+    </div>
+    <div class="trending-products__nav">
+      <button class="trending-products__nav-btn" aria-label="Previous">&lt;</button>
+      <button class="trending-products__nav-btn" aria-label="Next">&gt;</button>
+    </div>
+  </div>
+  <div class="trending-products__list">
+    <div class="trending-products__card">
+      <div class="trending-products__card-image">
+        <img src="img/journeey-img-2x.webp" alt="Travel Hero" width="305" height="272"/>
+        <span class="trending-products__card-badge trending-products__card-badge--trophy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15C8.68629 15 6 12.3137 6 9V3.44444C6 3.0306 6 2.82367 6.06031 2.65798C6.16141 2.38021 6.38021 2.16141 6.65798 2.06031C6.82367 2 7.0306 2 7.44444 2H16.5556C16.9694 2 17.1763 2 17.342 2.06031C17.6198 2.16141 17.8386 2.38021 17.9397 2.65798C18 2.82367 18 3.0306 18 3.44444V9C18 12.3137 15.3137 15 12 15ZM12 15V18M18 4H20.5C20.9659 4 21.1989 4 21.3827 4.07612C21.6277 4.17761 21.8224 4.37229 21.9239 4.61732C22 4.80109 22 5.03406 22 5.5V6C22 6.92997 22 7.39496 21.8978 7.77646C21.6204 8.81173 20.8117 9.62038 19.7765 9.89778C19.395 10 18.93 10 18 10M6 4H3.5C3.03406 4 2.80109 4 2.61732 4.07612C2.37229 4.17761 2.17761 4.37229 2.07612 4.61732C2 4.80109 2 5.03406 2 5.5V6C2 6.92997 2 7.39496 2.10222 7.77646C2.37962 8.81173 3.18827 9.62038 4.22354 9.89778C4.60504 10 5.07003 10 6 10M7.44444 22H16.5556C16.801 22 17 21.801 17 21.5556C17 19.5919 15.4081 18 13.4444 18H10.5556C8.59188 18 7 19.5919 7 21.5556C7 21.801 7.19898 22 7.44444 22Z" stroke="#F8F7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <button class="trending-products__card-cta">Go to product</button>
+      </div>
+      <div class="trending-products__card-info">
+        <div class="trending-products__card-name">Travel Hero</div>
+        <div class="trending-products__card-price">€29.99</div>
+        <div class="trending-products__card-tags">
+          <span>Adventure</span>•<span>Journey</span>
+        </div>
+      </div>
+    </div>
+    <div class="trending-products__card">
+      <div class="trending-products__card-image trending-products__card-image--blue">
+        <img src="img/medcaro-img-2x.webp" alt="Healthcare Pro" width="305" height="272"/>
+        <span class="trending-products__card-badge trending-products__card-badge--trophy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15C8.68629 15 6 12.3137 6 9V3.44444C6 3.0306 6 2.82367 6.06031 2.65798C6.16141 2.38021 6.38021 2.16141 6.65798 2.06031C6.82367 2 7.0306 2 7.44444 2H16.5556C16.9694 2 17.1763 2 17.342 2.06031C17.6198 2.16141 17.8386 2.38021 17.9397 2.65798C18 2.82367 18 3.0306 18 3.44444V9C18 12.3137 15.3137 15 12 15ZM12 15V18M18 4H20.5C20.9659 4 21.1989 4 21.3827 4.07612C21.6277 4.17761 21.8224 4.37229 21.9239 4.61732C22 4.80109 22 5.03406 22 5.5V6C22 6.92997 22 7.39496 21.8978 7.77646C21.6204 8.81173 20.8117 9.62038 19.7765 9.89778C19.395 10 18.93 10 18 10M6 4H3.5C3.03406 4 2.80109 4 2.61732 4.07612C2.37229 4.17761 2.17761 4.37229 2.07612 4.61732C2 4.80109 2 5.03406 2 5.5V6C2 6.92997 2 7.39496 2.10222 7.77646C2.37962 8.81173 3.18827 9.62038 4.22354 9.89778C4.60504 10 5.07003 10 6 10M7.44444 22H16.5556C16.801 22 17 21.801 17 21.5556C17 19.5919 15.4081 18 13.4444 18H10.5556C8.59188 18 7 19.5919 7 21.5556C7 21.801 7.19898 22 7.44444 22Z" stroke="#F8F7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <button class="trending-products__card-cta">Go to product</button>
+      </div>
+      <div class="trending-products__card-info">
+        <div class="trending-products__card-name">Healthcare Pro</div>
+        <div class="trending-products__card-price">€39.99</div>
+        <div class="trending-products__card-tags">
+          <span>Medical</span>•<span>Wellness</span>
+        </div>
+      </div>
+    </div>
+    <div class="trending-products__card">
+      <div class="trending-products__card-image trending-products__card-image--green">
+        <img src="img/foodish-img-2x.webp" alt="Foodish Delight" width="305" height="272"/>
+        <span class="trending-products__card-badge trending-products__card-badge--trophy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15C8.68629 15 6 12.3137 6 9V3.44444C6 3.0306 6 2.82367 6.06031 2.65798C6.16141 2.38021 6.38021 2.16141 6.65798 2.06031C6.82367 2 7.0306 2 7.44444 2H16.5556C16.9694 2 17.1763 2 17.342 2.06031C17.6198 2.16141 17.8386 2.38021 17.9397 2.65798C18 2.82367 18 3.0306 18 3.44444V9C18 12.3137 15.3137 15 12 15ZM12 15V18M18 4H20.5C20.9659 4 21.1989 4 21.3827 4.07612C21.6277 4.17761 21.8224 4.37229 21.9239 4.61732C22 4.80109 22 5.03406 22 5.5V6C22 6.92997 22 7.39496 21.8978 7.77646C21.6204 8.81173 20.8117 9.62038 19.7765 9.89778C19.395 10 18.93 10 18 10M6 4H3.5C3.03406 4 2.80109 4 2.61732 4.07612C2.37229 4.17761 2.17761 4.37229 2.07612 4.61732C2 4.80109 2 5.03406 2 5.5V6C2 6.92997 2 7.39496 2.10222 7.77646C2.37962 8.81173 3.18827 9.62038 4.22354 9.89778C4.60504 10 5.07003 10 6 10M7.44444 22H16.5556C16.801 22 17 21.801 17 21.5556C17 19.5919 15.4081 18 13.4444 18H10.5556C8.59188 18 7 19.5919 7 21.5556C7 21.801 7.19898 22 7.44444 22Z" stroke="#F8F7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <button class="trending-products__card-cta">Go to product</button>
+      </div>
+      <div class="trending-products__card-info">
+        <div class="trending-products__card-name">Foodish Delight</div>
+        <div class="trending-products__card-price">€31.99</div>
+        <div class="trending-products__card-tags">
+          <span>Catering</span>•<span>Food</span>
+        </div>
+      </div>
+    </div>
+    <div class="trending-products__card">
+      <div class="trending-products__card-image trending-products__card-image--light-blue">
+        <img src="img/skyhome-img-2x.webp" alt="Real Estate" width="305" height="272"/>
+        <span class="trending-products__card-badge trending-products__card-badge--trophy">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 15C8.68629 15 6 12.3137 6 9V3.44444C6 3.0306 6 2.82367 6.06031 2.65798C6.16141 2.38021 6.38021 2.16141 6.65798 2.06031C6.82367 2 7.0306 2 7.44444 2H16.5556C16.9694 2 17.1763 2 17.342 2.06031C17.6198 2.16141 17.8386 2.38021 17.9397 2.65798C18 2.82367 18 3.0306 18 3.44444V9C18 12.3137 15.3137 15 12 15ZM12 15V18M18 4H20.5C20.9659 4 21.1989 4 21.3827 4.07612C21.6277 4.17761 21.8224 4.37229 21.9239 4.61732C22 4.80109 22 5.03406 22 5.5V6C22 6.92997 22 7.39496 21.8978 7.77646C21.6204 8.81173 20.8117 9.62038 19.7765 9.89778C19.395 10 18.93 10 18 10M6 4H3.5C3.03406 4 2.80109 4 2.61732 4.07612C2.37229 4.17761 2.17761 4.37229 2.07612 4.61732C2 4.80109 2 5.03406 2 5.5V6C2 6.92997 2 7.39496 2.10222 7.77646C2.37962 8.81173 3.18827 9.62038 4.22354 9.89778C4.60504 10 5.07003 10 6 10M7.44444 22H16.5556C16.801 22 17 21.801 17 21.5556C17 19.5919 15.4081 18 13.4444 18H10.5556C8.59188 18 7 19.5919 7 21.5556C7 21.801 7.19898 22 7.44444 22Z" stroke="#F8F7FF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <button class="trending-products__card-cta">Go to product</button>
+      </div>
+      <div class="trending-products__card-info">
+        <div class="trending-products__card-name">Real Estate</div>
+        <div class="trending-products__card-price">€40.99</div>
+        <div class="trending-products__card-tags">
+          <span>Modern</span>•<span>Homes</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="pricing-plan">
+  <div class="pricing-plan__header">
+    <span class="pricing-plan__subtitle">PRICING PLAN</span>
+    <h2 class="pricing-plan__title">Choose The Perfect Plan for Creative Potential</h2>
+  </div>
+  <div class="pricing-plan__cards">
+    <div class="pricing-card">
+      <div class="pricing-card__title">Standard Membership</div>
+      <div class="pricing-card__price">
+        <span class="pricing-card__currency">€</span>14.99 <span class="pricing-card__period">/ Month</span>
+      </div>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Enhanced Resource Access</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Monthly Credits</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Priority Customer Support</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Community Features Access</span>
+        </li>
+      </ul>
+      <button class="pricing-card__btn">Subscribe</button>
+    </div>
+
+    <div class="pricing-card pricing-card--featured">
+      <div class="pricing-card__best-seller">BEST SELLER</div>
+      <div class="pricing-card__title">Plus Membership</div>
+      <div class="pricing-card__price">
+        <span class="pricing-card__currency">€</span>29.99 <span class="pricing-card__period">/ Month</span>
+      </div>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>All Standard Benefits</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Increased Monthly Credits</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Early Access to New Releases</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Member-Only Offers</span>
+        </li>
+      </ul>
+      <button class="pricing-card__btn pricing-card__btn--primary">Subscribe</button>
+    </div>
+
+    <div class="pricing-card">
+      <div class="pricing-card__title">Pro Membership</div>
+      <div class="pricing-card__price">
+        <span class="pricing-card__currency">€</span>49.99 <span class="pricing-card__period">/ Month</span>
+      </div>
+      <hr class="pricing-card__divider">
+      <ul class="pricing-card__features">
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>All Plus Benefits</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Unlimited Downloads</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Custom Licensing</span>
+        </li>
+        <li>
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M7.5 12L10.5 15L16.5 9" stroke="#0F73F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <span>Direct Creator Collaboration</span>
+        </li>
+      </ul>
+      <button class="pricing-card__btn">Subscribe</button>
+    </div>
+  </div>
+</section>
+<section class="faq">
+  <div class="faq__container">
+    <div class="faq__left">
+      <span class="faq__subtitle">FAQ</span>
+      <h2 class="faq__title">Answers to Your Questions</h2>
+      <button class="faq__ask-btn" disabled>Ask Us A Question</button>
+    </div>
+    <div class="faq__right">
+      <div class="faq-accordion">
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            Can I request a refund?
+            <span class="faq-accordion__icon"></span>
+          </button>
+          <div class="faq-accordion__answer">
+            Yes, we have a refund policy for all purchases. If you're not satisfied with your purchase, you can request a refund within 30 days of the purchase date. Please contact our customer support team with your order details to process your refund.
+          </div>
+        </div>
+        <div class="faq-accordion__item faq-accordion__item--active">
+          <button class="faq-accordion__question show">
+            How do I access my purchased products?
+            <span class="faq-accordion__icon"></span>
+          </button>
+          <div class="faq-accordion__answer">
+            Accessing your purchased products is seamless and hassle-free on our digital design assets marketplace. Simply log in to your account, navigate to the 'My Purchases' section, and you'll find all your purchased products ready for download.
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            Are there any discounts for bulk purchases?
+            <span class="faq-accordion__icon"></span>
+          </button>
+          <div class="faq-accordion__answer">
+            Yes, we offer special discounts for bulk purchases. The discount rate varies based on the quantity and type of products you're purchasing. Please contact our sales team for a custom quote on your bulk order requirements.
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            What payment methods do you accept here?
+            <span class="faq-accordion__icon"></span>
+          </button>
+          <div class="faq-accordion__answer">
+            We accept various payment methods including credit/debit cards (Visa, Mastercard, American Express), PayPal, and bank transfers. All transactions are processed securely through our payment gateway with encryption to ensure your financial information remains safe.
+          </div>
+        </div>
+        <div class="faq-accordion__item">
+          <button class="faq-accordion__question">
+            Can I sell my digital products on this marketplace?
+            <span class="faq-accordion__icon"></span>
+          </button>
+          <div class="faq-accordion__answer">
+            Yes, you can sell your digital products on our marketplace. We welcome talented creators to join our platform. To become a seller, you'll need to create a creator account, pass our quality review process, and agree to our seller terms. Visit our "Become a Creator" page to get started.
+          </div>
+            <span class="faq-accordion__icon"></span>
+          </button>
+          <div class="faq-accordion__answer">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nesciunt suscipit eius possimus esse officiis quia minima sequi est totam ipsa aliquam obcaecati, unde ipsam nam optio vitae nemo placeat!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="latest-articles">
+  <div class="latest-articles__header">
+    <h2 class="latest-articles__title">Latest Articles</h2>
+    <a href="#" class="latest-articles__explore">Explore All Articles &rsaquo;</a>
+  </div>
+  <div class="latest-articles__content">
+    <div class="latest-articles__blog-list">
+      <div class="blog-card">
+        <img src="img/binabox-img-2x.avif" alt="Blog 1" class="blog-card__img" width="400" height="300">
+        <div class="blog-card__meta">
+          <span class="blog-card__author">Creative Blog</span>
+          <span class="blog-card__date">15 APRIL 2024</span>
+        </div>
+      </div>
+      <div class="blog-card">
+        <img src="img/best-dishes-2x.avif" alt="Blog 2" class="blog-card__img" width="400" height="300">
+        <div class="blog-card__meta">
+          <span class="blog-card__author">Best Dishes</span>
+          <span class="blog-card__date">5 MAY 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    let questionButtons = document.querySelectorAll('.faq-accordion__question');
+    
+    // Initialize answers - hide them initially
+    document.querySelectorAll('.faq-accordion__answer').forEach(answer => {
+      answer.style.display = 'none';
+    });
+    
+    questionButtons.forEach((elem) => {
+      elem.addEventListener("click", () => {
+        // Toggle the show class on the question
+        elem.classList.toggle("show");
+        
+        // Find and toggle the corresponding answer
+        let answer = elem.nextElementSibling;
+        if (answer && answer.classList.contains('faq-accordion__answer')) {
+          if (elem.classList.contains('show')) {
+            // Close any other open answers first
+            document.querySelectorAll('.faq-accordion__question.show').forEach(openQuestion => {
+              if (openQuestion !== elem) {
+                openQuestion.classList.remove('show');
+                const siblingAnswer = openQuestion.nextElementSibling;
+                if (siblingAnswer && siblingAnswer.classList.contains('faq-accordion__answer')) {
+                  siblingAnswer.style.display = 'none';
+                }
+              }
+            });
+            
+            // Open this answer with smooth animation
+            answer.style.display = 'block';
+            answer.style.maxHeight = '0';
+            answer.style.transition = 'max-height 0.3s ease-in-out';
+            setTimeout(() => {
+              answer.style.maxHeight = answer.scrollHeight + 'px';
+            }, 10);
+          } else {
+            // Close this answer with smooth animation
+            answer.style.maxHeight = '0';
+            setTimeout(() => {
+              answer.style.display = 'none';
+            }, 300);
+          }
+        }
+      });
+    });
+  });
+</script>
+{% endblock %}

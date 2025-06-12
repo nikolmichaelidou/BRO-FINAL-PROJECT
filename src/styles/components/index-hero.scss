@@ -1,0 +1,51 @@
+@use "../components/variables-main" as *;
+@use "../components/typography" as *;
+@use "../components/_mixins" as *;
+
+.hero {
+  background: $background-light;
+  padding: 60px 0;
+}
+
+.hero__container {
+  @include flex(row, space-evenly, center, nowrap);
+  width: 1440px;
+  height: 638px;
+  gap: 36px;
+  padding: 120px 80px;
+}
+
+.hero__left {
+  width: 100%;
+  max-width: 500px;
+}
+
+.hero__left h1 {
+  @include heading(1);
+}
+
+.hero__left .highlight {
+  color: $color-primary;
+}
+
+.hero__actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 20px;
+}
+
+.hero__right {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.hero__mockup {
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(30, 40, 90, 12%);
+
+  /* Use absolute positioning for overlap if needed */
+  width: 624;
+  height: 544;
+}

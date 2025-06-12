@@ -1,0 +1,61 @@
+
+{
+  "footerLinks": [
+    {
+      "title": "Company",
+      "links": [
+        "Homepage v1",
+        "Homepage v2",
+        "Homepage v3",
+        "About Us",
+        "About Us",
+        "Blog Articles"
+      ]
+    },
+    {
+      "title": "Products",
+      "links": [
+        "Website",
+        "Mobile App",
+        "Social Media Feeds",
+        "Presentation",
+        "Product Mockups",
+        "Illustrations"
+      ]
+    },
+    {
+      "title": "Account",
+      "links": [
+        "Your Cart",
+        "Check Out",
+        "Refund Policy",
+        "Company Policy",
+        "Send A Message",
+        "Customer Support"
+      ]
+    }
+  ]
+,
+  "illustrations": [
+    {
+      "icon": "img/illustration-icon-1x.webp",
+      "label": "UI Kits"
+    },
+    {
+      "icon": "img/illustration-icon-1x.webp",
+      "label": "Social Media"
+    },
+    {
+      "icon": "img/illustration-presentations-1x.webp",
+      "label": "Presentation"
+    },
+    {
+      "icon": "img/illustration-fonts-1x.webp",
+      "label": "Fonts"
+    },
+    {
+      "icon": "img/illustration-icon-1x.webp",
+      "label": "Illustrations"
+    }
+  ]
+}

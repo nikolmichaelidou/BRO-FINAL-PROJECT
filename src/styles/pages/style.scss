@@ -1,0 +1,24 @@
+/* style.scss - Main stylesheet for importing all component styles */
+@use '../components/_variables-main' as variables; // Import variables first for access across all files
+@use '../components/_breakpoints' as breakpoints; // Import breakpoints mixins
+@use '../components/typography'; // Import typography after variables
+@use '../components/_mixins' as mixins; // Import mixins
+@use '../components/global';
+@use '../components/header';
+@use '../components/index-hero';
+@use '../components/footer';
+@use '../components/contact-form';
+@use '../components/pricing-plan';
+@use '../components/faq';
+@use '../components/catalog-hero';
+@use '../components/catalog-filter';
+@use '../components/blog';
+@use '../components/product-grid';
+@use '../components/latest-expert';
+@use '../components/illustrations-index';
+@use '../components/catalog-header';
+@use '../components/categories-showcase';
+@use '../components/related-articles';
+@use '../components/trending-products';
+@use '../components/overflow-fixes';
+@use '../components/filter-overrides';

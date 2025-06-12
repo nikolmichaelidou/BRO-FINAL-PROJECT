@@ -1,0 +1,56 @@
+/* Illustrations section - Homepage */
+.illustrations {
+  padding: 4rem 0;
+
+  &__categories {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+}
+
+.asset-categories__grid {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin: 2rem 0;
+  
+  /* Enhanced mobile scroll behavior */
+  @media (max-width: 768px) {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    padding: 1rem 0;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.asset-category-card {
+  background: #f5f8fb;
+  border-radius: 1.5rem;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 180px;
+  flex-shrink: 0; /* Prevent cards from shrinking on mobile */
+  
+  @media (max-width: 768px) {
+    scroll-snap-align: start;
+    width: 160px; /* Slightly smaller on mobile */
+  }
+
+  &__icon img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 1rem;
+  }
+
+  &__label {
+    font-weight: 600;
+    margin-top: 0.5rem;
+  }
+}

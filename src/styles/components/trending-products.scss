@@ -1,0 +1,255 @@
+/* trending-products.scss - Styling for trending products section */
+@use "sass:math";
+@use "sass:color";
+@use "variables-main" as variables;
+@use "typography" as typography;
+@use "_mixins" as mixins;
+
+.trending-products {
+  padding: 80px 0;
+  position: relative;
+  &__header {
+    @include mixins.flex(row, space-between, center, wrap);
+    max-width: 1200px;
+    margin: 0 auto 40px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }  &__left {
+    @include mixins.flex(column);
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  &__trending {    color: variables.$color-primary;
+    font-size: typography.$text-base;
+    font-weight: typography.$font-semibold;
+    letter-spacing: typography.$tracking-wide;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }  &__title {
+    margin: 0;
+    @include mixins.heading(2);
+  }
+  &__nav {
+    @include mixins.flex;
+    gap: 16px;
+  }
+  &__nav-btn {
+    width: 64px;
+    height: 64px;
+    @include mixins.border(variables.$color-gray-300, 2px);
+    background: transparent;    color: variables.$color-gray-800;
+    font-size: typography.$text-md;
+    cursor: pointer;
+    @include mixins.flex-center;
+    transition: all variables.$transition-fast ease;
+    border-radius: variables.$border-radius-circle;    &:hover {
+      border-color: variables.$color-primary;
+      background: variables.$color-primary;
+      color: variables.$color-white;
+    }
+  }
+  &__list {
+    @include mixins.flex;
+    gap: 24px;
+    overflow-x: auto;
+    padding: 0 20px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    /* Enhanced mobile scroll behavior */
+    scroll-snap-type: x mandatory;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+  &__card {
+    flex: 0 0 auto;
+    width: 305px;
+    background: transparent;    border-radius: variables.$Spacing20;
+    overflow: hidden;
+    transition: transform variables.$transition-normal ease;
+    position: relative;
+    @include mixins.shadow('none');
+    scroll-snap-align: start; /* Add scroll snap alignment */
+
+    &:hover {
+      transform: translateY(-10px);
+
+      .trending-products__card-image::after {
+        background: rgba(0, 0, 0, 50%);
+      }
+
+      .trending-products__card-cta {
+        opacity: 1;
+      }
+    }    &-image {
+      @include mixins.aspect-ratio(305, 272);
+      border-radius: variables.$border-radius-lg;
+      background: variables.$background-light-alt;
+      @include mixins.flex-center;
+      
+      &--blue {
+        background: variables.$color-bg-blue;
+      }
+
+      &--green {
+        background: variables.$color-bg-green;
+      }
+
+      &--light-blue {
+        background: variables.$color-bg-light-blue;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: cover;        transition: transform variables.$transition-normal ease;
+        border-radius: variables.$border-radius-lg;
+      }
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;        background: rgba(variables.$color-black, 0%);
+        transition: background variables.$transition-normal ease;
+        border-radius: variables.$border-radius-lg;
+        z-index: 1;
+      }
+    }    &-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      z-index: 2;      &--trophy {
+        background: variables.$color-primary;
+        border-radius: variables.$border-radius-circle;
+        width: 40px;
+        height: 40px;
+        @include mixins.flex-center;
+        @include mixins.shadow('primary');
+      }
+    }&-info {
+      padding: 16px 16px 8px;
+      overflow: visible;
+      @include mixins.flex(row, space-between, center, wrap);
+      width: 100%;
+      box-sizing: border-box;
+    }    &-name {
+      @include mixins.font-style(typography.$text-md, typography.$font-semibold, typography.$leading-tight, variables.$color-text-primary);
+      @include mixins.text-truncate;
+      flex: 1;
+      padding-right: 10px;
+      max-width: 60%;
+    }    &-price {
+      @include mixins.font-style(typography.$text-base, typography.$font-bold, typography.$leading-normal, variables.$color-primary);
+      text-align: right;
+      min-width: 70px;
+      flex-shrink: 0;
+    }    &-tags {
+      @include mixins.font-style(typography.$text-xs, typography.$font-regular, typography.$leading-normal, variables.$color-text-secondary);
+      @include mixins.text-truncate;
+      width: 100%;
+      margin-top: 6px;
+      box-sizing: border-box;
+
+      span {
+        display: inline-block;
+        max-width: 45%;
+        @include mixins.text-truncate;
+      }
+    }    &-cta {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include mixins.button-primary;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity variables.$transition-normal ease;
+
+      @include mixins.responsive(md) {
+        padding: 14px 28px;
+        font-size: typography.$text-md;
+      }
+    }
+
+    &--active {
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+@include mixins.responsive(xl) {
+  .trending-products {
+    &__title {
+      font-size: typography.$text-3xl;
+    }
+  }
+}
+
+@include mixins.responsive(md) {
+  .trending-products {
+    padding: 60px 0;
+
+    &__header {
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 16px;
+      margin-bottom: 24px;
+    }
+
+    &__title {      font-size: typography.$text-2xl;
+      margin: 8px 0 16px;
+    }
+  }
+}
+
+// Extra small screens
+@include mixins.responsive(xs) {
+  .trending-products {
+    &__card {
+      width: 100%; // Make cards fully responsive
+      max-width: 305px; // But ensure they don't exceed original design width
+    }
+    &-image {
+      width: 100%; // Make images fully responsive
+      max-width: 305px; // But ensure they don't exceed original design width
+      height: 272px; // Fixed height as per requirements
+      border-radius: variables.$border-radius-lg; // Consistent border radius
+    }
+
+    &__nav {
+      align-self: center;
+      margin-top: 8px;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__list {
+      gap: 16px;
+    }
+
+    &__card {
+      width: 280px;
+      &-image {
+        width: 280px;
+        height: 272px; // Maintain consistent height as required
+        border-radius: variables.$border-radius-lg; // Consistent border radius
+      }
+      &-name {        font-size: typography.$text-base;
+        max-width: 65%;
+      }
+      &-price {
+        font-size: typography.$text-base;
+      }
+
+      &-info {
+        padding: 12px 8px 8px;
+      }
+    }
+  }
+}

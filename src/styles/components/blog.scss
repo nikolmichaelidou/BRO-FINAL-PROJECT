@@ -1,0 +1,227 @@
+/* blog.scss - Styles for blog section */
+@use "sass:color";
+@use "sass:math";
+@use "variables-main" as variables;
+@use "typography" as typography;
+@use "_mixins" as mixins;
+
+.blog--header-backround {
+  background: linear-gradient(
+    0.23deg,
+    variables.$background-filter 0.2%,
+    rgba(255, 255, 255, 0%) 99.8%
+  );
+}
+
+.blog-hero__image {
+  padding-right: 80px;
+  padding-left: 80px;
+  padding-bottom: 25px;
+  border-radius: variables.$border-radius-lg;
+}
+
+.blog-content__image {
+  width: 980px;
+  height: 462px;
+  border-radius: variables.$border-radius-lg;
+}
+
+.blog-hero {
+  margin-top: 32px;
+  margin-bottom: 48px;
+  padding-left: 8vw;
+  &__tag {
+    display: inline-block;
+    background: variables.$color-primary-accent;
+    color: variables.$color-white;
+    font-size: typography.$text-sm;
+    font-weight: typography.$font-medium;
+    border-radius: variables.$border-radius-round;
+    padding: 8px 32px;
+    margin-bottom: 32px;
+    letter-spacing: 1px;
+  }
+
+  &__title {
+    font-size: typography.$text-4xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
+    line-height: 1.1;
+    margin: 0;
+    letter-spacing: -1px;
+  }
+}
+
+.blog-layout {
+  @include mixins.flex(row, center, flex-start, nowrap);
+  gap: 48px;
+  max-width: 1200px; // Limit the width for better centering
+  margin: 0 auto; // Center the container itself
+  padding: 0 24px; // Optional: add some side padding for small screens
+
+  @media (width <= 900px) {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 8px;
+  }
+}
+
+.blog-sidebar {
+  flex: 0 0 320px;
+  width: 260px;
+  height: 689px;
+  min-width: 260px;
+  gap: 40px;
+  &__author {
+    @include mixins.flex(row, flex-start, center, nowrap);
+    gap: 18px;
+    margin-bottom: 12px;
+  }
+
+  &__avatar {
+    width: 72px;
+    height: 72px;
+    border-radius: variables.$border-radius-circle;
+    object-fit: cover;
+  }
+
+  &__author-name {
+    font-size: typography.$text-2xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
+    margin-bottom: 2px;
+  }
+  &__date {
+    font-size: typography.$text-sm;
+    color: variables.$color-gray-700;
+    opacity: 0.7;
+  }
+  &__divider {
+    border: none;
+    border-top: 2px solid variables.$color-dark;
+    opacity: 0.07;
+    margin: 32px 0;
+  }
+
+  &__section {
+    margin-bottom: 32px;
+  }
+
+  &__heading {
+    font-size: typography.$text-2xl;
+    font-weight: typography.$font-bold;
+    margin-bottom: 18px;
+    color: variables.$color-dark;
+  }
+
+  &__categories {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: typography.$text-sm;
+
+    li {
+      @include mixins.flex(row, flex-start, center, nowrap);
+      gap: 10px;
+      margin-bottom: 14px;
+      color: variables.$color-gray-600;
+      font-weight: typography.$font-medium;
+    }
+
+    .blog-sidebar__active {
+      color: variables.$color-dark;
+      font-weight: typography.$font-bold;
+      padding-left: 15px;
+    }
+  }
+
+  &__dot {
+    width: 10px;
+    height: 10px;
+    background: variables.$color-primary-accent;
+    border-radius: variables.$border-radius-circle;
+    display: inline-block;
+  }
+
+  &__article {
+    margin-bottom: 32px;
+  }
+  &__article-title {
+    font-size: typography.$text-xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
+    margin-bottom: 6px;
+  }
+
+  &__article-date {
+    font-size: typography.$text-xs;
+    color: variables.$color-gray-600;
+    opacity: 0.7;
+  }
+
+  @media (width <= 900px) {
+    width: 100%;
+    padding: 0;
+    margin-top: 32px;
+  }
+}
+
+.blog-content {
+  flex: 1 1 0;
+  min-width: 0;
+  max-width: 800px;
+  margin: 0 auto 48px; // Center the content block
+}
+
+.typography-header {
+  font-weight: typography.$font-regular;
+  font-size: typography.$text-base;
+  line-height: typography.$leading-normal;
+  letter-spacing: typography.$tracking-normal;
+  width: 273px;
+  height: 24px;
+  opacity: 0.7;
+  @include mixins.flex(row, space-between, center, nowrap);
+  color: variables.$color-dark;
+}
+
+.get-asset-link {
+  color: variables.$color-primary-dark;
+  width: 105px;
+  height: 24px;
+}
+
+.blog-quote {
+  @include mixins.flex(row, flex-start, flex-start, nowrap);
+  gap: 18px;
+  margin: 48px 0 32px;
+
+  &__icon {
+    flex-shrink: 0;
+    width: 64px;
+    height: 48px;
+    margin-top: 4px;
+  }
+  &_h4 {
+    font-size: typography.$text-3xl;
+    font-weight: typography.$font-bold;
+    color: variables.$color-dark;
+    line-height: typography.$leading-tight;
+    letter-spacing: typography.$tracking-tight;
+  }
+}
+
+@media (width <= 600px) {
+  .blog-quote {
+    flex-direction: column;
+    align-items: flex-start;
+
+    &__icon {
+      margin-bottom: 12px;
+    }
+
+    &__text {
+      font-size: 1.2rem;
+    }
+  }
+}
