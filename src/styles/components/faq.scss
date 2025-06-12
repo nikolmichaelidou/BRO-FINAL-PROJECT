@@ -130,16 +130,30 @@
       color: #06f;
       background: #f5faff;
     }
-  }
-
-  &__icon {
-    font-size: 1.5rem;
-    color: #06f;
+  }  &__icon {
+    position: relative;
+    width: 24px;
+    height: 24px;
     margin-left: 18px;
-    transition: transform 0.2s;
-
-    &--open {
-      transform: rotate(180deg);
+    background-image: url('../img/chevron-down-icon-2x.webp');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    
+    .faq-accordion__question:hover & {
+      filter: brightness(1.2);
+      transform: translateY(-1px);
+    }
+    
+    .faq-accordion__question.show & {
+      background-image: url('../img/chevron-up-icon-2x.webp');
+      transform: translateY(-2px); // Slight adjustment for visual balance
+    }
+    
+    .faq-accordion__question.show:hover & {
+      filter: brightness(1.2);
+      transform: translateY(-1px);
     }
   }
 
@@ -219,5 +233,10 @@
 
   .faq-accordion {
     gap: 10px;
+  }
+    .faq-accordion__icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
   }
 }
