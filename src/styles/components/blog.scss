@@ -16,12 +16,12 @@
 .blog-hero__image {
   padding-right: 80px;
   padding-left: 80px;
-  padding-bottom: 25px;  width: 1280px;
-  height: 398px;
+  padding-bottom: 25px;
   border-radius: variables.$border-radius-lg;
 }
 
-.blog-content__image {  width: 980px;
+.blog-content__image {
+  width: 980px;
   height: 462px;
   border-radius: variables.$border-radius-lg;
 }
@@ -114,11 +114,12 @@
     color: variables.$color-dark;
   }
 
-  &__categories {    list-style: none;
+  &__categories {
+    list-style: none;
     padding: 0;
     margin: 0;
     font-size: typography.$text-sm;
-    
+
     li {
       @include mixins.flex(row, flex-start, center, nowrap);
       gap: 10px;
@@ -204,7 +205,8 @@
   &_h4 {
     font-size: typography.$text-3xl;
     font-weight: typography.$font-bold;
-    color: variables.$color-dark;    line-height: typography.$leading-tight;
+    color: variables.$color-dark;
+    line-height: typography.$leading-tight;
     letter-spacing: typography.$tracking-tight;
   }
 }
