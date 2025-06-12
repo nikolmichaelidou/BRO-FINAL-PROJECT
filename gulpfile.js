@@ -12,6 +12,7 @@ import sharpResponsive from 'gulp-sharp-responsive'
 import svgo from 'gulp-svgo'
 import * as dartSass from 'sass'
 import gulpSass from 'gulp-sass'
+import replace from 'gulp-replace'
 import postcss from 'gulp-postcss'
 import stylelint from 'stylelint'
 import csso from 'postcss-csso'
@@ -276,6 +277,8 @@ export const markup = () =>
     .pipe(nunjucks({
       path: paths.viewsDir
     }))
+    // Remove JavaScript-style comments for W3C validation
+    .pipe(replace(/^\/\/\sfilepath:.*$/gm, ''))
     .pipe(rename({ dirname: '' }))
     .pipe(dest(paths.dist.pages))
     .pipe(gulpif(args.debug, size(sizeOptions)))
