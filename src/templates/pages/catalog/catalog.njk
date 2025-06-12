@@ -218,6 +218,7 @@
                     </div>
                 {% endfor %}
             </div>
+            <!-- Normal state -->
             <button class="catalog-grid__load-more">Load more</button>
         </section>
     </section>
@@ -232,6 +233,24 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+            // Load more button functionality
+            const loadMoreBtn = document.querySelector('.catalog-grid__load-more:not(.catalog-grid__load-more--loading):not(.catalog-grid__load-more--disabled)');
+            if (loadMoreBtn) {
+                loadMoreBtn.addEventListener('click', function() {
+                    // Simulate loading state
+                    this.classList.add('catalog-grid__load-more--loading');
+                    this.textContent = 'Loading...';
+                    
+                    // Simulate API call delay
+                    setTimeout(() => {
+                        // After "loading" completes
+                        this.classList.remove('catalog-grid__load-more--loading');
+                        this.classList.add('catalog-grid__load-more--disabled');
+                        this.textContent = 'No more items';
+                    }, 2000);
+                });
+            }
+            
             // Filter sections toggle functionality
 
             // Filter sections toggle

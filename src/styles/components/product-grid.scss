@@ -1,14 +1,14 @@
 /* product-grid.scss - Styling for product grid layout */
 @use "sass:color";
 @use "sass:map";
-@use "../components/variables-main" as *;
-@use "../components/typography" as *;
+@use "../components/variables-main" as variables;
+@use "../components/typography" as typography;
 
 $badge-colors: (
-  "sold-out": $color-white,
+  "sold-out": variables.$color-white,
   "new": #007772,
   // Keep custom green
-  "popular": $color-info,
+  "popular": variables.$color-info,
 );
 
 // Catalog layout
@@ -66,34 +66,33 @@ $badge-colors: (
         filter: grayscale(80%);
       }
     }
-  }
-  &__badge {
+  }  &__badge {
     position: absolute;
     top: 16px;
     left: 16px;
     padding: 6px 12px;
-    border-radius: $border-radius-round;
-    font-size: $text-xs;
-    font-weight: $font-semibold;
+    border-radius: variables.$border-radius-round;
+    font-size: typography.$text-xs;
+    font-weight: typography.$font-semibold;
     text-transform: uppercase;
     z-index: 1;
 
     &--sold-out {
-      background: $color-white;
+      background: variables.$color-white;
       color: #2a3541b2; // Specific opacity color
-      box-shadow: $shadow-light;
+      box-shadow: variables.$shadow-light;
     }
 
     &--new {
       background: map.get($badge-colors, "new");
-      color: $color-white;
+      color: variables.$color-white;
       box-shadow: 0 2px 8px rgba(0, 119, 114, 25%);
     }
 
     &--popular {
-      background: $color-primary;
-      color: $color-white;
-      box-shadow: $shadow-primary;
+      background: variables.$color-primary;
+      color: variables.$color-white;
+      box-shadow: variables.$shadow-primary;
     }
   }
 
@@ -192,19 +191,74 @@ $badge-colors: (
   }
   &__icon-bag {
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23FFFFFF' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z'%3E%3C/path%3E%3Cline x1='3' y1='6' x2='21' y2='6'%3E%3C/line%3E%3Cpath d='M16 10a4 4 0 0 1-8 0'%3E%3C/path%3E%3C/svg%3E");
-  }
-
-  &__load-more {
+  }  &__load-more {
     margin: 40px auto;
     background: transparent;
-    border: 2px solid #2735448c;
-    color: #000000;
-    font-size: 1rem;
-    font-weight: 600;
-    padding: 12px 24px;
-    border-radius: 8px;
+    border: 2px solid variables.$color-gray-600;
+    color: variables.$color-dark;
+    font-size: typography.$text-base;
+    font-weight: typography.$font-semibold;
+    padding: 12px 32px;
+    border-radius: variables.$border-radius-lg;
     cursor: pointer;
-    transition: all 0.2s;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+    
+    &:hover {
+      background-color: variables.$color-gray-100;
+      border-color: variables.$color-dark;
+      transform: translateY(-2px);
+    }
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(variables.$color-primary, 0.25);
+      border-color: variables.$color-primary;
+    }
+    
+    &:active {
+      transform: translateY(1px);
+      background-color: variables.$color-gray-200;
+      border-color: variables.$color-dark;
+    }
+    
+    &--loading {
+      color: transparent;
+      pointer-events: none;
+      
+      &::after {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        top: 50%;
+        left: 50%;
+        margin-left: -10px;
+        margin-top: -10px;
+        border: 2px solid variables.$color-gray-300;
+        border-radius: 50%;
+        border-top-color: variables.$color-primary;
+        animation: spin 0.8s linear infinite;
+      }
+    }
+    
+    &--disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+      background-color: variables.$color-gray-100;
+      
+      &:hover, &:focus, &:active {
+        transform: none;
+        background-color: variables.$color-gray-100;
+        border-color: variables.$color-gray-600;
+        box-shadow: none;
+      }
+    }
+  }
+  
+  @keyframes spin {
+    to { transform: rotate(360deg); }
   }
 }
 
