@@ -95,6 +95,32 @@
                     }
                 });
             }
+            
+            // FAQ Accordion functionality
+            const faqButtons = document.querySelectorAll('.faq-accordion__question');
+            
+            if (faqButtons.length > 0) {
+                faqButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const item = this.closest('.faq-accordion__item');
+                        
+                        // Check if this item is already active
+                        const isActive = item.classList.contains('faq-accordion__item--active');
+                        
+                        // Close all accordion items
+                        document.querySelectorAll('.faq-accordion__item').forEach(element => {
+                            element.classList.remove('faq-accordion__item--active');
+                            element.querySelector('.faq-accordion__question').classList.remove('show');
+                        });
+                        
+                        // If the clicked item wasn't active, open it
+                        if (!isActive) {
+                            item.classList.add('faq-accordion__item--active');
+                            this.classList.add('show');
+                        }
+                    });
+                });
+            }
         });
     </script>
   </body>
