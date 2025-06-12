@@ -1,7 +1,0 @@
-{
-    "html.suggest.html5": true,
-    "emmet.includeLanguages": {
-        "njk": "html",
-        "nunjucks": "html"
-    }
-}

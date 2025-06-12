@@ -2,7 +2,8 @@
 @use "sass:color";
 
 /* Global overflow handling */
-html, body {
+html,
+body {
   overflow-x: hidden; // Prevent horizontal scrolling on the entire page
   width: 100%;
 }
@@ -33,7 +34,7 @@ html, body {
 .trending-products__card,
 .category-card {
   overflow: hidden;
-  
+
   img {
     max-width: 100%;
     height: auto;
@@ -101,8 +102,9 @@ table {
   table-layout: fixed;
   width: 100%;
   overflow-wrap: break-word;
-  
-  td, th {
+
+  td,
+  th {
     overflow-wrap: break-word;
     word-break: break-word;
   }
@@ -151,7 +153,8 @@ svg {
 }
 
 /* Fix for code blocks if present in content */
-pre, code {
+pre,
+code {
   overflow-x: auto;
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -196,11 +199,11 @@ img {
     gap: 16px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none; /* Hide scrollbar for Firefox */
-    
+
     &::-webkit-scrollbar {
       display: none; /* Hide scrollbar for Chrome/Safari/Edge */
     }
-    
+
     .trending-products__card {
       scroll-snap-align: start;
       flex: 0 0 auto;
@@ -208,7 +211,7 @@ img {
       max-width: 305px; /* But not larger than designed size */
     }
   }
-  
+
   /* Enable horizontal scrolling for asset categories */
   .asset-categories__grid {
     display: flex;
@@ -218,18 +221,18 @@ img {
     gap: 16px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
-    
+
     .asset-category-card {
       scroll-snap-align: start;
       flex: 0 0 auto;
       width: 160px; /* Fixed width for consistent sizing */
     }
   }
-  
+
   /* Enable horizontal scrolling for categories showcase grid */
   .categories-showcase__grid {
     display: flex;
@@ -239,18 +242,18 @@ img {
     gap: 16px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
-    
+
     .category-card {
       scroll-snap-align: start;
       flex: 0 0 auto;
       width: 180px; /* Fixed width for consistent sizing */
     }
   }
-  
+
   /* Enable horizontal scrolling for catalog active filters */
   .catalog-active-filters {
     display: flex;
@@ -260,16 +263,16 @@ img {
     gap: 12px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
-    
+
     &__tag {
       flex: 0 0 auto;
     }
   }
-  
+
   /* Enable horizontal scrolling for footer links on small screens */
   .footer__links {
     display: flex;
@@ -280,11 +283,11 @@ img {
     gap: 24px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
-    
+
     &::-webkit-scrollbar {
       display: none;
     }
-    
+
     .footer__col {
       flex: 0 0 auto;
       min-width: 160px;

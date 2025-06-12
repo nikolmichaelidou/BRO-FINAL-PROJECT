@@ -35,7 +35,7 @@
   }
 
   &__title {
-    font-size: $text-4xl; 
+    font-size: $text-4xl;
     font-weight: $font-bold;
     line-height: $leading-tight;
     letter-spacing: $tracking-tight;
@@ -106,7 +106,8 @@
       .trending-products__card-cta {
         opacity: 1;
       }
-    }    &-image {
+    }
+    &-image {
       height: 272px;
       width: 305px;
       position: relative;
@@ -118,22 +119,24 @@
       background: #f5f8fb;
 
       &--blue {
-        background: #E6F0FA;
+        background: #e6f0fa;
       }
-      
+
       &--green {
-        background: #E6FAD7;
+        background: #e6fad7;
       }
-      
+
       &--light-blue {
-        background: #D6F3FF;
-      }      img {
+        background: #d6f3ff;
+      }
+      img {
         max-width: 100%;
         max-height: 100%;
         object-fit: cover;
         transition: transform 0.3s ease;
         border-radius: 20px;
-      }&::after {
+      }
+      &::after {
         content: "";
         position: absolute;
         top: 0;
@@ -164,8 +167,8 @@
         box-shadow: 0 0 20px rgba(15, 115, 246, 40%);
       }
     }    &-info {
-      padding: 16px 8px 8px;
-      overflow: hidden;
+      padding: 16px 16px 8px;
+      overflow: visible;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -173,31 +176,31 @@
       width: 100%;
       box-sizing: border-box;
     }    &-name {
-      font-size: 18px; 
+      font-size: 18px;
       font-weight: 600;
       color: #181a1d;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       flex: 1;
-      margin-right: 10px;
-      max-width: 70%;
+      padding-right: 10px;
+      max-width: 60%;
     }    &-price {
       font-size: 16px;
       font-weight: 700;
       color: #0f73f6;
       text-align: right;
-      min-width: 65px;
+      min-width: 70px;
       flex-shrink: 0;
-    }&-tags {
+    }
+    &-tags {
       font-size: 12px;
-      color: #6B7280;
+      color: #6b7280;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       width: 100%;
-      margin-top: 8px;
-      padding-top: 5px;
+      margin-top: 6px;
       box-sizing: border-box;
 
       span {
@@ -271,13 +274,13 @@
       width: 100%; // Make cards fully responsive
       max-width: 305px; // But ensure they don't exceed original design width
     }
-      &-image {
+    &-image {
       width: 100%; // Make images fully responsive
       max-width: 305px; // But ensure they don't exceed original design width
       height: 272px; // Fixed height as per requirements
       border-radius: 20px; // Consistent border radius
     }
-    
+
     &__nav {
       align-self: center;
       margin-top: 8px;
@@ -290,18 +293,20 @@
     }
 
     &__card {
-      width: 280px;      &-image {
+      width: 280px;
+      &-image {
         width: 280px;
         height: 272px; // Maintain consistent height as required
         border-radius: 20px; // Consistent border radius
-      }      &-name {
+      }
+      &-name {
         font-size: 16px;
         max-width: 65%;
       }
-        &-price {
+      &-price {
         font-size: 16px;
       }
-      
+
       &-info {
         padding: 12px 8px 8px;
       }
