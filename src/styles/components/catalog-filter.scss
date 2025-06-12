@@ -3,7 +3,8 @@
 @use "../components/typography" as *;
 @use "../components/variables-main" as *;
 
-.catalog-filter {  background: $color-white;
+.catalog-filter {  
+  background: $color-white;
   padding: 32px 24px;
   border-radius: $border-radius-xl;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 4%);
@@ -16,12 +17,16 @@
 
   &__section {
     margin-bottom: 32px;
-  }  &__title {
+  }  
+  
+  &__title {
     font-size: 2rem;
     font-weight: $font-bold;
     margin-bottom: 20px;
     color: $color-dark;
-  }  &__checkbox,
+  }  
+  
+  &__checkbox,
   &__radio,
   &__toggle {
     display: flex;
@@ -34,6 +39,7 @@
     color: $color-dark;
     user-select: none;
   }
+  
   &__checkbox input[type="checkbox"],
   &__radio input[type="radio"] {
     appearance: none;
@@ -46,10 +52,13 @@
     position: relative;
     transition: border $transition-fast;
   }
+  
   &__checkbox input[type="checkbox"]:checked {
     border-color: $color-primary-accent;
     background: $color-primary-accent;
-  }  &__checkbox input[type="checkbox"]:checked::after {
+  }  
+  
+  &__checkbox input[type="checkbox"]:checked::after {
     content: "";
     display: block;
     width: 14px;
@@ -58,6 +67,7 @@
     border-radius: $border-radius-sm;
     background: $color-white;
   }
+  
   &__radio input[type="radio"] {
     border-radius: $border-radius-circle;
   }
@@ -66,6 +76,7 @@
     border-color: $color-primary-accent;
     background: $color-primary-accent;
   }
+  
   &__radio input[type="radio"]:checked::after {
     content: "";
     display: block;
@@ -78,7 +89,9 @@
 
   &__toggle {
     margin-bottom: 16px;
-  }  &__toggle input[type="checkbox"] {
+  }  
+  
+  &__toggle input[type="checkbox"] {
     appearance: none;
     width: 48px;
     height: 28px;
@@ -88,9 +101,13 @@
     outline: none;
     transition: background $transition-fast;
     margin: 0;
-  }  &__toggle input[type="checkbox"]:checked {
+  }  
+  
+  &__toggle input[type="checkbox"]:checked {
     background: $color-primary-accent;
-  }  &__toggle span {
+  }  
+  
+  &__toggle span {
     font-size: 1.15rem;
     font-weight: $font-semibold;
     margin-left: 12px;
@@ -115,7 +132,9 @@
     font-size: 1.1rem;
     color: $color-dark;
     font-weight: $font-semibold;
-  }  &__clear-btn {
+  }  
+  
+  &__clear-btn {
     width: 100%;
     padding: 14px 0;
     background: $color-white;
@@ -135,7 +154,9 @@
   &__clear-btn:hover {
     background: $color-primary-accent;
     color: $color-white;
-  }  // Mobile styles
+  }  
+  
+  // Mobile styles
   @media (width <= $breakpoint-md) {
     display: none;
     position: fixed;
@@ -155,7 +176,9 @@
       display: block;
       transform: translateX(0);
     }
-  }&__close-btn {
+  }
+
+  &__close-btn {
     position: absolute;
     top: 16px;
     right: 16px;
@@ -182,6 +205,7 @@
       box-shadow: $shadow-primary;
     }
   }
+
   &__toggle {
     display: flex;
     align-items: center;
@@ -269,9 +293,17 @@
 
 .catalog-active-filters {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
   margin: 16px 0;
+  overflow-x: auto;
+  padding-bottom: 8px; /* Add padding to prevent content from touching the scrollbar */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  
+  &::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari/Edge */
+  }
 
   &__tag {
     display: flex;
@@ -283,6 +315,8 @@
     font-size: 14px;
     color: #000;
     cursor: pointer;
+    flex: 0 0 auto;
+    white-space: nowrap;
 
     &-remove {
       margin-left: 8px;
@@ -308,9 +342,9 @@
     background: $color-primary;
     color: $color-white;
     border-radius: $border-radius-round;
-    padding: 16px 32px; // Increased padding for better touch target
+    padding: 16px 32px; /* Increased padding for better touch target */
     font-weight: $font-medium;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); // Enhanced shadow for better visibility
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow for better visibility */
     z-index: 99;
     align-items: center;
     gap: 10px;
